@@ -1,0 +1,27 @@
+.intro {
+  background: rgb(255, 243, 177);
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.intro p {
+  display: flex;
+}
+
+.intro p strong {
+  flex: 1;
+}
+
+.intro p span {
+  flex: 6;
+}
+
+.bigsur .pic {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.bigsur .pic img {
+  border-radius: 4px;
+}

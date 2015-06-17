@@ -1,0 +1,279 @@
+html { height: 100%; overflow: hidden; }
+
+body { margin: 0; height: 100%; }
+
+#wrapper {
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+}
+
+.section {
+  height: 100%;
+  -webkit-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  transition: all 300ms;
+  cursor: default;
+  z-index: 1;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.section:not(.unselected):not(.static):hover, .section.selected {
+  -webkit-flex: 1.2;
+  flex: 1.2;
+  box-shadow: -20px 0px 15px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.section.selected {
+  -webkit-flex: 13 !important;
+  flex: 20 !important;
+  z-index: 3 !important;
+  background: white;
+}
+
+.section.unselected:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.s1 { background: #E5C61C;}
+.s1.selected h1 { color: #E5C61C; }
+.s2 { background: #66580C;}
+.s2.selected h1 { color: #66580C; }
+.s3 { background: #EAD562;}
+.s3.selected h1 { color: #EAD562; }
+.s4 { background: #B29A16;}
+.s4.selected h1 { color: #B29A16; }
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+h1 {
+  transition: all 300ms, top cubic-bezier(0.28, 0.38, 0.43, 1.15) 700ms;
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  position: relative;
+  top: calc(50% - 0.6em);
+  margin: 0;
+  z-index: 1;
+  font-weight: normal;
+}
+
+.section.scrolled h1:not(.back) {
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.15)
+}
+
+.hidden {
+  display: none;
+}
+
+h1 .small {
+  font-size: 0.5em;
+  font-variant: small-caps;
+}
+
+.section:not(.selected):hover h1 {
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.section.selected h1 {
+  top: 0px;
+  font-size: 2em;
+  padding-left: 18px;
+  text-align: left;
+  padding-bottom: 7px;
+  min-height: 34px;
+}
+
+.content {
+  display: none;
+}
+
+.section.selected .content {
+  display: block;
+  padding: 1em;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background: white;
+  z-index: 3;
+}
+
+.content h2 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #666;
+  padding-bottom: .3em;
+}
+
+.content h2:not(:first-child) {
+  margin-top: 1em;
+}
+
+img.left {
+  float: left;
+  border-radius: 100%;
+  margin: 3em;
+  width: 12em;
+  height: 12em;
+}
+
+.flex { display: flex; }
+
+.panel-right {
+  background: #f3f3f3;
+  flex: 1;
+  max-width: 50em;
+  font-size: 14px;
+  padding: 2em;
+  border-radius: 3px;
+  margin: 2em;
+  margin-top: 0;
+  position: relative;
+  border-bottom: 2px solid #ddd;
+  color: #555;
+}
+
+.panel-right:before {
+  content: "";
+  width: 0em;
+  height: 0em;
+  position: absolute;
+  top: 4em;
+  left: -4em;
+  border: 2em solid rgba(0, 0, 0, 0);
+  border-right-color: #F3F3F3;
+}
+
+.panel-right .my-name {
+  color: rgb(173, 44, 153);
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.back {
+  position: absolute;
+  right: 15px;
+  top: 9px;
+  font-size: 2em;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.section:not(.selected) .back {
+  display: none;
+}
+
+.tags-container {
+  display: flex;
+  max-width: 61em;
+  margin: auto;
+  width: 80%;
+}
+
+.tags-title {
+  font-weight: bold;
+  color: #333;
+  padding-right: 10px;
+}
+
+.tags { flex: 1; }
+
+.tags > div {
+  display: inline-block;
+  font-size: 15px;
+  color: #777;
+  margin: 10px 12px;
+  margin-top: 0;
+  border-bottom: 2px dotted #ddd;
+}
+
+.resume {
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1.3em;
+  margin-left: 11.2em;
+}
+
+.resume a {
+  color: rgb(160, 138, 27);
+  text-decoration: none;
+}
+
+.resume a:hover {
+  color: black;
+}
+
+.project {
+  box-sizing: border-box;
+  margin: auto;
+  border: 0px solid rgb(240, 234, 201);
+  border-radius: 24em;
+  overflow: hidden;
+  height: 25em;
+  width: 25em;
+  cursor: pointer;
+  position: relative;
+  background: #2D2D18;
+  z-index: 1;
+  margin-top: 0;
+  transition: all 600ms;
+}
+
+.project img {
+  width: 140%;
+  position: relative;
+  top: 0em;
+  left: -5em;
+  transition: all 600ms;
+  opacity: 0.4;
+}
+
+.project:after {
+  content: attr(title);
+  pointer-events: none;
+  position: absolute;
+  top: 44%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  opacity: 1;
+  transition: all 600ms;
+  font-size: 2em;
+}
+
+.project:hover {
+  border-width: 6px;
+}
+
+.project:hover img {
+  opacity: 0.7;
+}
+
+.project:hover:after {
+  font-size: 1.9em;
+}
+
+.section.expanded .project {
+  margin-top: -26em;
+}
+
+.project-content {
+  padding-top: 1em;
+  max-width: 800px;
+  margin: auto;
+}
