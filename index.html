@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sharon Duan</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link media="all" rel="stylesheet" type="text/css" href="sharon.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+
+      <!-- SECTION Sharon -------------------- -->
+      <div class="section s1 static">
+        <h1>
+          <span>S.D.</span>
+          <span class="hidden">
+            <span>S</span><span class="small">haron</span><span>D</span><span class="small">uan</span>
+          </span>
+        </h1>
+        <h1 class="back">></h1>
+      </div>
+
+      <!-- SECTION Projects -------------------- -->
+      <div class="section s2">
+        <h1>Projects</h1>
+        <h1 class="back">></h1>
+        <div class="content">
+          <div class="project" title="Big Sur Website Redesign">
+            <img id="bigsur" src="bigsur/bigsur_page2.jpg">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION About -------------------- -->
+      <div class="section s3">
+        <h1>About</h1>
+        <h1 class="back">></h1>
+        <div class="content">
+          <div class="flex">
+            <img class="left" src="cucu.jpg">
+            <div class="panel-right">
+              <p>My name is <span class="my-name">Sharon Duan</span> and I am an entry-level web designer and I am seeking an entry-level position in the related field.</p>
+
+              <p>I'm a person that loves design, travel, and food. From fashion to graphic, I genuinely love design since I am a little girl.</p>
+
+              <p>Having worked in the communication field for the past years, I've already grasped solid project management, organizational and multi-tasking skills, well-developed research and analytical skills. I'm a quick learner and can work well in both team and self-directed environments and I am always fully committed to meet the deadlines and pay attention to details.</p>
+
+              <p>I am now fully dedicated to web design and UI/UX creation. Right now, I am a student at University of California, Santa Cruz extension, learning web and interactive media design.</p>
+            </div>
+          </div>
+
+          <div class="tags-container">
+            <div class="tags-title">TAGS</div>
+            <div class="tags">
+              <div>UI/UX Design</div>
+              <div>Graphic Design</div>
+              <div>HTML 5</div>
+              <div>CSS 3</div>
+              <div>Drupal</div>
+              <div>Wordpress</div>
+              <div>Deamweaver</div>
+              <div>SEO</div>
+              <div>Consumer Insight</div>
+              <div>Data Analysis</div>
+              <div>SPSS</div>
+              <div>NodeXL</div>
+              <div>Netsuite</div>
+              <div>Travel</div>
+              <div>Food</div>
+              <div>Culture</div>
+              <div>Coffee Lover</div>
+              <div>Pigs & Hamsters</div>
+            </div>
+          </div>
+          <div class="resume">
+            <a href="Sharon Duan CV.pdf" target="_blank">Get my resume, biatch!</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION Contact -------------------- -->
+      <div class="section s4">
+        <h1>Contact</h1>
+        <h1 class="back">></h1>
+        <div class="content">
+          <p>Contact me sooon!</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      (function() {
+        var currentProject;
+
+        $('.section:not(.static)').on('click', function() {
+          if ($(this).is('.selected')) { return; }
+          unselectProject();
+          $('.section').removeClass('selected');
+          $('.section').removeClass('scrolled');
+          $('.section').addClass('unselected');
+
+          $(this).removeClass('unselected');
+          $(this).addClass('selected');
+        });
+
+        $('.section.static').on('click', function() {
+          unselectProject();
+          $('.section').removeClass('selected');
+          $('.section').removeClass('unselected');
+          $('.section').removeClass('scrolled');
+
+          $(this).find('h1 > span:first-child').addClass('hidden');
+          $(this).find('h1 > span:last-child').removeClass('hidden');
+        });
+
+        $('.back').on('click', function(e) {
+          e.stopPropagation();
+          if (currentProject) {
+            unselectProject();
+            return;
+          }
+          $('.section').removeClass('selected');
+          $('.section').removeClass('unselected');
+        });
+
+        $('.content').on('scroll', function(e) {
+          if ($(e.target).scrollTop()) {
+            $(this).parents('.section').addClass('scrolled');
+          } else {
+            $(this).parents('.section').removeClass('scrolled');
+          }
+        });
+
+        $('#bigsur').on('click', function() {
+          currentProject = {
+            section: $(this).parents('.section'),
+            title: $(this).parents('.section').find('h1:not(.back)').text()
+          };
+          console.log(currentProject);
+          var projectTitle = currentProject.section.find('.project').attr('title');
+          currentProject.section.addClass('expanded');
+          currentProject.section.find('h1:not(.back)').text(projectTitle);
+          $('<div class="project-content"></div>')
+            .appendTo(currentProject.section.find('.content'))
+            .load('bigsur.html');
+        });
+
+        return;
+
+        function unselectProject() {
+          if (!currentProject) { return; }
+          currentProject.section.find('.project-content').remove();
+          currentProject.section.removeClass('expanded');
+          currentProject.section.find('h1:not(.back)').text(currentProject.title);
+          currentProject = null;
+        }
+      })();
+    </script>
+  </body>
+</html>
