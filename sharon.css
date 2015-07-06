@@ -92,13 +92,15 @@ h1 .small {
 
 .section.selected h1 {
   top: 0px;
-  font-size: 1.7em;
+  font-size: 1.6em;
   padding-left: 18px;
   text-align: left;
-  padding-bottom: 7px;
+  padding-bottom: 2px;
   padding-top: 7px;
-  background: rgb(246,247,234);
+  background: none repeat scroll 0% 0% #F6F7EA;
   min-height: 34px;
+  font-weight: 300;
+  font-variant: small-caps;
 }
 
 .content {
