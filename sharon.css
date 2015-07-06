@@ -92,10 +92,12 @@ h1 .small {
 
 .section.selected h1 {
   top: 0px;
-  font-size: 2em;
+  font-size: 1.7em;
   padding-left: 18px;
   text-align: left;
   padding-bottom: 7px;
+  padding-top: 7px;
+  background: rgb(246,247,234);
   min-height: 34px;
 }
 
@@ -105,7 +107,6 @@ h1 .small {
 
 .section.selected .content {
   display: block;
-  padding: 1em;
   height: 100%;
   overflow: auto;
   position: relative;
@@ -273,7 +274,6 @@ img.left {
 }
 
 .project-content {
-  padding-top: 1em;
-  max-width: 800px;
+  padding-top: 4px;
   margin: auto;
 }
