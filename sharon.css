@@ -74,7 +74,8 @@ h1 {
 }
 
 .section.scrolled h1:not(.back) {
-  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.15)
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.15);
+  z-index: 5;
 }
 
 .hidden {
@@ -114,6 +115,7 @@ h1 .small {
   position: relative;
   background: white;
   z-index: 3;
+  padding-top: 1em;
 }
 
 .content h2 {
@@ -278,4 +280,31 @@ img.left {
 .project-content {
   padding-top: 4px;
   margin: auto;
+}
+
+.contact {
+  padding-left: 1em;
+  color: #666;
+}
+
+.contact > p:first-child {
+  text-align: center;
+  color: #999;
+}
+
+.contact .vignette {
+  margin: auto;
+  width: 200px;
+  padding: 15px;
+  background-color: #eee;
+  margin-top: 2em;
+}
+
+.contact .vignette a {
+  color: inherit;
+  text-decoration: initial;
+}
+
+.contact .email, .contact .phone {
+  font-family: monospace;
 }
