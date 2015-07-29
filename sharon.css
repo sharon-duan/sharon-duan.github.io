@@ -151,6 +151,7 @@ img.left {
   position: relative;
   border-bottom: 2px solid #ddd;
   color: #555;
+  line-height: 2em;
 }
 
 .panel-right:before {
@@ -165,9 +166,9 @@ img.left {
 }
 
 .panel-right .my-name {
-  color: rgb(173, 44, 153);
+
   font-weight: 700;
-  font-size: 1.2em;
+
 }
 
 .back {
@@ -210,13 +211,16 @@ img.left {
 .resume {
   padding: 1em;
   padding-top: 2em;
-  font-size: 1.3em;
-  margin-left: 20.2em;
+  font-size: 1.2em;
+  margin-left: 27em;
+  margin-top:2em;
 }
 
 .resume a {
-  color: rgb(160, 138, 27);
+  color: rgb(119, 119, 119);
   text-decoration: none;
+  background-color: rgb(234, 213, 99);
+  padding: 2%;
 }
 
 .resume a:hover {
