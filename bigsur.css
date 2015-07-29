@@ -34,6 +34,14 @@
   text-align: center;
 }
 
+.bigsur h3 {
+  font-size: 1.3em;
+  color: #4F504A;
+  font-weight: 300;
+  padding: 1em;
+  text-align: center;
+}
+
 .intro {
   background: #f6f6f6;
   font-weight: 300;
