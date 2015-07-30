@@ -166,9 +166,7 @@ img.left {
 }
 
 .panel-right .my-name {
-
   font-weight: 700;
-
 }
 
 .back {
@@ -178,6 +176,8 @@ img.left {
   font-size: 2em;
   cursor: pointer;
   font-family: monospace;
+  z-index: 1;
+  background: none !important;
 }
 
 .section:not(.selected) .back {
@@ -227,14 +227,20 @@ img.left {
   color: black;
 }
 
+.projects {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
 .project {
   box-sizing: border-box;
   margin: auto;
   border: 0px solid rgb(240, 234, 201);
   border-radius: 24em;
   overflow: hidden;
-  height: 25em;
-  width: 25em;
+  height: 21em;
+  width: 21em;
   cursor: pointer;
   position: relative;
   background: #2D2D18;
@@ -243,13 +249,17 @@ img.left {
   transition: all 600ms;
 }
 
+.project.disabled {
+  cursor: not-allowed;
+}
+
 .project img {
   width: 140%;
   position: relative;
-  top: 0em;
+  top: 0;
   left: -5em;
   transition: all 600ms;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .project:after {
@@ -262,19 +272,32 @@ img.left {
   color: white;
   opacity: 1;
   transition: all 600ms;
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
-.project:hover {
+.project.disabled:before {
+  content: "(Coming Soon)";
+  pointer-events: none;
+  position: absolute;
+  top: 57%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  opacity: 0.7;
+  transition: all 600ms;
+  font-size: 1.3em;
+}
+
+.project:not(.disabled):hover {
   border-width: 6px;
 }
 
-.project:hover img {
-  opacity: 0.7;
+.project:not(.disabled):hover img {
+  opacity: 0.9;
 }
 
-.project:hover:after {
-  font-size: 1.9em;
+.project:not(.disabled):hover:after {
+  font-size: 1.5em;
 }
 
 .section.expanded .project {
