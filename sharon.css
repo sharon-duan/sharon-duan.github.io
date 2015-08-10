@@ -9,52 +9,68 @@ body { margin: 0; height: 100%; }
   font-family: 'Roboto', sans-serif;
 }
 
-.section {
-  height: 100%;
-  -webkit-flex: 1;
-  flex: 1;
-  overflow: hidden;
-  transition: all 300ms;
-  cursor: default;
-  z-index: 1;
-  position: relative;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  -webkit-flex-direction: column;
-}
-
-.section:not(.unselected):not(.static):hover, .section.selected {
-  -webkit-flex: 1.2;
-  flex: 1.2;
-  box-shadow: -20px 0px 15px 0px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-.section.selected {
-  -webkit-flex: 13 !important;
-  flex: 20 !important;
-  z-index: 3 !important;
-  background: white;
-}
-
-.section.unselected:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
+.sharon {
+  position: absolute;
   height: 100%;
   width: 100%;
-  position: absolute;
-  z-index: 2;
+  transition: all 1s;
+  cursor: default;
+  background: #E5C61C;
+  color: hsl(51, 79%, 20%);
+  cursor: pointer;
+  display: flex;
+  z-index: 10;
 }
 
-.s1 { background: #E5C61C;}
-.s1.selected h1 { color: #E5C61C; }
-.s2 { background: #66580C;}
-.s2.selected h1 { color: #66580C; }
-.s3 { background: #EAD562;}
-.s3.selected h1 { color: #EAD562; }
-.s4 { background: #B29A16;}
-.s4.selected h1 { color: #B29A16; }
+.sharon.folded {
+  width: 300px;
+}
+
+.sharon-block {
+  margin: auto;
+  font-size: 0.9em;
+}
+
+.sharon-block h1 {
+  transition: all 1s;
+  font-size: 5em;
+  margin-bottom: 0.5em;
+}
+
+.sharon.folded .sharon-block h1 {
+  font-size: 3em;
+}
+
+.sharon-details {
+  transition: all 2s;
+  opacity: 1;
+  max-height: 50px;
+}
+
+.sharon-details.sharon-hidden {
+  opacity: 0;
+  max-height: 0;
+}
+
+.sharon-details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sharon-details a:hover {
+  text-decoration: underline;
+}
+
+.sharon-details i.fa {
+  margin-right: .5em;
+  width: 16px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.sharon-details div {
+  margin: 1em;
+}
 
 hr {
   border: none;
@@ -62,20 +78,9 @@ hr {
 }
 
 h1 {
-  transition: all 300ms, top cubic-bezier(0.28, 0.38, 0.43, 1.15) 700ms;
-  color: white;
-  font-size: 4em;
-  text-align: center;
-  position: relative;
-  top: calc(50% - 0.6em);
+  font-size: 3em;
   margin: 0;
-  z-index: 1;
   font-weight: normal;
-}
-
-.section.scrolled h1:not(.back) {
-  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.15);
-  z-index: 5;
 }
 
 .hidden {
@@ -83,26 +88,10 @@ h1 {
 }
 
 h1 .small {
-  font-size: 0.5em;
+  font-size: 0.7em;
   font-variant: small-caps;
 }
 
-.section:not(.selected):hover h1 {
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.section.selected h1 {
-  top: 0px;
-  font-size: 1.6em;
-  padding-left: 18px;
-  text-align: left;
-  padding-bottom: 2px;
-  padding-top: 7px;
-  background: none repeat scroll 0% 0% #F6F7EA;
-  min-height: 34px;
-  font-weight: 300;
-  font-variant: small-caps;
-}
 
 .content {
   display: none;
@@ -227,13 +216,15 @@ img.left {
   color: black;
 }
 
-.projects {
-  width: 80%;
-  margin: auto;
-  display: flex;
+.bubbles {
+  width: 100%;
+  margin-left: 300px;
+  position: relative;
+  background: hsl(51, 79%, 96%);
 }
 
-.project {
+.bubble {
+  position: absolute;
   box-sizing: border-box;
   margin: auto;
   border: 0px solid rgb(240, 234, 201);
@@ -242,27 +233,37 @@ img.left {
   height: 21em;
   width: 21em;
   cursor: pointer;
-  position: relative;
   background: #2D2D18;
   z-index: 1;
   margin-top: 0;
-  transition: all 600ms;
 }
 
-.project.disabled {
+.bubble.bubble-bigsur {
+  background: hsl(182, 41%, 33%);
+}
+
+.bubble.bubble-uxdesign {
+  background: hsl(93, 45%, 28%);
+}
+
+.bubble.bubble-mobileui {
+  background: hsl(16, 51%, 37%);
+}
+
+.bubble.disabled {
   cursor: not-allowed;
 }
 
-.project img {
+.bubble img {
   width: 140%;
   position: relative;
-  top: 0;
+  top: -0.2em;
   left: -5em;
   transition: all 600ms;
   opacity: 0.3;
 }
 
-.project:after {
+.bubble:after {
   content: attr(title);
   pointer-events: none;
   position: absolute;
@@ -273,13 +274,14 @@ img.left {
   opacity: 1;
   transition: all 600ms;
   font-size: 1.6em;
+  padding: .5em 0;
 }
 
-.project.disabled:before {
+.bubble.disabled:before {
   content: "(Coming Soon)";
   pointer-events: none;
   position: absolute;
-  top: 57%;
+  top: 64%;
   width: 100%;
   text-align: center;
   color: white;
@@ -288,25 +290,79 @@ img.left {
   font-size: 1.3em;
 }
 
-.project:not(.disabled):hover {
-  border-width: 6px;
+.bubble:not(.disabled):hover {
+  border-width: 1px;
 }
 
-.project:not(.disabled):hover img {
-  opacity: 0.9;
+.bubble:not(.disabled):hover img {
+  opacity: 0.8;
+  width: 135%;
+  left: -4.5em;
+  top: 0em;
 }
 
-.project:not(.disabled):hover:after {
-  font-size: 1.5em;
+.bubble:not(.disabled):hover:after {
+  background: rgba(0,0,0,0.6);
 }
 
-.section.expanded .project {
-  margin-top: -26em;
+.project-close {
+  transition: opacity 300ms;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  margin-left: 300px;
+  left: 0.9em;
+  top: 0.6em;
+  background: #E5C61C;
+  color: white;
+  border-radius: 100%;
+  height: 2.8em;
+  width: 2.8em;
+  cursor: pointer;
+  transform: rotate(45deg);
+  display: flex;
+  box-shadow: 3px 3px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.project-content {
-  padding-top: 4px;
+.project-close span {
+  font-size: 1.9em;
+  font-weight: 300;
+  top: 0.1em;
+  left: 0.4em;
   margin: auto;
+}
+
+.project-close i.fa {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  top: 3px;
+}
+
+.project {
+  transition: top 800ms;
+  position: absolute;
+  width: calc(100% - 300px);
+  background-color: white;
+  top: 100%;
+  left: 0;
+  margin-left: 300px;
+  height: 100%;
+  z-index: 1;
+  overflow: auto;
+}
+
+.project .title {
+  font-size: 1.8em;
+  color: rgb(91, 79, 10);
+  display: inline-block;
+  margin: 0.35em 0px 0.1em 2.55em;
+  padding: 4px;
+  border-radius: 30.9px;
+  font-variant: small-caps;
+  font-weight: 300;
 }
 
 .contact {
