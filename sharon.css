@@ -236,7 +236,7 @@ img.left {
   background: #2D2D18;
   z-index: 1;
   margin-top: 0;
-  background: hsl(182, 41%, 33%);
+  background: rgb(101, 98, 28);
 }
 
 .bubble.disabled {
