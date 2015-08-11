@@ -236,18 +236,7 @@ img.left {
   background: #2D2D18;
   z-index: 1;
   margin-top: 0;
-}
-
-.bubble.bubble-bigsur {
   background: hsl(182, 41%, 33%);
-}
-
-.bubble.bubble-uxdesign {
-  background: hsl(93, 45%, 28%);
-}
-
-.bubble.bubble-mobileui {
-  background: hsl(16, 51%, 37%);
 }
 
 .bubble.disabled {
@@ -305,11 +294,11 @@ img.left {
   background: rgba(0,0,0,0.6);
 }
 
-.project-close {
+.project-btn {
   transition: opacity 300ms;
   opacity: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 11;
   margin-left: 300px;
   left: 0.9em;
   top: 0.6em;
@@ -319,12 +308,22 @@ img.left {
   height: 2.8em;
   width: 2.8em;
   cursor: pointer;
-  transform: rotate(45deg);
   display: flex;
   box-shadow: 3px 3px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.project-close span {
+.project-close {
+  transform: rotate(45deg);
+}
+
+.project-top {
+  bottom: 1em;
+  right: 1em;
+  top: initial;
+  left: initial;
+}
+
+.project-btn span {
   font-size: 1.9em;
   font-weight: 300;
   top: 0.1em;
@@ -332,13 +331,49 @@ img.left {
   margin: auto;
 }
 
-.project-close i.fa {
+.project-btn i.fa {
   position: relative;
   width: 100%;
   height: 100%;
   margin: auto;
   text-align: center;
-  top: 3px;
+  top: 0.5em;
+  font-size: 1.3em;
+}
+
+.project-title {
+  font-size: 1.8em;
+  color: rgb(91, 79, 10);
+  display: inline-block;
+  padding: 4px;
+  border-radius: 30.9px;
+  font-variant: small-caps;
+  font-weight: 300;
+  position: absolute;
+  top: 0.4em;
+  left: 0;
+  z-index: 10;
+  margin-left: 300px;
+  text-align: center;
+  width: 15em;
+  box-sizing: border-box;
+  transition: all 500ms;
+  border: 0;
+  background: none;
+  padding-left: 1em;
+  opacity: 0;
+}
+
+.project-title.scrolled {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  left: -11.9em;
+  top: 1em;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.08);
+  font-size: 1.1em;
+  padding-right: 2em;
+  width: 13.7em;
+  padding-left: 0.4em;
 }
 
 .project {
@@ -352,17 +387,7 @@ img.left {
   height: 100%;
   z-index: 1;
   overflow: auto;
-}
-
-.project .title {
-  font-size: 1.8em;
-  color: rgb(91, 79, 10);
-  display: inline-block;
-  margin: 0.35em 0px 0.1em 2.55em;
-  padding: 4px;
-  border-radius: 30.9px;
-  font-variant: small-caps;
-  font-weight: 300;
+  padding-top: 4em;
 }
 
 .contact {

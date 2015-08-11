@@ -27,6 +27,9 @@
             <div>
               <i class="fa fa-home"></i>Mountain View, CA
             </div>
+            <div>
+              <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
+            </div>
           </div>
         </div>
       </div>
@@ -49,7 +52,9 @@
       </div>
 
       <!-- Selected Project ----------------- -->
-      <div class="project-close"><span>+</span></div>
+      <div class="project-close project-btn"><span>+</span></div>
+      <div class="project-title">Big Sur Website Redesign</div>
+      <div class="project-top   project-btn"><i class="fa fa-arrow-up"></i></div>
       <div class="project"></div>
 
     </div>
@@ -69,17 +74,33 @@
             $('.project').css('top', 0);
             setTimeout(function() {
               $('.project-close').css('opacity', 1);
+              $('.project-title').css('opacity', 1);
             }, 1000);
           });
         });
 
         var t_closeProject;
         $('.project-close').on('click', function() {
-          $('.project-close').css('opacity', 0);
+          $('.project-btn').css('opacity', 0);
+          $('.project-title').css('opacity', 0);
           $('.project').css('top', '100%');
           t_closeProject = setTimeout(function() {
             $('.project').empty();
           }, 1000);
+        });
+
+        $('.project-top').on('click', function() {
+          $('.project').animate({scrollTop: 0}, 1000);
+        });
+
+        $('.project').on('scroll', function(e) {
+          if ($(e.target).scrollTop()) {
+            $('.project-title').addClass('scrolled');
+            $('.project-top').css('opacity', 1);
+          } else {
+            $('.project-title').removeClass('scrolled');
+            $('.project-top').css('opacity', 0);
+          }
         });
 
         $(window).on('resize', processBubbles);
