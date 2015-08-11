@@ -3,189 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <title>Sharon Duan</title>
+    <script src="jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link media="all" rel="stylesheet" type="text/css" href="sharon.css" />
 </head>
 
 <body>
     <div id="wrapper">
 
-      <!-- SECTION Sharon -------------------- -->
-      <div class="section s1 static">
-        <h1>
-          <span>S.D.</span>
-          <span class="hidden">
-            <span>S</span><span class="small">haron</span><span>D</span><span class="small">uan</span>
-          </span>
-        </h1>
-        <h1 class="back">></h1>
-      </div>
-
-      <!-- SECTION Projects -------------------- -->
-      <div class="section s2">
-        <h1>Projects</h1>
-        <h1 class="back">></h1>
-        <div class="content">
-          <div class="projects">
-
-            <div class="project" title="Big Sur Website Redesign">
-              <img id="bigsur" src="bigsur/bigsur_page2.jpg">
+      <!-- Sharon panel -------------------- -->
+      <div class="sharon">
+        <div class="sharon-block">
+          <h1><span>S</span><span class="small">haron</span> <span>D</span><span class="small">uan</span></h1>
+          <div class="sharon-details sharon-hidden">
+            <div>
+              <a href="mailto:duxyu5@gmail.com" target="_blank"><i class="fa fa-envelope"></i>duxyu5@gmail.com</a>
             </div>
-
-            <div class="project disabled" title="User Experience Design">
-              <img id="design" src="logo.png">
+            <div>
+              <i class="fa fa-phone"></i>+1 202-316-5825
             </div>
-
-            <div class="project disabled" title="Mobile Interface Design">
-              <img src="openpage.pdf">
+            <div>
+              <i class="fa fa-home"></i>Mountain View, CA
             </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION About -------------------- -->
-      <div class="section s3">
-        <h1>About</h1>
-        <h1 class="back">></h1>
-        <div class="content">
-          <div class="flex">
-            <img class="left" src="cucu.jpg">
-            <div class="panel-right">
-              <p>My name is <span class="my-name">Sharon Duan</span> and I am an entry-level web designer seeking a position in web production/UI/UX.</p>
-
-              <p>I'm a person that has the natural artistic eye for design. I believe good design will be the mover-shaker of successful products and bringing happiness, convenience, and good quality of life to people. </p>
-
-              <p>Having worked in the communications field for the past years, I've already grasped solid project management, organizational, multi-tasking, social media, research and analytical skills. I'm a quick learner and can work well in both team and self-directed environments and I am always fully committed to meet the deadlines and pay attention to details.</p>
-
-              <p>I am now fully dedicated to web design and UI/UX creation. Right now, I am a student at University of California, Santa Cruz extension, learning web and interactive media design.</p>
-            </div>
-          </div>
-
-          <div class="tags-container">
-            <div class="tags-title">TAGS</div>
-            <div class="tags">
-              <div>UI/UX Design</div>
-              <div>Graphic Design</div>
-              <div>HTML 5</div>
-              <div>CSS 3</div>
-              <div>Javascript</div>
-              <div>PHP</div>
-              <div>Drupal</div>
-              <div>Wordpress</div>
-              <div>Deamweaver</div>
-              <div>InVision</div>
-              <div>Sketch 3</div>
-              <div>Adobe Creative Suite</div>
-              <div>Balsamiq</div>
-              <div>Justinmind</div>
-              <div>Fluid UI</div>
-              <div>Prototyping</div>
-              <div>Concept Creation</div>
-              <div>Information Architecture</div>
-              <div>SEO</div>
-              <div>Consumer Insight</div>
-              <div>Data Analysis</div>
-              <div>SPSS</div>
-              <div>NodeXL</div>
-              <div>Netsuite</div>
-              <div>Travel</div>
-              <div>Food</div>
-              <div>Culture</div>
-              <div>Coffee</div>
-              <div>Pigs & Hamsters</div>
-            </div>
-          </div>
-          <div class="resume">
-            <a href="SharonDuan.pdf" target="_blank">My Resume (PDF)</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION Contact -------------------- -->
-      <div class="section s4">
-        <h1>Contact</h1>
-        <h1 class="back">></h1>
-        <div class="content">
-          <div class="contact">
-            <p>Drop me an email, call me anytime or let's have a coffee if you are around!</p>
-            <div class="vignette">
-              <p class="city">Sharon Duan</p>
-              <p class="city">San Francisco Bay Area</p>
-              <p class="email"><a href="mailto:duxyu5@gmail.com">duxyu5@gmail.com</a></p>
-              <p class="phone">+1 202 316 5825</p>
+            <div>
+              <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Projects Bubbles ----------------- -->
+      <div class="bubbles">
+
+        <div id="bigsur" class="bubble bubble-bigsur" title="Big Sur Website Redesign">
+          <img src="bigsur/bigsur_page2.jpg">
+        </div>
+
+        <div id="uxdesign" class="bubble bubble-uxdesign disabled" title="User Experience Design">
+          <img src="logo.png">
+        </div>
+
+        <div id="mobileui" class="bubble bubble-mobileui disabled" title="Mobile Interface Design">
+          <img src="openpage.pdf">
+        </div>
+
+      </div>
+
+      <!-- Selected Project ----------------- -->
+      <div class="project-close project-btn"><span>+</span></div>
+      <div class="project-title">Big Sur Website Redesign</div>
+      <div class="project-top   project-btn"><i class="fa fa-arrow-up"></i></div>
+      <div class="project"></div>
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
       (function() {
-        var currentProject;
+        console.log("%cWelcome to my Portfolio :-)", "color: orange");
 
-        $('.section:not(.static)').on('click', function() {
-          if ($(this).is('.selected')) { return; }
-          unselectProject();
-          $('.section').removeClass('selected');
-          $('.section').removeClass('scrolled');
-          $('.section').addClass('unselected');
+        processBubbles();
 
-          $(this).removeClass('unselected');
-          $(this).addClass('selected');
+        var t_foldSharon = setTimeout(foldSharon, 2000);
+        $('.sharon').on('click.foldSharon', foldSharon);
+
+        $('.bubble').on('click', function() {
+          clearTimeout(t_closeProject);
+          $('.project').load($(this).attr('id') + '.html', function() {
+            $('.project').css('top', 0);
+            setTimeout(function() {
+              $('.project-close').css('opacity', 1);
+              $('.project-title').css('opacity', 1);
+            }, 1000);
+          });
         });
 
-        $('.section.static').on('click', function() {
-          unselectProject();
-          $('.section').removeClass('selected');
-          $('.section').removeClass('unselected');
-          $('.section').removeClass('scrolled');
-
-          $(this).find('h1 > span:first-child').addClass('hidden');
-          $(this).find('h1 > span:last-child').removeClass('hidden');
+        var t_closeProject;
+        $('.project-close').on('click', function() {
+          $('.project-btn').css('opacity', 0);
+          $('.project-title').css('opacity', 0);
+          $('.project').css('top', '100%');
+          t_closeProject = setTimeout(function() {
+            $('.project').empty();
+          }, 1000);
         });
 
-        $('.back').on('click', function(e) {
-          e.stopPropagation();
-          if (currentProject) {
-            unselectProject();
-            return;
-          }
-          $('.section').removeClass('selected');
-          $('.section').removeClass('unselected');
+        $('.project-top').on('click', function() {
+          $('.project').animate({scrollTop: 0}, 1000);
         });
 
-        $('.content').on('scroll', function(e) {
+        $('.project').on('scroll', function(e) {
           if ($(e.target).scrollTop()) {
-            $(this).parents('.section').addClass('scrolled');
+            $('.project-title').addClass('scrolled');
+            $('.project-top').css('opacity', 1);
           } else {
-            $(this).parents('.section').removeClass('scrolled');
+            $('.project-title').removeClass('scrolled');
+            $('.project-top').css('opacity', 0);
           }
         });
 
-        $('#bigsur').on('click', function() {
-          currentProject = {
-            section: $(this).parents('.section'),
-            title: $(this).parents('.section').find('h1:not(.back)').text()
-          };
-          console.log(currentProject);
-          var projectTitle = currentProject.section.find('.project').attr('title');
-          currentProject.section.addClass('expanded');
-          currentProject.section.find('h1:not(.back)').text(projectTitle);
-          $('<div class="project-content"></div>')
-            .appendTo(currentProject.section.find('.content'))
-            .load('bigsur.html');
-        });
+        $(window).on('resize', processBubbles);
 
         return;
 
-        function unselectProject() {
-          if (!currentProject) { return; }
-          currentProject.section.find('.project-content').remove();
-          currentProject.section.removeClass('expanded');
-          currentProject.section.find('h1:not(.back)').text(currentProject.title);
-          currentProject = null;
+        function foldSharon() {
+          clearTimeout(t_foldSharon);
+          $('.sharon').off('click.foldSharon');
+          $('.sharon').addClass('folded');
+          setTimeout(function() {
+            $('.sharon').css('box-shadow', '0px 0px 4px 4px hsla(51, 79%, 25%, 0.4)');
+            $('.sharon-details').removeClass('sharon-hidden');
+          }, 1000);
+        }
+
+        function processBubbles() {
+          var width = $('.bubbles').width();
+          var height = $('.bubbles').height();
+
+          $('.bubble-bigsur').css({
+            'font-size': width / 60,
+            left: width * 7/100,
+            top: height * 12/100,
+          });
+
+          $('.bubble-uxdesign').css({
+            'font-size': width / 100,
+            left: width * 60/100,
+            top: height * 5/100
+          });
+
+          $('.bubble-mobileui').css({
+            'font-size': width / 80,
+            left: width * 50/100,
+            top: height * 50/100
+          });
         }
       })();
     </script>
