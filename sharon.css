@@ -9,6 +9,20 @@ body { margin: 0; height: 100%; }
   font-family: 'Roboto', sans-serif;
 }
 
+.about-me {
+  background-color: rgba(91, 79, 10, 0.3);
+  padding: 7px;
+  width: 7em;
+  margin-left: 29px !important;
+  border-radius: 5px;
+  margin-top: 4em !important;
+  transition: all 300ms;
+}
+
+.about-me:hover {
+  background: rgba(91, 79, 10, 0.1);
+}
+
 .sharon {
   position: absolute;
   height: 100%;
@@ -24,6 +38,27 @@ body { margin: 0; height: 100%; }
 
 .sharon.folded {
   width: 300px;
+}
+
+.sharon-about {
+  width: 0;
+  overflow: hidden;
+  background: white;
+  transition: all 2s;
+  position: relative;
+}
+
+.sharon-about-content {
+  width: 100%;
+  padding: 2em 0;
+}
+
+.sharon.about {
+  width: 100%;
+}
+
+.sharon.about .sharon-about {
+  width: calc(100% - 300px);
 }
 
 .sharon-block {
@@ -129,7 +164,7 @@ img.left {
 .flex { display: flex; }
 
 .panel-right {
-  background: #f3f3f3;
+  background: rgba(229, 198, 28, 0.13);
   flex: 1;
   max-width: 50em;
   font-size: 14px;
@@ -151,7 +186,7 @@ img.left {
   top: 4em;
   left: -4em;
   border: 2em solid rgba(0, 0, 0, 0);
-  border-right-color: #F3F3F3;
+  border-right-color: rgba(229, 198, 28, 0.13);
 }
 
 .panel-right .my-name {
