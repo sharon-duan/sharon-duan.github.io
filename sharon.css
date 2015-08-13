@@ -46,6 +46,7 @@ body { margin: 0; height: 100%; }
   margin:auto;
   color: #9E6308;
   font-size: 1.3em;
+  transition: all 1s;
 }
 
 .sharon.folded .subhead {
