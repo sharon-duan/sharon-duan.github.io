@@ -1,32 +1,32 @@
-.bigsur {
+.project-content {
   color: #444;
   font-weight: 300;
   line-height: 1.5em;
 }
 
-.block {
+.project-content .block {
   padding-bottom: 1em;
   padding-top: 1em;
 }
 
-.block:first-child {
+.project-content .block:first-child {
   margin-top: 1em;
 }
 
-.block:nth-child(2n) {
+.project-content .block:nth-child(2n) {
   background: white;
 }
 
-.block:nth-child(2n+1) {
+.project-content .block:nth-child(2n+1) {
   background: #f6f6f6;
 }
 
-.block .block-content {
+.project-content .block .block-content {
   max-width: 900px;
   margin: auto;
 }
 
-.bigsur h2 {
+.project-content h2 {
   font-size: 1.5em;
   color: #4F504A;
   font-weight: 300;
@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-.bigsur h3 {
+.project-content h3 {
   font-size: 1.3em;
   color: #4F504A;
   font-weight: 300;
@@ -42,72 +42,72 @@
   text-align: center;
 }
 
-.intro {
+.project-content .intro {
   background: #f6f6f6;
   font-weight: 300;
   max-width: 800px;
   margin: auto;
 }
 
-.intro p {
+.project-content .intro p {
   display: flex;
 }
 
-.intro p strong {
+.project-content .intro p strong {
   flex: 1;
   font-weight: 500;
 }
 
-.intro p span {
+.project-content .intro p span {
   flex: 6;
 }
 
-.bigsur .pic {
+.project-content .pic {
   display: block;
   width: 100%;
   text-align: center;
 }
 
-.bigsur .pic img:hover {
+.project-content .pic img:hover {
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.2);
 }
 
-.bigsur .pic img {
+.project-content .pic img {
   border-radius: 4px;
   box-sizing: border-box;
   transition: box-shadow 400ms;
 }
 
-.table {
+.project-content .table {
   display: flex;
   flex-direction: column;
 }
 
-.table.shrink {
+.project-content .table.shrink {
   padding-top: 2em;
 }
 
-.table .row {
+.project-content .table .row {
   flex: 1;
   display: flex;
   padding-bottom: 1em;
 }
 
-.table .row .cell:first-child {
+.project-content .table .row .cell:first-child {
   padding-left: 0;
 }
 
-.table .row .cell:last-child {
+.project-content .table .row .cell:last-child {
   padding-right: 0;
 }
 
-.table .cell {
+.project-content .table .cell {
   flex: 1;
   margin: auto;
   padding: 2%;
 }
 
-.table .cell.title {
+.project-content .table .cell.title {
   font-weight: 400;
   text-align: center;
   color: #666;
@@ -116,12 +116,12 @@
   padding: 1em;
 }
 
-.table .cell img {
+.project-content .table .cell img {
   width: 100%;
   height: auto;
 }
 
-.table figure {
+.project-content .table figure {
   margin: 0;
   margin-bottom: 40px;
 }

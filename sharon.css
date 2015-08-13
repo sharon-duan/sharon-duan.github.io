@@ -46,16 +46,13 @@ body { margin: 0; height: 100%; }
   margin:auto;
   color: #9E6308;
   font-size: 1.3em;
+  margin-bottom: 16%;
   transition: all 1s;
 }
 
 .sharon.folded .subhead {
   font-size: 0.9em;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 16%;
 }
-
 
 .sharon-about {
   width: 0;
@@ -81,12 +78,19 @@ body { margin: 0; height: 100%; }
 .sharon-block {
   margin: auto;
   font-size: 0.9em;
+  position: relative;
+  transition: top 1s;
+  top: 0%;
+}
+
+.sharon.folded .sharon-block {
+  top: -10%;
 }
 
 .sharon-block h1 {
   transition: all 1s;
   font-size: 5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
 }
 
 .sharon.folded .sharon-block h1 {
@@ -306,7 +310,7 @@ img.left {
 }
 
 .bubble:after {
-  content: attr(title);
+  content: attr(name);
   pointer-events: none;
   position: absolute;
   top: 44%;

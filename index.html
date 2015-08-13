@@ -94,15 +94,15 @@
       <!-- Projects Bubbles ----------------- -->
       <div class="bubbles">
 
-        <div id="bigsur" class="bubble bubble-bigsur" title="Big Sur Website Redesign">
+        <div id="bigsur" class="bubble bubble-bigsur" href="bigsur.html" name="Big Sur Website Redesign">
           <img src="bigsur/bigsur_page2.jpg">
         </div>
 
-        <div id="uxdesign" class="bubble bubble-uxdesign disabled" title="User Experience Design">
-          <img src="ux/pics/logo.png">
+        <div id="uxdesign" class="bubble bubble-uxdesign" href="uxproject.html" name="User Experience Design">
+          <img src="ux/pics/landing-page.png">
         </div>
 
-        <div id="mobileui" class="bubble bubble-mobileui disabled" title="Mobile Interface Design">
+        <div id="mobileui" class="bubble bubble-mobileui disabled" name="Mobile Interface Design">
           <img src="openpage.png">
         </div>
 
@@ -110,7 +110,7 @@
 
       <!-- Selected Project ----------------- -->
       <div class="project-close project-btn"><span>+</span></div>
-      <div class="project-title">Big Sur Website Redesign</div>
+      <div class="project-title"></div>
       <div class="project-top   project-btn"><i class="fa fa-arrow-up"></i></div>
       <div class="project"></div>
 
@@ -126,8 +126,9 @@
         $('.sharon').on('click.foldSharon', foldSharon);
 
         $('.bubble').on('click', function() {
+          $('.project-title').text($(this).attr('name'));
           clearTimeout(t_closeProject);
-          $('.project').load($(this).attr('id') + '.html', function() {
+          $('.project').load($(this).attr('href'), function() {
             $('.project').css('top', 0);
             setTimeout(function() {
               $('.project-close').css('opacity', 1);
@@ -169,10 +170,11 @@
           $('.sharon').off('click.foldSharon');
           $('.sharon').addClass('folded');
           setTimeout(function() {
-            $('.sharon').css('box-shadow', '0px 0px 4px 4px hsla(51, 79%, 25%, 0.4)');
             $('.sharon-details').removeClass('sharon-hidden');
 
             $('.sharon').on('click', function() {
+              $('.project-close').click();
+              $('.sharon').css('box-shadow', 'none');
               $('.sharon-about-content').width($(window).width() - 300);
               $(this).toggleClass('about');
             });
@@ -191,15 +193,15 @@
           });
 
           $('.bubble-uxdesign').css({
-            'font-size': width / 100,
+            'font-size': width / 80,
             left: width * 60/100,
             top: height * 5/100
           });
 
           $('.bubble-mobileui').css({
-            'font-size': width / 80,
-            left: width * 50/100,
-            top: height * 50/100
+            'font-size': width / 100,
+            left: width * 45/100,
+            top: height * 60/100
           });
         }
       })();
