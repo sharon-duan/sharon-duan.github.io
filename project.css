@@ -5,8 +5,7 @@
 }
 
 .project-content .block {
-  padding-bottom: 1em;
-  padding-top: 1em;
+  padding: 1em 3em;
 }
 
 .project-content .block:first-child {
@@ -74,6 +73,7 @@
 
 .project-content .pic img {
   border-radius: 4px;
+  -webkit-border-radius: 4px;
   box-sizing: border-box;
   transition: box-shadow 400ms;
 }
