@@ -474,6 +474,10 @@ img.left {
     height: 8em;
   }
 
+  .sharon.folded .sharon-block h1 {
+    font-size: 8em;
+  }
+
   .sharon-block {
     width: 100%;
   }
@@ -483,10 +487,15 @@ img.left {
     text-align: center;
   }
 
+  .subhead {
+    display: none;
+  }
+
   .sharon-details {
     position: absolute;
     right: 1em;
     top: -1em;
+    display: none;
   }
 
   .sharon-details div {
@@ -507,24 +516,37 @@ img.left {
     width: 28em;
   }
 
+  .bubble::after {
+    font-size: 3.5em;
+    top: 32%;
+  }
+
+  .bubble.disabled:before {
+    font-size: 2.4em;
+    top: 73%;
+  }
+
   .about-me {
     display: none;
   }
 
   .project {
     width: 100%;
+    padding-top: 12em;
   }
 
   .project-close {
-    top: 9em;
-    left: 1em;
+    top: 3.3em;
+    left: 0.6em;
     margin: 0;
+    font-size: 3em;
   }
 
   .project-title {
     margin: 0px;
-    top: 4.9em;
-    margin-left: 0.4em;
+    top: 3.4em;
+    margin-left: 0.5em;
+    font-size: 3.5em;
   }
 
   .project-title.scrolled {
