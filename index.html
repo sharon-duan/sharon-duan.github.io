@@ -129,7 +129,11 @@
           $('.project-title').text($(this).attr('name'));
           clearTimeout(t_closeProject);
           $('.project').load($(this).attr('href'), function() {
-            $('.project').css('top', 0);
+            if (window.matchMedia("(max-device-width: 480px)").matches) {
+              $('.project').css('top', '8em');
+            } else {
+              $('.project').css('top', 0);
+            }
             setTimeout(function() {
               $('.project-close').css('opacity', 1);
               $('.project-title').css('opacity', 1);

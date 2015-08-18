@@ -40,76 +40,6 @@ body { margin: 0; height: 100%; }
   margin-bottom: 0;
 }
 
-@media only screen and (max-device-width: 480px) {
-  .sharon.folded {
-    height: 8em;
-  }
-
-  .sharon-block {
-    margin: 0;
-    width: 100%;
-  }
-
-  .sharon-block h1 {
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .sharon-details {
-    position: absolute;
-    right: 1em;
-    top: -1em;
-  }
-
-  .sharon-details div {
-    margin: .5em;
-  }
-
-  .bubbles {
-    margin-top: 8em;
-    display: flex;
-    display:-webkit-flex;
-    flex-direction: column;
-  }
-
-  .bubble {
-    margin: auto;
-    position: relative;
-    height: 28em;
-    width: 28em;
-  }
-}
-
-@media only screen and (min-device-width: 480px) {
-  .sharon.folded {
-    width: 300px;
-  }
-
-  .sharon.folded .sharon-block {
-    top: -10%;
-  }
-
-  .subhead {
-    margin-bottom: 16%;
-  }
-
-  .sharon-details div {
-    margin: 1em;
-  }
-
-  .bubbles {
-    margin-left: 300px;
-  }
-
-  .bubble {
-    position: absolute;
-    margin: auto;
-    margin-top: 0;
-    height: 21em;
-    width: 21em;
-  }
-}
-
 .subhead {
   text-align: center;
   margin:auto;
@@ -502,11 +432,9 @@ img.left {
 .project {
   transition: top 800ms;
   position: absolute;
-  width: calc(100% - 300px);
   background-color: white;
   top: 100%;
   left: 0;
-  margin-left: 300px;
   height: 100%;
   z-index: 1;
   overflow: auto;
@@ -539,4 +467,103 @@ img.left {
 
 .contact .email, .contact .phone {
   font-family: monospace;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .sharon.folded {
+    height: 8em;
+  }
+
+  .sharon-block {
+    width: 100%;
+  }
+
+  .sharon-block h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .sharon-details {
+    position: absolute;
+    right: 1em;
+    top: -1em;
+  }
+
+  .sharon-details div {
+    margin: .5em;
+  }
+
+  .bubbles {
+    margin-top: 8em;
+    display: flex;
+    display:-webkit-flex;
+    flex-direction: column;
+  }
+
+  .bubble {
+    margin: auto;
+    position: relative;
+    height: 28em;
+    width: 28em;
+  }
+
+  .about-me {
+    display: none;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  .project-close {
+    top: 9em;
+    left: 1em;
+    margin: 0;
+  }
+
+  .project-title {
+    margin: 0px;
+    top: 4.9em;
+    margin-left: 0.4em;
+  }
+
+  .project-title.scrolled {
+    left: 0;
+    margin: 3.9em 2em;
+  }
+}
+
+@media only screen and (min-device-width: 480px) {
+  .sharon.folded {
+    width: 300px;
+  }
+
+  .sharon.folded .sharon-block {
+    top: -10%;
+  }
+
+  .subhead {
+    margin-bottom: 16%;
+  }
+
+  .sharon-details div {
+    margin: 1em;
+  }
+
+  .bubbles {
+    margin-left: 300px;
+  }
+
+  .bubble {
+    position: absolute;
+    margin: auto;
+    margin-top: 0;
+    height: 21em;
+    width: 21em;
+  }
+
+  .project {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+  }
 }
