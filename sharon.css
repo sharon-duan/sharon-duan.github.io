@@ -453,6 +453,13 @@ img.left {
 }
 
 @media only screen and (max-device-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+
   .sharon.folded {
     height: 8em;
   }
