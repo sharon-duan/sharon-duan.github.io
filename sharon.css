@@ -29,7 +29,6 @@ body { margin: 0; height: 100%; }
   position: absolute;
   height: 100%;
   width: 100%;
-  transition: all 1s;
   cursor: default;
   background: #E5C61C;
   color: hsl(51, 79%, 20%);
@@ -82,7 +81,6 @@ body { margin: 0; height: 100%; }
 }
 
 .sharon-block h1 {
-  transition: all 1s;
   font-size: 5em;
   margin-bottom: 0.1em;
 }
@@ -327,21 +325,6 @@ img.left {
   font-size: 1.3em;
 }
 
-.bubble:not(.disabled):hover {
-  border-width: 1px;
-}
-
-.bubble:not(.disabled):hover img {
-  opacity: 0.8;
-  width: 135%;
-  left: -4.5em;
-  top: 0em;
-}
-
-.bubble:not(.disabled):hover:after {
-  background: rgba(0,0,0,0.6);
-}
-
 .project-btn {
   transition: opacity 300ms;
   opacity: 0;
@@ -475,7 +458,7 @@ img.left {
   }
 
   .sharon.folded .sharon-block h1 {
-    font-size: 8em;
+    font-size: 7em;
   }
 
   .sharon-block {
@@ -507,23 +490,37 @@ img.left {
     display: flex;
     display:-webkit-flex;
     flex-direction: column;
+    background: white;
+    height: calc(100% - 8em);
   }
 
   .bubble {
-    margin: auto;
     position: relative;
-    height: 28em;
-    width: 28em;
+    margin: 0;
+    border-radius: 0;
+    flex: 1;
+    border-bottom: 3px solid white;
+    transition: none;
   }
 
   .bubble::after {
-    font-size: 3.5em;
-    top: 32%;
+    font-size: 3.7em;
+    top: 35%;
+    transition: none;
   }
 
   .bubble.disabled:before {
     font-size: 2.4em;
     top: 73%;
+  }
+
+  .bubble img {
+    width: 104%;
+    top: -3.6em;
+    left: -0.7em;
+    transition: none;
+    opacity: 0.3;
+    position: relative;
   }
 
   .about-me {
@@ -556,12 +553,20 @@ img.left {
 }
 
 @media only screen and (min-device-width: 480px) {
+  .sharon {
+    transition: all 1s;
+  }
+
   .sharon.folded {
     width: 300px;
   }
 
   .sharon.folded .sharon-block {
     top: -10%;
+  }
+
+  .sharon-block h1 {
+    transition: all 1s;
   }
 
   .subhead {
@@ -582,6 +587,21 @@ img.left {
     margin-top: 0;
     height: 21em;
     width: 21em;
+  }
+
+  .bubble:not(.disabled):hover {
+    border-width: 1px;
+  }
+
+  .bubble:not(.disabled):hover img {
+    opacity: 0.8;
+    width: 135%;
+    left: -4.5em;
+    top: 0em;
+  }
+
+  .bubble:not(.disabled):hover:after {
+    background: rgba(0,0,0,0.6);
   }
 
   .project {
