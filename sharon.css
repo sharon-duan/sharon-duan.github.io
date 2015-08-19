@@ -557,6 +557,10 @@ img.left {
     left: 0;
     margin: 3.9em 2em;
   }
+
+  .project-top {
+    display: none;
+  }
 }
 
 @media only screen and (min-device-width: 480px) {
