@@ -64,14 +64,6 @@ body { margin: 0; height: 100%; }
   padding: 2em 0;
 }
 
-.sharon.about {
-  width: 100%;
-}
-
-.sharon.about .sharon-about {
-  width: calc(100% - 300px);
-}
-
 .sharon-block {
   margin: auto;
   font-size: 0.9em;
@@ -578,6 +570,14 @@ img.left {
 
   .sharon-block h1 {
     transition: all 1s;
+  }
+
+  .sharon.about {
+    width: 100%;
+  }
+
+  .sharon.about .sharon-about {
+    width: calc(100% - 300px);
   }
 
   .subhead {
