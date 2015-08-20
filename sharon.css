@@ -4,7 +4,6 @@ body { margin: 0; height: 100%; }
 
 #wrapper {
   height: 100%;
-  display: -webkit-flex;
   display: flex;
   display:-webkit-flex;
   font-family: 'Roboto', sans-serif;
@@ -172,6 +171,7 @@ img.left {
 .panel-right {
   background: rgba(229, 198, 28, 0.13);
   flex: 1;
+  -webkit-flex: 1;
   max-width: 50em;
   font-size: 14px;
   padding: 2em;
@@ -229,7 +229,10 @@ img.left {
   padding-right: 10px;
 }
 
-.tags { flex: 1; }
+.tags {
+  flex: 1;
+  -webkit-flex: 1;
+}
 
 .tags > div {
   display: inline-block;
@@ -457,6 +460,7 @@ img.left {
 
   #wrapper {
     flex-direction: column;
+    -webkit-flex-direction: column;
     overflow: auto;
   }
 
@@ -485,7 +489,7 @@ img.left {
   .sharon-details {
     max-height: none;
     transition: none;
-    min-height: 15em;
+    min-height: 25em;
   }
 
   .sharon-details::before {
@@ -519,6 +523,7 @@ img.left {
     display: flex;
     display:-webkit-flex;
     flex-direction: column;
+    -webkit-flex-direction: column;
     background: white;
     height: calc(100% - 8em);
   }
@@ -528,6 +533,7 @@ img.left {
     margin: 0;
     border-radius: 0;
     flex: 1;
+    -webkit-flex: 1;
     border-bottom: 3px solid white;
     transition: none;
   }
