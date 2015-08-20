@@ -76,10 +76,10 @@
               <a href="mailto:duxyu5@gmail.com" target="_blank"><i class="fa fa-envelope"></i>duxyu5@gmail.com</a>
             </div>
             <div>
-              <i class="fa fa-phone"></i>+1 202-316-5825
+              <a href="tel:+1-202-316-5825"><i class="fa fa-phone"></i>+1 202-316-5825</a>
             </div>
             <div>
-              <i class="fa fa-home"></i>Mountain View, CA
+              <a href="https://www.google.com/maps?q=mountain+view" target="_blank"><i class="fa fa-home"></i>Mountain View, CA</a>
             </div>
             <div>
               <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
@@ -120,16 +120,26 @@
       (function() {
         console.log("%cWelcome to my Portfolio :-)", "color: orange");
 
-        processBubbles();
+        var isMobile = window.matchMedia("(max-device-width: 480px)").matches;
 
-        var t_foldSharon = setTimeout(foldSharon, (window.matchMedia("(max-device-width: 480px)").matches) ? 0 : 2000);
-        $('.sharon').on('click.foldSharon', foldSharon);
+        if (!isMobile) {
+          $(window).on('resize', processBubbles);
+          processBubbles();
+
+          var t_foldSharon = setTimeout(foldSharon, 2000);
+          $('.sharon').on('click.foldSharon', foldSharon);
+        } else {
+
+          foldSharon();
+          $('.sharon-details').insertAfter('.bubbles');
+        }
+
 
         $('.bubble').on('click', function() {
           $('.project-title').text($(this).attr('name'));
           clearTimeout(t_closeProject);
           $('.project').load($(this).attr('href'), function() {
-            if (window.matchMedia("(max-device-width: 480px)").matches) {
+            if (isMobile) {
               $('.project').css('top', '8em');
             } else {
               $('.project').css('top', 0);
@@ -165,8 +175,6 @@
           }
         });
 
-        $(window).on('resize', processBubbles);
-
         return;
 
         function foldSharon() {
@@ -176,21 +184,19 @@
           setTimeout(function() {
             $('.sharon-details').removeClass('sharon-hidden');
 
-            $('.sharon').on('click', function() {
-              $('.project-close').click();
-              $('.sharon').css('box-shadow', 'none');
-              $('.sharon-about-content').width($(window).width() - 300);
-              $(this).toggleClass('about');
-            });
+            if (!isMobile) {
+              $('.sharon').on('click', function() {
+                $('.project-close').click();
+                $('.sharon').css('box-shadow', 'none');
+                $('.sharon-about-content').width($(window).width() - 300);
+                $(this).toggleClass('about');
+              });
+            }
 
-          }, (window.matchMedia("(max-device-width: 480px)").matches) ? 0 : 1000);
+          }, (isMobile) ? 0 : 1000);
         }
 
         function processBubbles() {
-          if (window.matchMedia("(max-device-width: 480px)").matches) {
-            return;
-          }
-
           var width = $('.bubbles').width();
           var height = $('.bubbles').height();
 

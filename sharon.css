@@ -452,6 +452,14 @@ img.left {
     position: relative
   }
 
+  :focus {outline:none;}
+  ::-moz-focus-inner {border:0;}
+
+  #wrapper {
+    flex-direction: column;
+    overflow: auto;
+  }
+
   .sharon.folded {
     height: 8em;
   }
@@ -462,6 +470,7 @@ img.left {
 
   .sharon-block {
     width: 100%;
+    box-shadow: 0 -1.5em 1.5em 2em rgba(0, 0, 0, 0.5);
   }
 
   .sharon-block h1 {
@@ -474,14 +483,35 @@ img.left {
   }
 
   .sharon-details {
-    position: absolute;
-    right: 1em;
-    top: -1em;
-    display: none;
+    max-height: none;
+    transition: none;
+    min-height: 15em;
+  }
+
+  .sharon-details::before {
+    content: "About Me";
+    font-size: 4em;
+    text-align: center;
+    display: block;
+    padding: 0.9em;
+    color: #5B4F0A;
+    font-weight: 200;
   }
 
   .sharon-details div {
-    margin: .5em;
+    font-size: 2.2em;
+    display: inline-block;
+    width: 40%;
+    padding-left: 2.6em;
+    padding-bottom: 2em;
+    color: #444;
+  }
+
+  .sharon-details i.fa {
+    margin-right: 0.5em;
+    width: initial;
+    font-size: 1.2em;
+    text-align: center;
   }
 
   .bubbles {
@@ -522,7 +552,7 @@ img.left {
     position: relative;
   }
 
-  .about-me {
+  .sharon-details .about-me {
     display: none;
   }
 
