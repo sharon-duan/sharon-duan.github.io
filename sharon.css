@@ -56,6 +56,7 @@ body { margin: 0; height: 100%; }
   background: white;
   transition: all 2s;
   position: relative;
+  cursor: default;
 }
 
 .sharon-about-content {
