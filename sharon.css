@@ -459,9 +459,8 @@ img.left {
   ::-moz-focus-inner {border:0;}
 
   #wrapper {
-    flex-direction: column;
-    -webkit-flex-direction: column;
     overflow: auto;
+    display: block;
   }
 
   .sharon.folded {

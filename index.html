@@ -120,7 +120,7 @@
       (function() {
         console.log("%cWelcome to my Portfolio :-)", "color: orange");
 
-        var isMobile = window.matchMedia("(max-device-width: 480px)").matches;
+        var isMobile = true || window.matchMedia("(max-device-width: 480px)").matches;
 
         if (!isMobile) {
           $(window).on('resize', processBubbles);
