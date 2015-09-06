@@ -80,11 +80,13 @@ h1, h2 { font-family: inherit !important; }
     bottom: 0;
     width: 100%;
     display: flex;
+    display: -webkit-flex;
     background: #eee;
   }
 
   .sharon-menu a {
     flex: 1;
+    -webkit-flex: 1;
     padding: 0.4em;
     text-align: center;
     color: #777;
@@ -114,9 +116,9 @@ h1, h2 { font-family: inherit !important; }
   }
 
   .sharon-details div {
-    font-size: 1em;
+    font-size: 0.95em;
     display: block;
-    padding: 1em 2em;
+    padding: 1em 1.6em;
     color: #666;
   }
 
@@ -206,7 +208,7 @@ h1, h2 { font-family: inherit !important; }
     color: #777;
     margin: 0 18px 0px 0px;
     border-bottom: none;
-    width: 9em;
+    width: 40%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
