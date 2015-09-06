@@ -61,6 +61,7 @@ h1, h2 { font-family: inherit !important; }
   .sharon .sharon-block h1 {
     font-size: 2.6em;
     padding-top: .2em;
+    margin-bottom: 1%;
   }
 
   .sharon-block {
@@ -243,7 +244,7 @@ h1, h2 { font-family: inherit !important; }
   }
 
   .sharon-menu {
-    display: hidden;
+    display: none;
   }
 
   .sharon.about {
@@ -253,8 +254,6 @@ h1, h2 { font-family: inherit !important; }
     width: 0%;
     height: 100%;
     overflow: hidden;
-    background: white;
-    position: relative;
   }
 
   .sharon-about-content {
@@ -272,8 +271,33 @@ h1, h2 { font-family: inherit !important; }
     transition:         all 2s;
     opacity: 1;
     max-height: 50px;
-    margin-left: 10%;
+    margin-left: 0;
+    font-size: .9em;
     color: hsl(51, 79%, 20%);
+    position: relative;
+    top: 2em;
+  }
+
+  .sharon-details div {
+    margin: 1em .4em;
+  }
+
+  .sharon-details div.about-me {
+    background-color: rgba(91, 79, 10, 0.3);
+    padding: 7px;
+    width: 8em;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 4em !important;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: all 300ms;
+    -moz-transition:    all 300ms;
+    transition:         all 300ms;
+  }
+
+  .about-me:hover {
+    background: rgba(91, 79, 10, 0.1);
   }
 
   .sharon-details.sharon-hidden {
@@ -303,30 +327,52 @@ h1, h2 { font-family: inherit !important; }
     border-bottom: 2px dotted #ddd;
   }
 
-}
+  .sharon-about {
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    background: white;
+    position: relative;
+    -webkit-transition: width 1.5s;
+    -moz-transition:    width 1.5s;
+    transition:         width 1.5s;
+  }
 
-#wrapper {
-  height: 100%;
-  display: flex;
-  display:-webkit-flex;
-  font-family: 'Roboto', sans-serif;
-}
+  img.left {
+    float: left;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    margin: 3em;
+    width: 12em;
+    height: 12em;
+  }
 
-.about-me {
-  background-color: rgba(91, 79, 10, 0.3);
-  padding: 7px;
-  width: 8em;
-  margin-left: 29px !important;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin-top: 4em !important;
-  -webkit-transition: all 300ms;
-  -moz-transition:    all 300ms;
-  transition:         all 300ms;
-}
+  .flex {
+    display: flex;
+    display:-webkit-flex;
+  }
 
-.about-me:hover {
-  background: rgba(91, 79, 10, 0.1);
+  .sharon.folded .sharon-block {
+    top: -10%;
+  }
+
+  .sharon-block h1 {
+    transition: all 1s;
+    text-align: center;
+    margin-bottom: 4%;
+  }
+
+  .sharon.about {
+    width: 100%;
+  }
+
+  .sharon.about .sharon-about {
+    width: 80%;
+  }
+
+  .subhead {
+    margin-bottom: 16%;
+  }
 }
 
 .subhead {
@@ -361,7 +407,7 @@ h1, h2 { font-family: inherit !important; }
 
 .sharon.folded .sharon-block h1 {
   font-size: 2.6em;
-  margin-bottom: 1%;
+  margin-bottom: 4%;
 }
 
 .sharon-details a {
