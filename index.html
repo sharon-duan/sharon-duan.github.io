@@ -17,19 +17,53 @@
 			padding: 0;
 		}
 
-		.cd-folding-panel .cd-close {
-			background-color: #aaa;
+		.cd-folding-panel .cd-close, .sharon-about-close {
+			background-color: #C9D17E;
 			border-radius: 100%;
 			width: 2.5em;
 			height: 2.5em;
-			box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.4);
+      top: 1.2em;
+      right: 1.5em;
+			box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 		}
 
-		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after {
+    .sharon-about-close {
+      position: absolute;
+      right: 0.8em;
+      top: 0.6em;
+      cursor: pointer;
+    }
+
+		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after, .sharon-about-close:before, .sharon-about-close:after {
 			background-color: white;
 			height: 1px;
 			width: 17px;
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: opacity 0.2s;
+      -moz-transition: opacity 0.2s;
+      transition: opacity 0.2s;
 		}
+
+    .sharon-about-close:before {
+      -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+
+    .sharon-about-close:after {
+      -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
 
 		.project-content .title {
 			opacity: 0;
@@ -84,6 +118,7 @@
 		<div class="sharon">
       <div class="sharon-about" id="about">
         <div class="sharon-about-content">
+          <div class="sharon-about-close"></div>
           <div class="sharon-about-content-top">
             <img class="left" src="cucu.jpg">
             <div class="panel-right">
@@ -98,7 +133,7 @@
           </div>
 
           <div class="tags-container">
-            <div class="tags-title">TAGS</div>
+            <div class="tags-title">Me @</div>
             <div class="tags">
               <div>UI/UX Design</div>
               <div>Graphic Design</div>
@@ -136,7 +171,7 @@
       <div class="sharon-block">
         <h1>Sharon Duan</h1>
 
-        <p class="subhead">A UI/UX designer</p>
+        <p class="subhead">User Experience Designer</p>
 
         <div class="sharon-menu">
           <a href="#projects">Projects</a>
@@ -277,12 +312,19 @@
 		  setTimeout(function() {
 		    $('.sharon-details').removeClass('sharon-hidden');
 
-	      $('.sharon').on('click', function() {
-	        $(this).toggleClass('about');
-          $('.sharon-about-content').width($(window).width() * 0.8);
-	      });
+	      $('.sharon .about-me, .sharon-about-close').on('click', unroll);
 		  }, 1000);
 		}
+
+    function unroll() {
+      if ($('.is-open').length) {
+        $('.cd-close').click();
+        return setTimeout(unroll, 800);
+      }
+
+      $('.sharon').toggleClass('about');
+      $('.sharon-about-content').width($(window).width() * 0.8);
+    }
 	});
 </script>
 </body>
