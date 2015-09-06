@@ -1,224 +1,289 @@
 <!doctype html>
-<html>
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <title>Sharon Duan, UI/UX Designer</title>
-    <script src="jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link media="all" rel="stylesheet" type="text/css" href="sharon.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Vollkorn|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css">   <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css">   <!-- Resource style -->
+	<link rel="stylesheet" href="css/project.css"> <!-- Custom style -->
+	<link rel="stylesheet" href="css/sharon.css">  <!-- Custom style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font Awesome Icons-->
+
+	<style>
+		.cd-fold-content {
+			padding: 0;
+		}
+
+		.cd-folding-panel .cd-close {
+			background-color: #aaa;
+			border-radius: 100%;
+			width: 2.5em;
+			height: 2.5em;
+			box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.4);
+		}
+
+		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after {
+			background-color: white;
+			height: 1px;
+			width: 17px;
+		}
+
+		.project-content .title {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-moz-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			-o-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+
+		.project-content .blocks {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-moz-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			-o-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+
+		.is-open .project-content .blocks {
+			opacity: 1;
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		  -webkit-transition: -webkit-transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		  -moz-transition: -moz-transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		  transition: transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		}
+
+		.is-open .project-content .title {
+			opacity: 1;
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		  -webkit-transition: -webkit-transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		  -moz-transition: -moz-transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		  transition: transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		}
+	</style>
+
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>Sharon Duan</title>
 </head>
-
 <body>
-    <div id="wrapper">
+	<main class="cd-main" id="projects">
 
-      <!-- Sharon panel -------------------- -->
-      <div class="sharon">
-        <div class="sharon-about">
-          <div class="sharon-about-content">
-            <div class="flex">
-              <img class="left" src="cucu.jpg">
-              <div class="panel-right">
-                <p>My name is <span class="my-name">Sharon Duan</span> and I am an entry-level web designer seeking a position in web production/UI/UX.</p>
+		<div class="sharon">
+      <div class="sharon-about" id="about">
+        <div class="sharon-about-content">
+          <div class="sharon-about-content-top">
+            <img class="left" src="cucu.jpg">
+            <div class="panel-right">
+              <p>My name is <span class="my-name">Sharon Duan</span> and I am an entry-level web designer seeking a position in web production/UI/UX.</p>
 
-                <p>I'm a person that has the natural artistic eye for design. I believe good design will be the mover-shaker of successful products and bringing happiness, convenience, and good quality of life to people. </p>
+              <p>I'm a person that has the natural artistic eye for design. I believe good design will be the mover-shaker of successful products and bringing happiness, convenience, and good quality of life to people. </p>
 
-                <p>Having worked in the communications field for the past years, I've already grasped solid project management, organizational, multi-tasking, social media, research and analytical skills. I'm a quick learner and can work well in both team and self-directed environments and I am always fully committed to meet the deadlines and pay attention to details.</p>
+              <p>Having worked in the communications field for the past years, I've already grasped solid project management, organizational, multi-tasking, social media, research and analytical skills. I'm a quick learner and can work well in both team and self-directed environments and I am always fully committed to meet the deadlines and pay attention to details.</p>
 
-                <p>I am now fully dedicated to web design and UI/UX creation. Right now, I am a student at University of California, Santa Cruz extension, learning web and interactive media design.</p>
-              </div>
-            </div>
-
-            <div class="tags-container">
-              <div class="tags-title">TAGS</div>
-              <div class="tags">
-                <div>UI/UX Design</div>
-                <div>Graphic Design</div>
-                <div>HTML</div>
-                <div>CSS</div>
-                <div>Javascript</div>
-                <div>PHP</div>
-                <div>Drupal</div>
-                <div>Wordpress</div>
-                <div>Deamweaver</div>
-                <div>InVision</div>
-                <div>Sketch 3</div>
-                <div>Adobe Creative Suite</div>
-                <div>Balsamiq</div>
-                <div>Justinmind</div>
-                <div>Fluid UI</div>
-                <div>Prototyping</div>
-                <div>Concept Creation</div>
-                <div>Information Architecture</div>
-                <div>SEO</div>
-                <div>Consumer Insight</div>
-                <div>Data Analysis</div>
-                <div>SPSS</div>
-                <div>NodeXL</div>
-                <div>Netsuite</div>
-                <div>Travel</div>
-                <div>Food</div>
-                <div>Culture</div>
-                <div>Coffee</div>
-                <div>Pigs & Hamsters</div>
-              </div>
+              <p>I am now fully dedicated to web design and UI/UX creation. Right now, I am a student at University of California, Santa Cruz extension, learning web and interactive media design.</p>
             </div>
           </div>
-        </div>
-        <div class="sharon-block">
-          <h1><span>S</span><span class="small">haron</span> <span>D</span><span class="small">uan</span></h1>
 
-          <p class="subhead">A UI/UX designer</p>
-
-          <div class="sharon-details sharon-hidden">
-            <div>
-              <a href="mailto:duxyu5@gmail.com" target="_blank"><i class="fa fa-envelope"></i>duxyu5@gmail.com</a>
-            </div>
-            <div>
-              <a href="tel:+1-202-316-5825"><i class="fa fa-phone"></i>+1 202-316-5825</a>
-            </div>
-            <div>
-              <a href="https://www.google.com/maps?q=mountain+view" target="_blank"><i class="fa fa-home"></i>Mountain View, CA</a>
-            </div>
-            <div>
-              <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
-            </div>
-            <div class="about-me">
-              <i class="fa fa-question-circle"></i>About Me
+          <div class="tags-container">
+            <div class="tags-title">TAGS</div>
+            <div class="tags">
+              <div>UI/UX Design</div>
+              <div>Graphic Design</div>
+              <div>HTML</div>
+              <div>CSS</div>
+              <div>Javascript</div>
+              <div>PHP</div>
+              <div>Drupal</div>
+              <div>Wordpress</div>
+              <div>Deamweaver</div>
+              <div>InVision</div>
+              <div>Sketch 3</div>
+              <div>Adobe Creative Suite</div>
+              <div>Balsamiq</div>
+              <div>Justinmind</div>
+              <div>Fluid UI</div>
+              <div>Prototyping</div>
+              <div>Concept Creation</div>
+              <div>Information Architecture</div>
+              <div>SEO</div>
+              <div>Consumer Insight</div>
+              <div>Data Analysis</div>
+              <div>SPSS</div>
+              <div>NodeXL</div>
+              <div>Netsuite</div>
+              <div>Travel</div>
+              <div>Food</div>
+              <div>Culture</div>
+              <div>Coffee</div>
+              <div>Pigs &amp; Hamsters</div>
             </div>
           </div>
         </div>
       </div>
+      <div class="sharon-block">
+        <h1>Sharon Duan</h1>
 
-      <!-- Projects Bubbles ----------------- -->
-      <div class="bubbles">
+        <p class="subhead">A UI/UX designer</p>
 
-        <div id="bigsur" class="bubble bubble-bigsur" href="bigsur.html" name="Big Sur Website Redesign">
-          <img src="bigsur/bigsur_page2.jpg">
+        <div class="sharon-menu">
+          <a href="#projects">Projects</a>
+          <a href="#about">About me</a>
+          <a href="SharonDuan.pdf" target="_blank">Resume</a>
         </div>
 
-        <div id="uxdesign" class="bubble bubble-uxdesign" href="uxproject.html" name="User Experience Design">
-          <img src="ux/pics/landing-page.png">
+        <div class="sharon-details sharon-hidden" id="contact">
+          <div>
+            <a href="mailto:sharonduan.design@gmail.com" target="_blank"><i class="fa fa-envelope"></i>sharonduan.design@gmail.com</a>
+          </div>
+          <div>
+            <a href="tel:+1-202-316-5825"><i class="fa fa-phone"></i>+1 202-316-5825</a>
+          </div>
+          <div>
+            <a href="https://www.google.com/maps?q=mountain+view" target="_blank"><i class="fa fa-home"></i>Mountain View, CA</a>
+          </div>
+          <div>
+            <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
+          </div>
+          <div class="about-me">
+            <i class="fa fa-question-circle"></i>About Me
+          </div>
         </div>
-
-        <div id="mobileui" class="bubble bubble-mobileui disabled" name="Mobile Interface Design">
-          <img src="openpage.png">
-        </div>
-
       </div>
-
-      <!-- Selected Project ----------------- -->
-      <div class="project-close project-btn"><span>+</span></div>
-      <div class="project-title"></div>
-      <div class="project-top project-btn"><i class="fa fa-arrow-up"></i></div>
-      <div class="project"></div>
-
     </div>
 
-    <script>
-      (function() {
-        console.log("%cWelcome to my Portfolio :-)", "color: orange");
+		<ul class="cd-gallery">
+			<li class="cd-item">
+				<a href="item-1.html">
+					<div>
+						<h2>Big Sur</h2>
+						<p>Website visual redesign</p>
+						<b>View More</b>
+					</div>
+					<img src="bigsur/bigsur_page2.jpg">
+				</a>
+			</li>
 
-        var isMobile = window.matchMedia("(max-device-width: 480px)").matches;
+			<li class="cd-item">
+				<a href="item-2.html">
+					<div>
+						<h2>FreshGrab</h2>
+						<p>User Experience Design</p>
+						<b>View More</b>
+					</div>
+					<img src="ux/pics/landing-page.png">
+				</a>
+			</li>
 
-        if (!isMobile) {
-          $(window).on('resize', processBubbles);
-          processBubbles();
+			<li class="cd-item">
+				<a class="dark-text" href="item-3.html">
+					<div>
+						<h2>CityNote</h2>
+						<p>Mobile app design</p>
+						<b>View More</b>
+					</div>
+					<img src="openpage.png">
+				</a>
+			</li>
 
-          var t_foldSharon = setTimeout(foldSharon, 2000);
-          $('.sharon').on('click.foldSharon', foldSharon);
-        } else {
+			<li class="cd-item">
+				<a href="item-4.html">
+					<div>
+						<h2>Nova Ukraine</h2>
+						<p>Website redesign</p>
+						<b>Coming soon...</b>
+					</div>
+				</a>
+			</li>
+		</ul> <!-- .cd-gallery -->
+	</main> <!-- .cd-main -->
 
-          foldSharon();
-          $('.sharon-details').insertAfter('.bubbles');
-        }
+	<div class="cd-folding-panel">
+
+		<div class="fold-left"></div> <!-- this is the left fold -->
+
+		<div class="fold-right"></div> <!-- this is the right fold -->
+
+		<div class="cd-fold-content">
+			<!-- content will be loaded using javascript -->
+		</div>
+
+		<a class="cd-close" href="#0"></a>
+	</div> <!-- .cd-folding-panel -->
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script>
+	$(function() {
+		console.log("%cWelcome to my Portfolio :-)", "color: orange");
+
+		$('.cd-item').on('click', function() {
+			var color = $(this).css('background-color');
+			setTimeout(function() {
+				$('.project-content .title').css('color', color);
+				$('.cd-folding-panel .cd-close').css('background-color', color);
+			}, 500);
+		});
 
 
-        $('.bubble').on('click', function() {
-          $('.project-title').text($(this).attr('name'));
-          clearTimeout(t_closeProject);
-          $('.project').load($(this).attr('href'), function() {
-            if (isMobile) {
-              $('.project').css('top', '8em');
-            } else {
-              $('.project').css('top', 0);
-            }
-            setTimeout(function() {
-              $('.project-close').css('opacity', 1);
-              $('.project-title').css('opacity', 1);
+		if (viewportSize() !== 'mobile') {
+		  var t_foldSharon = setTimeout(foldSharon, 2000);
+		  $('.sharon').on('click.foldSharon', foldSharon);
+		} else {
+      $('.sharon-about').insertAfter('.cd-gallery');
+      $('.sharon-details').removeClass('sharon-hidden');
+      $('.sharon-details').insertAfter('.sharon-about');
+    }
+
+    function viewportSize() {
+      /* retrieve the content value of .cd-main::before to check the actua mq */
+      return window.getComputedStyle(document.querySelector('.cd-main'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, "");
+    }
+
+    // Snippet that smooth anchor links, credits to css-tricks.com
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
             }, 1000);
-          });
-        });
-
-        var t_closeProject;
-        $('.project-close').on('click', function() {
-          $('.project-btn').css('opacity', 0);
-          $('.project-title').css('opacity', 0);
-          $('.project').css('top', '100%');
-          t_closeProject = setTimeout(function() {
-            $('.project').empty();
-          }, 1000);
-        });
-
-        $('.project-top').on('click', function() {
-          $('.project').animate({scrollTop: 0}, 1000);
-        });
-
-        $('.project').on('scroll', function(e) {
-          if ($(e.target).scrollTop()) {
-            $('.project-title').addClass('scrolled');
-            $('.project-top').css('opacity', 1);
-          } else {
-            $('.project-title').removeClass('scrolled');
-            $('.project-top').css('opacity', 0);
+            return false;
           }
-        });
-
-        return;
-
-        function foldSharon() {
-          clearTimeout(t_foldSharon);
-          $('.sharon').off('click.foldSharon');
-          $('.sharon').addClass('folded');
-          setTimeout(function() {
-            $('.sharon-details').removeClass('sharon-hidden');
-
-            if (!isMobile) {
-              $('.sharon').on('click', function() {
-                $('.project-close').click();
-                $('.sharon').css('box-shadow', 'none');
-                $('.sharon-about-content').width($(window).width() - 300);
-                $(this).toggleClass('about');
-              });
-            }
-
-          }, (isMobile) ? 0 : 1000);
         }
+      });
+    });
 
-        function processBubbles() {
-          var width = $('.bubbles').width();
-          var height = $('.bubbles').height();
+		return;
 
-          $('.bubble-bigsur').css({
-            'font-size': width / 60,
-            left: width * 7/100,
-            top: height * 12/100,
-          });
+		function foldSharon() {
+		  clearTimeout(t_foldSharon);
+		  $('.sharon').off('click.foldSharon');
+		  $('.sharon').addClass('folded');
+		  setTimeout(function() {
+		    $('.sharon-details').removeClass('sharon-hidden');
 
-          $('.bubble-uxdesign').css({
-            'font-size': width / 80,
-            left: width * 60/100,
-            top: height * 5/100
-          });
-
-          $('.bubble-mobileui').css({
-            'font-size': width / 100,
-            left: width * 45/100,
-            top: height * 60/100
-          });
-        }
-      })();
-    </script>
-  </body>
+	      $('.sharon').on('click', function() {
+	        $(this).toggleClass('about');
+          $('.sharon-about-content').width($(window).width() * 0.8);
+	      });
+		  }, 1000);
+		}
+	});
+</script>
+</body>
 </html>

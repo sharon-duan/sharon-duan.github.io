@@ -1,0 +1,481 @@
+/* Shared */
+.cd-item { background: #ddd; }
+.cd-item:nth-of-type(1) { background: #4E589A; }
+.cd-item:nth-of-type(2) { background: #52A77C; }
+.cd-item:nth-of-type(3) { background: #E6B648; }
+.cd-item:nth-of-type(4) { background: #31B7D6; }
+
+h1, h2 { font-family: inherit !important; }
+
+.cd-item {
+  overflow: hidden;
+}
+
+.cd-item h2 {
+  font-size: 4rem;
+}
+
+.cd-item p {
+  font-size: 1.2em;
+  opacity: 0.7;
+}
+
+.cd-item img {
+  position: absolute;
+  top: -23%;
+  left: 0;
+  width: 120%;
+  z-index: -1;
+  height: auto;
+  opacity: 0;
+}
+
+.sharon {
+  background: #FFFBDD;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0;
+  cursor: pointer;
+}
+
+/* Mobiles */
+@media only screen and (max-width: 600px) {
+  .cd-main {
+    position: relative;
+  }
+
+  .sharon {
+    height: 5em;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .cd-gallery {
+    margin-top: 5em;
+  }
+
+  .sharon .sharon-block h1 {
+    font-size: 2.6em;
+    padding-top: .2em;
+  }
+
+  .sharon-block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .sharon-block h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .sharon-menu {
+    position: absolute;
+    font-size: 1.1em;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background: #eee;
+  }
+
+  .sharon-menu a {
+    flex: 1;
+    padding: 0.4em;
+    text-align: center;
+    color: #777;
+    cursor: pointer;
+  }
+
+  .subhead {
+    display: none;
+  }
+
+  .sharon-details {
+    background: #eee;
+    padding-top: 5em;
+    padding-bottom: 2em;
+    position: relative;
+  }
+
+  .sharon-details::before {
+    content: "Contact";
+    position: absolute;
+    left: 0em;
+    top: 1em;
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+    color: #999;
+  }
+
+  .sharon-details div {
+    font-size: 1em;
+    display: block;
+    padding: 1em 2em;
+    color: #666;
+  }
+
+  .sharon-details i.fa {
+    margin-right: 0.5em;
+    width: initial;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .sharon-details .about-me {
+    display: none;
+  }
+
+  .sharon-about {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    -webkit-transition: none;
+    -moz-transition:    none;
+    transition:         none;
+  }
+
+  .sharon-about-content-top {
+    position: relative;
+  }
+
+  .sharon-about-content-top::before {
+    content: "About Me";
+    position: absolute;
+    left: 3.2em;
+    font-size: 2em;
+    top: 1em;
+    width: calc(100% - 5.7em);
+    text-align: center;
+    color: #999;
+  }
+
+  .sharon-about-content-top .left {
+    float: none;
+    width: 4em;
+    height: 4em;
+    margin: 1em;
+  }
+
+  .sharon-about-content-top .panel-right {
+    flex: none;
+    -webkit-flex: none;
+    max-width: none;
+    font-size: 14px;
+    padding: 1em;
+    position: relative;
+    margin: 0 1em;
+    border: none;
+    color: #555;
+    line-height: 1.7em;
+    text-align: justify;
+  }
+
+  .sharon-about-content-top .panel-right::before {
+    content: none;
+  }
+
+  .sharon-about-content-top .panel-right p {
+    margin-bottom: 1em;
+  }
+
+  /* hide the last paragraph on mobile phones */
+  .sharon-about-content-top .panel-right p:last-child {
+    display: none;
+  }
+
+  .tags-container {
+    max-width: none;
+    margin: 2em;
+    display: block;
+    margin-top: 1em;
+  }
+
+  .tags-title {
+    padding-bottom: .7em;
+  }
+
+  .tags > div {
+    display: inline-block;
+    font-size: 15px;
+    color: #777;
+    margin: 0 18px 0px 0px;
+    border-bottom: none;
+    width: 9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.6em;
+  }
+}
+
+/* Tablets and dektop */
+@media only screen and (min-width: 600px) {
+  html, body, main { height: 100%; }
+  body { overflow: hidden; }
+
+  .cd-gallery {
+    margin-left: 20%;
+  }
+
+  .cd-folding-panel {
+    margin-left: 10%;
+  }
+
+  .sharon {
+    width: 100%;
+    display: flex;
+    display:-webkit-flex;
+    -webkit-transition: width 1s, box-shadow 200ms ease 800ms;
+    -moz-transition:    width 1s, box-shadow 200ms ease 800ms;
+    transition:         width 1s, box-shadow 200ms ease 800ms;
+  }
+
+  .sharon.folded {
+    width: 20%;
+  }
+
+  .sharon-menu {
+    display: hidden;
+  }
+
+  .sharon.about {
+    -webkit-transition: width 1s;
+    -moz-transition:    width 1s;
+    transition:         width 1s;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    background: white;
+    position: relative;
+  }
+
+  .sharon-about-content {
+    padding: 2em 0;
+  }
+
+  .sharon-about-content-top {
+    display: flex;
+    display: -webkit-flex;
+  }
+
+  .sharon-details {
+    -webkit-transition: all 2s;
+    -moz-transition:    all 2s;
+    transition:         all 2s;
+    opacity: 1;
+    max-height: 50px;
+    margin-left: 10%;
+    color: hsl(51, 79%, 20%);
+  }
+
+  .sharon-details.sharon-hidden {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  .tags-container {
+    max-width: 61em;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    display:-webkit-flex;
+  }
+
+  .tags {
+    flex: 1;
+    -webkit-flex: 1;
+  }
+
+  .tags > div {
+    display: inline-block;
+    font-size: 15px;
+    color: #777;
+    margin: 10px 12px;
+    margin-top: 0;
+    border-bottom: 2px dotted #ddd;
+  }
+
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+  display:-webkit-flex;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about-me {
+  background-color: rgba(91, 79, 10, 0.3);
+  padding: 7px;
+  width: 8em;
+  margin-left: 29px !important;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-top: 4em !important;
+  -webkit-transition: all 300ms;
+  -moz-transition:    all 300ms;
+  transition:         all 300ms;
+}
+
+.about-me:hover {
+  background: rgba(91, 79, 10, 0.1);
+}
+
+.subhead {
+  text-align: center;
+  margin:auto;
+  color: #9E6308;
+  font-size: 1.3em;
+  -webkit-transition: all 1s;
+  -moz-transition:    all 1s;
+  transition:         all 1s;
+}
+
+.sharon.folded .subhead {
+  font-size: 0.9em;
+}
+
+.sharon-block {
+  margin: auto;
+  font-size: 0.9em;
+  position: relative;
+  -webkit-transition: top 1s;
+  -moz-transition:    top 1s;
+  transition:         top 1s;
+  top: 0%;
+}
+
+.sharon-block h1 {
+  font-size: 5em;
+  margin-bottom: 0.1em;
+  color: hsl(51, 79%, 20%);
+}
+
+.sharon.folded .sharon-block h1 {
+  font-size: 2.6em;
+  margin-bottom: 1%;
+}
+
+.sharon-details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sharon-details a:hover {
+  text-decoration: underline;
+}
+
+.sharon-details i.fa {
+  margin-right: .5em;
+  width: 16px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+img.left {
+  float: left;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  margin: 3em;
+  width: 12em;
+  height: 12em;
+}
+
+.flex {
+  display: flex;
+  display:-webkit-flex;
+}
+
+.panel-right {
+  flex: 1;
+  -webkit-flex: 1;
+  max-width: 56em;
+  font-size: 14px;
+  padding: 2em;
+  margin: 0em 4em 3em 1em;
+  position: relative;
+  border-bottom: 2px solid #ddd;
+  color: #555;
+  line-height: 2em;
+  border: 2px solid #C9D17E;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+}
+
+.panel-right:before {
+  content: "";
+  width: 0em;
+  height: 0em;
+  position: absolute;
+  top: 4em;
+  left: -4em;
+  border: 2em solid transparent;
+  border-right-color: #C9D17E;
+}
+
+.panel-right .my-name {
+  font-weight: 700;
+}
+
+.tags-title {
+  font-weight: bold;
+  color: #333;
+  padding-right: 10px;
+}
+
+.resume {
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1.2em;
+  margin-left: 27em;
+  margin-top:2em;
+}
+
+.resume a {
+  color: rgb(119, 119, 119);
+  text-decoration: none;
+  background-color: rgb(234, 213, 99);
+  padding: 2%;
+}
+
+.resume a:hover {
+  color: black;
+}
+
+.contact {
+  padding-left: 1em;
+  color: #666;
+}
+
+.contact > p:first-child {
+  text-align: center;
+  color: #999;
+}
+
+.contact .vignette {
+  margin: auto;
+  width: 200px;
+  padding: 15px;
+  background-color: #eee;
+  margin-top: 2em;
+}
+
+.contact .vignette a {
+  color: inherit;
+  text-decoration: initial;
+}
+
+.contact .email, .contact .phone {
+  font-family: monospace;
+}
