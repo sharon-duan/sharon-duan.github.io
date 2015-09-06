@@ -49,15 +49,18 @@
 
 .project-content .intro p {
   display: flex;
+  display: -webkit-flex;
 }
 
 .project-content .intro p strong {
   flex: 1;
+  -webkit-flex: 1;
   font-weight: 500;
 }
 
 .project-content .intro p span {
   flex: 6;
+  -webkit-flex: 6;
 }
 
 .project-content .pic {
@@ -74,12 +77,16 @@
   border-radius: 4px;
   -webkit-border-radius: 4px;
   box-sizing: border-box;
-  transition: box-shadow 400ms;
+  -webkit-transition: box-shadow 400ms;
+  -moz-transition:    box-shadow 400ms;
+  transition:         box-shadow 400ms;
 }
 
 .project-content .table {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  -webkit-flex-direction: column;
 }
 
 .project-content .table.shrink {
@@ -88,7 +95,9 @@
 
 .project-content .table .row {
   flex: 1;
+  -webkit-flex: 1;
   display: flex;
+  display: -webkit-flex;
   padding-bottom: 1em;
 }
 
@@ -102,6 +111,7 @@
 
 .project-content .table .cell {
   flex: 1;
+  -webkit-flex: 1;
   margin: auto;
   padding: 2%;
 }
@@ -125,10 +135,23 @@
   margin-bottom: 40px;
 }
 
-@media only screen and (max-device-width: 480px) {
+/* Mobiles */
+@media only screen and (max-width: 600px) {
+  h2.title {
+    font-size: 1.3em;
+    text-align: left !important;
+  }
 
-}
+  .project-content .block {
+    padding: 1em;
+  }
 
-@media only screen and (min-device-width: 480px) {
+  .project-content .pic {
+    max-width: 100%;
+    overflow: auto;
+  }
 
+  .project-content .table .cell {
+    overflow: auto;
+  }
 }

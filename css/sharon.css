@@ -149,10 +149,10 @@ h1, h2 { font-family: inherit !important; }
   .sharon-about-content-top::before {
     content: "About Me";
     position: absolute;
-    left: 3.2em;
+    left: 3em;
     font-size: 2em;
     top: 1em;
-    width: calc(100% - 5.7em);
+    width: calc(100% - 4.7em);
     text-align: center;
     color: #999;
   }
