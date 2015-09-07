@@ -272,19 +272,13 @@
 			}, 500);
 		});
 
-
-		if (viewportSize() !== 'mobile') {
+		if ($(window).width() >= 600) {
 		  var t_foldSharon = setTimeout(foldSharon, 2000);
 		  $('.sharon').on('click.foldSharon', foldSharon);
 		} else {
       $('.sharon-about').insertAfter('.cd-gallery');
       $('.sharon-details').removeClass('sharon-hidden');
       $('.sharon-details').insertAfter('.sharon-about');
-    }
-
-    function viewportSize() {
-      /* retrieve the content value of .cd-main::before to check the actua mq */
-      return window.getComputedStyle(document.querySelector('.cd-main'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, "");
     }
 
     // Snippet that smooth anchor links, credits to css-tricks.com
@@ -323,7 +317,7 @@
       }
 
       $('.sharon').toggleClass('about');
-      $('.sharon-about-content').width($(window).width() * 0.8);
+      $('.sharon-about-content').width($(window).width() > 1100 ? $(window).width() * 0.8 : $(window).width() - 250);
     }
 	});
 </script>
