@@ -5,6 +5,22 @@
 .cd-item:nth-of-type(3) { background: #E6B648; }
 .cd-item:nth-of-type(4) { background: #31B7D6; }
 
+/* code for simple page viewing */
+body {
+  background: #ddd;
+}
+.cd-fold-content.single-page {
+  padding: 0;
+  visibility: visible;
+  overflow: auto;
+  width: 70%;
+  background-color: white;
+}
+.cd-fold-content.single-page .project-content {
+  opacity: 1;
+}
+/* ========= */
+
 h1, h2 { font-family: inherit !important; }
 
 .cd-item {

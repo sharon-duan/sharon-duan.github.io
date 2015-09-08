@@ -151,6 +151,14 @@
     overflow: auto;
   }
 
+  .project-content .table .row {
+    display: block;
+  }
+
+  .project-content .table .row.not-on-mobile {
+    display: none;
+  }
+
   .project-content .table .cell {
     overflow: auto;
   }
