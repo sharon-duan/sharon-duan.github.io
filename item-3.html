@@ -78,10 +78,10 @@
 		        <div class="table">
 		          <div class="row">
 		            <div class="cell">
-		              <div id="Glide" class="glide">
+		              <div class="glide mockups">
 	                  <div class="glide__arrows">
-                      <span class="glide__arrow prev" data-glide-dir="<">prev</span>
-                      <span class="glide__arrow next" data-glide-dir=">">next</span>
+                      <span class="glide__arrow prev" data-glide-dir="<"><</span>
+                      <span class="glide__arrow next" data-glide-dir=">">></span>
 	                  </div>
 
 	                  <div class="glide__wrapper">
@@ -208,70 +208,30 @@
 		        <div class="table">
 		          <div class="row">
 		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w1.png" target="_blank">
-		                <img src="citynote/wireframes/w1.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w2.png" target="_blank">
-		                <img src="citynote/wireframes/w2.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w3.png" target="_blank">
-		                <img src="citynote/wireframes/w3.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w4.png" target="_blank">
-		                <img src="citynote/wireframes/w4.png">
-		              </a>
-		            </div>
-		          </div>
 
-		          <div class="row">
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w5.png" target="_blank">
-		                <img src="citynote/wireframes/w5.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w6.png" target="_blank">
-		                <img src="citynote/wireframes/w6.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w7.png" target="_blank">
-		                <img src="citynote/wireframes/w7.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/m1.png" target="_blank">
-		                <img src="citynote/wireframes/m1.png">
-		              </a>
-		            </div>
-		          </div>
+		              <div class="glide wireframes">
+	                  <div class="glide__arrows">
+                      <span class="glide__arrow prev" data-glide-dir="<"><</span>
+                      <span class="glide__arrow next" data-glide-dir=">">></span>
+	                  </div>
 
-		          <div class="row not-on-mobile">
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w8.png" target="_blank">
-		                <img src="citynote/wireframes/w8.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w9.png" target="_blank">
-		                <img src="citynote/wireframes/w9.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/w10.png" target="_blank">
-		                <img src="citynote/wireframes/w10.png">
-		              </a>
-		            </div>
-		            <div class="cell">
-		              <a class="pic" href="citynote/wireframes/m2.png" target="_blank">
-		                <img src="citynote/wireframes/m2.png">
-		              </a>
+	                  <div class="glide__wrapper">
+                      <ul class="glide__track" style="text-align: center">
+                        <li class="glide__slide"><img src="citynote/wireframes/w1.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w2.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w3.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w4.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w5.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w6.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w7.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w8.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w9.png"></li>
+                        <li class="glide__slide"><img src="citynote/wireframes/w10.png"></li>
+                      </ul>
+	                  </div>
+
+	                  <ul class="glide__bullets"></ul>
+		              </div>
 		            </div>
 		          </div>
 		        </div>
@@ -296,7 +256,7 @@
 <script src="js/glide.min.js"></script> <!-- Slideshow -->
 <script>
 	function glide() {
-	  $("#Glide").glide({ type: "slider" });
+	  $(".glide").glide({ type: "slider" });
 	}
 </script>
 </body>

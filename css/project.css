@@ -136,16 +136,23 @@
   margin-bottom: 40px;
 }
 
+.glide.mockups {
+  height: 59em;
+}
+
+.glide.wireframes {
+  height: 50em;
+}
+
 .glide__slide img {
   pointer-events:none;
   max-width: 20em;
 }
 
 .glide__arrow {
-  color: #666 !important;
+  color: #999 !important;
   border: 0 !important;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 2em 3em !important;
+  font-size: 2em !important;
 }
 
 .glide__bullet {
@@ -181,7 +188,19 @@
     display: none;
   }
 
+  .glide.mockups {
+    height: 26em;
+  }
+
+  .glide.wireframes {
+    height: 20em;
+  }
+
   .glide__arrow {
-    padding: 8px 10px !important;
+    font-size: 1.5em !important;
+  }
+
+  .glide__slide img {
+    max-width: 50%;
   }
 }
