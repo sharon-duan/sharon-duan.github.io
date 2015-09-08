@@ -78,6 +78,7 @@
   border-radius: 4px;
   -webkit-border-radius: 4px;
   box-sizing: border-box;
+  max-width: 100%;
   -webkit-transition: box-shadow 400ms;
   -moz-transition:    box-shadow 400ms;
   transition:         box-shadow 400ms;

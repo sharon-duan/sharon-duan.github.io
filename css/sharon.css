@@ -245,6 +245,11 @@ h1, h2 { font-family: inherit !important; }
     text-overflow: ellipsis;
     line-height: 1.6em;
   }
+
+  .cd-folding-panel .cd-close, .sharon-about-close {
+    top: .2em !important;
+    right: .2em !important;
+  }
 }
 
 /* Tablets and dektop */
