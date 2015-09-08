@@ -135,6 +135,11 @@
   margin-bottom: 40px;
 }
 
+.glide__slide img {
+  pointer-events:none;
+  max-width: 20em;
+}
+
 /* Mobiles */
 @media only screen and (max-width: 600px) {
   h2.title {
