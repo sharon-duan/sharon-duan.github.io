@@ -5,6 +5,19 @@
 .cd-item:nth-of-type(3) { background: #E6B648; }
 .cd-item:nth-of-type(4) { background: #31B7D6; }
 
+strong {
+  font-weight: 500;
+}
+
+i {
+  font-style: italic;
+}
+
+figcaption {
+  text-align: center;
+  height: 4.5em;
+}
+
 /* code for simple page viewing */
 body {
   background: #ddd;
