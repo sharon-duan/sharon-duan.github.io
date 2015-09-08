@@ -14,7 +14,7 @@
 
 	<title>Citynote</title>
 </head>
-<body>
+<body onload="glide()">
 	<div class="cd-fold-content single-page">
 
 		<div class="project-content">
@@ -96,8 +96,8 @@
 		            <div class="cell">
 		              <div id="Glide" class="glide">
 	                  <div class="glide__arrows">
-                      <span class="glide__arrow prev" style="color: #ccc; border-color: #ccc; padding: 2em 3em" data-glide-dir="<">prev</span>
-                      <span class="glide__arrow next" style="color: #ccc; border-color: #ccc; padding: 2em 3em" data-glide-dir=">">next</span>
+                      <span class="glide__arrow prev" data-glide-dir="<">prev</span>
+                      <span class="glide__arrow next" data-glide-dir=">">next</span>
 	                  </div>
 
 	                  <div class="glide__wrapper">
@@ -116,7 +116,6 @@
                         <li class="glide__slide"><img src="citynote/mockup/12iPhone 6 mockup.png"></li>
                         <li class="glide__slide"><img src="citynote/mockup/13iPhone 6 mockup.png"></li>
                         <li class="glide__slide"><img src="citynote/mockup/14iPhone 6 mockup.png"></li>
-                        <li class="glide__slide"><img src="citynote/mockup/15iPhone 6 mockup.png"></li>
                         <li class="glide__slide"><img src="citynote/mockup/16iPhone 6 mockup.png"></li>
                       </ul>
 	                  </div>
@@ -290,12 +289,11 @@
 </body>
 
 <script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
 <script src="js/glide.min.js"></script> <!-- Slideshow -->
 <script>
-  $("#Glide").glide({
-    type: "slider"
-  });
+	function glide() {
+	  $("#Glide").glide({ type: "slider" });
+	}
 </script>
 </body>
 </html>

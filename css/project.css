@@ -114,6 +114,7 @@
   -webkit-flex: 1;
   margin: auto;
   padding: 2%;
+  overflow: auto;
 }
 
 .project-content .table .cell.title {
@@ -140,6 +141,22 @@
   max-width: 20em;
 }
 
+.glide__arrow {
+  color: #666 !important;
+  border: 0 !important;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2em 3em !important;
+}
+
+.glide__bullet {
+  background-color: #aaa !important;
+}
+
+.glide__bullet.active {
+  background-color: white !important;
+  border: 1px solid #ddd !important;
+}
+
 /* Mobiles */
 @media only screen and (max-width: 600px) {
   h2.title {
@@ -164,7 +181,7 @@
     display: none;
   }
 
-  .project-content .table .cell {
-    overflow: auto;
+  .glide__arrow {
+    padding: 8px 10px !important;
   }
 }

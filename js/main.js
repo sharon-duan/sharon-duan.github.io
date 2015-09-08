@@ -45,6 +45,7 @@ jQuery(document).ready(function($){
 			/* load and show new content */
 			var foldingContent = foldingPanel.find('.cd-fold-content');
 			foldingContent.load(url+' .cd-fold-content > *', function(event){
+				glide();
 				setTimeout(function(){
 					$('body').addClass('overflow-hidden');
 					foldingPanel.addClass('is-open');
