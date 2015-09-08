@@ -56,6 +56,7 @@
   flex: 1;
   -webkit-flex: 1;
   font-weight: 500;
+  min-width: 4em;
 }
 
 .project-content .intro p span {
@@ -117,13 +118,13 @@
   overflow: auto;
 }
 
-.project-content .table .cell.title {
+.project-content .table .cell-title {
   font-weight: 400;
   text-align: center;
   color: #666;
   font-weight: 200;
-  font-size: 1.5em;
-  padding: 1em;
+  font-size: 1.4em;
+  padding: 1em 0;
 }
 
 .project-content .table .cell img {
