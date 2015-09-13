@@ -206,12 +206,18 @@
     display: none;
   }
 
+  .glide {
+    max-width: 17em;
+    margin: auto;
+    overflow: hidden;
+  }
+
   .glide.mockups {
     height: 22em;
   }
 
   .glide.wireframes {
-    height: 18em;
+    height: 20em;
   }
 
   .glide__arrow {

@@ -205,7 +205,6 @@ h1, h2 { font-family: inherit !important; }
     border: none;
     color: #555;
     line-height: 1.7em;
-    text-align: justify;
     background: none;
   }
 
@@ -231,6 +230,7 @@ h1, h2 { font-family: inherit !important; }
 
   .tags-title {
     padding-bottom: .7em;
+    text-align: left !important;
   }
 
   .tags > div {
@@ -250,6 +250,10 @@ h1, h2 { font-family: inherit !important; }
     top: .2em !important;
     right: .2em !important;
   }
+
+  .play {
+    padding: 0.5em !important;
+  }
 }
 
 /* Tablets and dektop */
@@ -264,6 +268,10 @@ h1, h2 { font-family: inherit !important; }
 
   .cd-gallery {
     margin-left: 250px;
+  }
+
+  p.center {
+    text-align: center;
   }
 
   .sharon {
@@ -590,4 +598,20 @@ img.left {
 
 .contact .email, .contact .phone {
   font-family: monospace;
+}
+
+.play {
+  border:1px solid;
+  padding:1.5% 4%;
+  background-color:rgb(115,145,56);
+  color:white;
+  text-decoration: none;
+  width: auto;
+  margin: auto;
+  font-weight: 300;
+  font-size: 1.2em;
+  display: block;
+  width: 4.6em;
+  text-align: center;
+  margin-bottom: 2em;
 }
