@@ -5,6 +5,11 @@
 .cd-item:nth-of-type(3) { background: #E6B648; }
 .cd-item:nth-of-type(4) { background: #31B7D6; }
 
+@font-face {
+  font-family:"Break";
+  src: url("font/break_semibold.ttf");
+}
+
 strong {
   font-weight: 500;
 }
@@ -480,6 +485,7 @@ h1, h2 { font-family: inherit !important; }
   font-size: 5em;
   margin-bottom: 0.1em;
   color: hsl(51, 79%, 20%);
+  font-family: Break, "Open Sans" !important;
 }
 
 .sharon.folded .sharon-block h1 {
