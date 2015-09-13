@@ -146,7 +146,6 @@
 }
 
 .glide__slide img {
-  pointer-events:none;
   max-width: 12em;
 }
 
@@ -207,9 +206,8 @@
   }
 
   .glide {
-    max-width: 17em;
+    max-width: 16.5em;
     margin: auto;
-    overflow: hidden;
   }
 
   .glide.mockups {
