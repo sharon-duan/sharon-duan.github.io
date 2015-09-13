@@ -602,7 +602,7 @@ img.left {
 
 .play {
   border:1px solid;
-  padding:1.5% 4%;
+  padding: 0.6em 0em;
   background-color:rgb(115,145,56);
   color:white;
   text-decoration: none;
