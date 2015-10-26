@@ -205,7 +205,28 @@
     </div>
 
 		<ul class="cd-gallery">
-			<li class="cd-item">
+
+      <li class="cd-item cafevenetia">
+        <a href="item-4.html">
+          <div>
+            <h2>Café Venetia</h2>
+            <p>Website Design</p>
+            <b>View More</b>
+          </div>
+        </a>
+      </li>
+
+      <li class="cd-item phlint">
+        <a href="item-5.html">
+          <div>
+            <h2>Phlint</h2>
+            <p>Dashboard Design</p>
+            <b>View More</b>
+          </div>
+        </a>
+      </li>
+
+			<li class="cd-item bigsur">
 				<a href="item-1.html">
 					<div>
 						<h2>Big Sur</h2>
@@ -215,17 +236,7 @@
 				</a>
 			</li>
 
-			<li class="cd-item">
-				<a href="item-2.html">
-					<div>
-						<h2>FreshGrab</h2>
-						<p>User Experience Design</p>
-						<b>View More</b>
-					</div>
-				</a>
-			</li>
-
-			<li class="cd-item">
+			<li class="cd-item citynote">
 				<a href="item-3.html">
 					<div>
 						<h2>CityNote</h2>
@@ -235,25 +246,16 @@
 				</a>
 			</li>
 
-			<li class="cd-item">
-				<a href="item-4.html">
-					<div>
-						<h2>Café Venetia</h2>
-						<p>Website Design</p>
-						<b>View More</b>
-					</div>
-				</a>
-			</li>
-
-      <li class="cd-item">
-        <a href="item-5.html">
+      <li class="cd-item freshgrab">
+        <a href="item-2.html">
           <div>
-            <h2>Phlint</h2>
-            <p>Dashboard Design</p>
+            <h2>FreshGrab</h2>
+            <p>User Experience Design</p>
             <b>View More</b>
           </div>
         </a>
       </li>
+
 
       <li class="cd-item" style="cursor: not-allowed">
         <a href="item-6.html" style="pointer-events: none">
@@ -287,7 +289,8 @@
 			var color = $(this).css('background-color');
 			setTimeout(function() {
 				$('.project-content .title').css('color', color);
-				$('.cd-folding-panel .cd-close').css('background-color', color);
+        $('.cd-folding-panel .cd-close').css('background-color', color);
+				$('.cd-folding-panel .play').css('background-color', color);
 			}, 500);
 		});
 
