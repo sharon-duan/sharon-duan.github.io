@@ -431,6 +431,10 @@ h1, h2 { font-family: inherit !important; }
   .tags-title {
     width: 8.3em;
   }
+
+  .cd-item.empty {
+    display: none;
+  }
 }
 
 /* Desktop */
