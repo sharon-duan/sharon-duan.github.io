@@ -258,6 +258,10 @@ h1, h2 { font-family: inherit !important; }
     right: .2em !important;
   }
 
+  .cd-item.empty {
+    display: none;
+  }
+
   .play {
     padding: 0.5em !important;
   }
