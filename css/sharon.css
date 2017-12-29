@@ -369,6 +369,7 @@ h1, h2 { font-family: inherit !important; }
   .tags {
     flex: 1;
     -webkit-flex: 1;
+    column-count: 3;
   }
 
   .tags > div {
@@ -377,7 +378,7 @@ h1, h2 { font-family: inherit !important; }
     color: #777;
     margin: 14px 16px;
     margin-top: 0;
-    border-bottom: 2px dotted #ddd;
+    min-width: 12em;
   }
 
   .sharon-about {
@@ -457,7 +458,7 @@ h1, h2 { font-family: inherit !important; }
   }
 
   .tags-title {
-    width: 17.8em;
+    width: 18em;
   }
 
   img.left {
@@ -559,7 +560,20 @@ img.left {
   border-right-color: #C9D17E;
 }
 
-.panel-right .my-name {
+.panel-right h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  opacity: 0.2;
+  position: relative;
+  top: -0.4em;
+  right: -0.4em;
+  font-style: italic;
+  font-family: serif !important;
+  float: right;
+  transform: rotate(3deg);
+}
+
+.panel-right strong {
   font-weight: 700;
 }
 
