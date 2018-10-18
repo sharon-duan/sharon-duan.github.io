@@ -22,7 +22,7 @@
 			padding: 0;
 		}
 
-		.cd-folding-panel .cd-close, .sharon-about-close {
+		.cd-folding-panel .cd-close {
 			background-color: #C9D17E;
 			border-radius: 100%;
 			width: 2.5em;
@@ -32,14 +32,7 @@
 			box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 		}
 
-    .sharon-about-close {
-      position: absolute;
-      right: 0.8em;
-      top: 0.6em;
-      cursor: pointer;
-    }
-
-		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after, .sharon-about-close:before, .sharon-about-close:after {
+		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after {
 			background-color: white;
 			height: 1px;
 			width: 17px;
@@ -53,22 +46,6 @@
       -moz-transition: opacity 0.2s;
       transition: opacity 0.2s;
 		}
-
-    .sharon-about-close:before {
-      -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-      -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-      -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-      -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-    }
-
-    .sharon-about-close:after {
-      -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-      -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-      -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-      -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-      transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    }
 
 		.project-content .title {
 			opacity: 0;
@@ -121,56 +98,6 @@
 	<main class="cd-main" id="projects">
 
 		<div class="sharon">
-      <div class="sharon-about" id="about">
-        <div class="sharon-about-content">
-          <div class="sharon-about-close"></div>
-          <div class="sharon-about-content-top">
-            <img class="left" src="cucu.jpg">
-            <div class="panel-right">
-              <h2>hi!</h2>
-              <p>My name is <strong>Sharon Duan</strong>. I am a User Eperience designer. </p><br>
-
-              <p>I come from a Communication and Design background. I aquired experience working for an embassy, non-profit organizations, governments, magazines, an educational publishing company, as well as tech start-ups.</p><br>
-
-              <p>All those diverse environments have tremendously helped me when it comes to design and creativity. Over the past few years, I've had the chance to design a retail dashboard, shopping carts, information websites, online learning system, and many other projects. I'm inspired by the essence of UX design which aims to solve real problematics and bring convenience to people's life.</p><br>
-
-            </div>
-          </div>
-
-          <div class="tags-container">
-            <div class="tags-title">Me @</div>
-            <div class="tags">
-              <div>UI/UX Design</div>
-              <div>HTML</div>
-              <div>CSS</div>
-              <!-- <div>Javascript</div> -->
-              <!-- <div>PHP</div> -->
-              <!-- <div>Drupal</div>
-              <div>Wordpress</div>
-              <div>Deamweaver</div>
-              <div>InVision</div>
-              <div>Sketch 3</div>
-              <div>Adobe Creative Suite</div>
-              <div>Balsamiq</div>
-              <div>Justinmind</div>
-              <div>Fluid UI</div> -->
-              <div>Prototyping</div>
-              <div>Concept Creation</div>
-              <div>Information Architecture</div>
-              <!-- <div>SEO</div> -->
-              <div>Consumer Insight</div>
-              <!-- <div>Data Analysis</div>
-              <div>SPSS</div>
-              <div>NodeXL</div>
-              <div>Netsuite</div> -->
-              <div>Travel</div>
-              <div>Food</div>
-              <div>Culture</div>
-              <div>Coffee</div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="sharon-block">
         <h1>Sharon Duan</h1>
 
@@ -178,7 +105,6 @@
 
         <div class="sharon-menu">
           <a href="#projects">Projects</a>
-          <a href="#about">About me</a>
          <!-- <a href="SharonDuan.pdf" target="_blank">Resume</a> -->
         </div>
 
@@ -195,9 +121,6 @@
           <!-- <div>
             <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
           </div> -->
-          <div class="about-me">
-            <i class="fa fa-question-circle"></i>About Me
-          </div>
         </div>
       </div>
     </div>
@@ -295,9 +218,7 @@
 		  var t_foldSharon = setTimeout(foldSharon, 2000);
 		  $('.sharon').on('click.foldSharon', foldSharon);
 		} else {
-      $('.sharon-about').insertAfter('.cd-gallery');
       $('.sharon-details').removeClass('sharon-hidden');
-      $('.sharon-details').insertAfter('.sharon-about');
     }
 
     // Snippet that smooth anchor links, credits to css-tricks.com
@@ -324,8 +245,6 @@
 		  $('.sharon').addClass('folded');
 		  setTimeout(function() {
 		    $('.sharon-details').removeClass('sharon-hidden');
-
-	      $('.sharon .about-me, .sharon-about-close').on('click', unroll);
 		  }, 1000);
 		}
 
@@ -334,9 +253,6 @@
         $('.cd-close').click();
         return setTimeout(unroll, 800);
       }
-
-      $('.sharon').toggleClass('about');
-      $('.sharon-about-content').width($(window).width() > 1100 ? $(window).width() * 0.8 : $(window).width() - 250);
     }
 	});
 
