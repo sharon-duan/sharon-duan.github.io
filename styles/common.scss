@@ -1,0 +1,27 @@
+@import 'fonts.scss';
+
+@mixin uppercase() {
+  font-family: Raleway;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+$grey-main: #495159;
+$grey-sub: #868288;
+$primary: #ec7357;
+$primary-tr: #fc8b76;
+
+$p-uncommon: #cf87f9;
+$p-delta: #dfb8a5;
+$p-bigsur: #96d0bc;
+
+$tile-margin: 1vw;
+
+* {
+  box-sizing: border-box;
+}
+

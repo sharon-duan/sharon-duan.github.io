@@ -1,0 +1,353 @@
+@import 'reset.scss';
+@import 'common.scss';
+
+$transitionLong: 600ms;
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #fcfcfc;
+  font-family: AvenirNext;
+  color: $grey-main;
+  display: flex;
+  flex-direction: column;
+
+  &.project {
+    footer {
+      transition: opacity $transitionLong*0.5;
+      opacity: 0;
+    }
+
+    #scrollable {
+      transition: opacity $transitionLong*0.5, top $transitionLong*0.5;
+      top: -100px;
+      opacity: 0;
+    }
+  }
+}
+
+#sharon {
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 40px (5vw + $tile-margin);
+  font-size: 30px;
+  transition: top $transitionLong, opacity $transitionLong;
+  z-index: 100;
+  background: rgba(252, 252, 252, 0.92);
+  backdrop-filter: blur(2px);
+  top: 0;
+
+  &.reduced, &.animated {
+    transition: padding $transitionLong*0.375, font-size $transitionLong*0.375, box-shadow $transitionLong*0.375;
+  }
+
+  &.animated {
+    pointer-events: none;
+    box-shadow: 0;
+  }
+
+  &.reduced {
+    font-size: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+
+    sub {
+      transition: opacity $transitionLong*0.375;
+      opacity: 0 !important;
+    }
+  }
+
+  strong {
+    @include uppercase();
+    color: $grey-main;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+  }
+
+  > div {
+    float: right;
+    padding-right: 2vw;
+
+    a {
+      text-decoration: none;
+      color: #555;
+      padding: 0 19px;
+      font-size: 16px;
+      cursor: pointer;
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+
+  sub {
+    color: $grey-sub;
+    display: block;
+    padding-top: 18px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 12px;
+    pointer-events: none;
+  }
+}
+
+#scrollable {
+  flex: 1;
+  overflow: auto;
+  scroll-behavior: smooth;
+  position: relative;
+
+  > main#work {
+    padding-top: calc(20px + 112px);
+  }
+
+  transition: opacity $transitionLong*0.75, top $transitionLong, transform $transitionLong*0.9;
+  top: 0;
+  opacity: 1;
+  transform: scaleY(1);
+
+  &.appears {
+    top: 100px;
+    opacity: 0;
+    transform: scaleY(1.1);
+  }
+
+  &.no-hover {
+    pointer-events: none;
+  }
+}
+
+$max-width: 1300px;
+
+main {
+  padding: 20px (2vw + $tile-margin);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: $max-width;
+  opacity: 1;
+  letter-spacing: 0.2px;
+  line-height: 1.4em;
+}
+
+.row {
+  flex: 1;
+  display: flex;
+}
+
+.tile {
+  margin: $tile-margin;
+  height: 35vw;
+  max-height: $max-width / (100/35);
+  background: white;
+  box-shadow: 0 2px 3px 2px #efefef;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform $transitionLong*0.25, box-shadow $transitionLong*0.25, width $transitionLong*0.625, height $transitionLong*0.625, margin $transitionLong*0.625;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+
+  &.h {
+    flex: 1;
+  }
+
+  &.v {
+    flex: 2;
+  }
+
+  &#uncommon {
+    background: $p-uncommon;
+    img {
+      transform: rotate(-24deg) scale(1.2);
+    }
+  }
+
+  &#delta {
+    background: $p-delta;
+    img {
+      transform: translateY(10px) rotate(11deg) scale(1.1);
+    }
+  }
+
+  &#bigsur {
+    background: $p-bigsur;
+    img {
+      transform: rotate(0deg) scale(0.8);
+    }
+  }
+
+  img {
+    height: calc(100% - 60px);
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    transition: transform $transitionLong*0.625;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  sub {
+    height: 60px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 10px 14px;
+    transition: height $transitionLong*0.25;
+    font-size: 100%;
+
+    h2 {
+      @include uppercase();
+      color: $grey-sub;
+      font-size: 0.685em;
+    }
+
+    h1 {
+      float: left;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+
+    h3 {
+      float: right;
+      font-size: 0.75em;
+      line-height: 17px;
+      color: $grey-sub;
+    }
+  }
+
+  &:hover, &:active {
+    @mixin shadow($color: #bbb) {
+      box-shadow: 0 2px 16px 3px lighten($color, 15%);
+    }
+
+    z-index: 2;
+    @include shadow();
+
+    sub {
+      height: 70px;
+    }
+
+    &#uncommon {
+      @include shadow($p-uncommon);
+      img {
+        transform: rotate(-18deg) scale(1.28);
+      }
+    }
+
+    &#delta {
+      @include shadow($p-delta);
+      img {
+        transform: translateY(10px) rotate(8deg) scale(1.18);
+      }
+    }
+
+    &#bigsur {
+      @include shadow($p-bigsur);
+      img {
+        transform: rotate(1deg) scale(0.9);
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 60px;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    color: $grey-main;
+  }
+
+  a:hover {
+    color: $primary;
+    img {
+      transform: scale(1.05);
+    }
+
+  }
+
+  div {
+    &:first-child {
+      font-size: 26px;
+      color: $primary;
+      margin-top: 40px;
+    }
+
+    img {
+      margin: 14px 4px;
+      width: 36px;
+    }
+  }
+
+  > img {
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+    object-fit: cover;
+  }
+
+  sub {
+    margin-bottom: 60px;
+    color: #555;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header, header.reduced {
+    font-size: 17px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+
+    text-align: center;
+
+    sub {
+      display: none;
+    }
+
+    > div {
+      float: none;
+      padding-right: 0;
+      padding-top: 12px;
+    }
+  }
+
+  main {
+    padding-top: 77px !important;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .tile {
+    height: 75vw;
+    box-shadow: 0 1px 2px 1px #efefef;
+    margin-bottom: 3vw;
+
+    &:hover, &:active {
+      transform: initial;
+    }
+  }
+}

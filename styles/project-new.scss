@@ -1,0 +1,425 @@
+@import 'common.scss';
+
+main {
+  padding: 62px 0;
+  max-width: none;
+}
+
+.missing {
+  background: #ccc;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0.3;
+  box-shadow: inset 0 2px 6px -2px #00000096;
+}
+
+#uncommon {
+  #banner {
+    background: $p-uncommon;
+  }
+}
+
+#bigsur {
+  #banner {
+    background: $p-bigsur;
+  }
+}
+
+#banner {
+  color: white;
+  height: 380px;
+  display: flex;
+
+  h1 {
+    font-size: 2em;
+    color: inherit;
+    padding: 0;
+    padding-bottom: 1.5em;
+    text-align: left;
+  }
+
+  p {
+    font-size: 20px;
+    padding-bottom: 1em;
+  }
+
+  sub {
+    font-size: 18px;
+  }
+
+  #banner-text {
+    width: 40%;
+    padding: 5em 7vw;
+  }
+
+  #banner-img {
+    flex: 1;
+    display: flex;
+
+    img {
+      height: 100%;
+      margin: auto;
+      object-fit: contain;
+    }
+  }
+
+  #banner-prev, #banner-next {
+    width: 100px;
+    font-size: 13px;
+    padding: 3em 10px;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 300ms;
+    color: white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      transform: scaleY(2.5);
+      top: 11.6em;
+      border: 50px solid transparent;
+      opacity: 0.2;
+      transition: opacity 300ms;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:hover::before {
+      opacity: 0.4;
+    }
+  }
+
+  #banner-prev::before {
+    left: -1.9em;
+    border-right-color: white;
+  }
+
+  #banner-next::before {
+    right: -1.9em;
+    border-left-color: white;
+  }
+}
+
+.project-content {
+  font-size: 15px;
+  padding: 0 calc(16vw - 50px);
+
+  h1 {
+    @include uppercase();
+    color: $primary;
+    font-size: 1.2em;
+    padding: 3em;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  h2 {
+    @include uppercase();
+    font-weight: 600;
+    padding: 0;
+    text-align: left;
+    color: $grey-main;
+    font-size: 1em;
+  }
+
+  h3 {
+    @include uppercase();
+    font-weight: 600;
+    padding: 0;
+    text-align: left;
+    color: $grey-main;
+    font-size: 1em;
+    position: relative;
+    margin-top: 4em;
+    margin-bottom: 2em;
+
+    &::before {
+      content: " ";
+      width: 100px;
+      height: 3px;
+      background: #ec7357;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      border-radius: 10px;
+    }
+
+    sub {
+      text-transform: initial;
+      font-weight: normal;
+      position: absolute;
+      width: 70%;
+      padding-left: 6em;
+      font-size: 15px;
+    }
+  }
+
+  h4 {
+    font-weight: 500;
+
+    sub {
+      text-transform: initial;
+      font-weight: normal;
+      position: absolute;
+      width: 60%;
+      padding-left: 6em;
+      font-size: 15px;
+    }
+  }
+
+  [pad] {
+    padding: 1em;
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    > * {
+      flex: 1;
+    }
+
+    &.valign > * {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    &.halign > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    > * {
+      flex: 1;
+    }
+  }
+
+  .children-spaced > * {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  ul {
+    ul {
+      padding-left: 1em;
+      font-size: 0.9em;
+
+      li {
+        padding-bottom: 0.4em;
+      }
+    }
+
+    li::first-letter {
+      padding-right: 4px;
+    }
+
+    li {
+      padding-bottom: 0.8em;
+    }
+  }
+
+  .grey-card {
+    background: #d8d8d8;
+    padding: 1em;
+
+    h4 {
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+    }
+
+    li::first-letter {
+      color: $primary;
+    }
+  }
+
+  .orange-card {
+    background: $primary-tr;
+    color: white;
+    display: flex;
+    padding: 1em;
+
+    > h4 {
+      font-weight: 600;
+      color: inherit;
+      text-transform: initial;
+      margin: 0;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+
+    > div {
+      flex: 1;
+      padding-right: 2em;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .arrow {
+    background: $primary;
+    position: relative;
+    flex: unset;
+    border-radius: 10px;
+    margin: auto;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      border: 8px solid transparent;
+    }
+  }
+
+  .arrow-right {
+    height: 3px;
+    width: 60px;
+    left: -13px;
+    margin-left: 3em !important;
+    margin-right: 3em !important;
+
+    &::before {
+      top: -7px;
+      right: -21px;
+      border-left: 13px solid $primary;
+    }
+  }
+
+  .arrow-down {
+    height: 50px;
+    width: 3px;
+    top: -13px;
+    margin-top: 3em !important;
+    margin-bottom: 3em !important;
+
+    &::before {
+      bottom: -20px;
+      right: -7px;
+      border-top: 13px solid $primary;
+    }
+  }
+
+  .persona {
+    position: relative;
+    margin: auto;
+    margin-bottom: 2em;
+
+    h4 {
+      position: absolute;
+      display: inline-block;
+      text-align: right;
+      width: 100%;
+      left: calc(-100% - 1em);
+    }
+    div {
+      position: relative;
+      height: 100%;
+    }
+
+    &.persona-main {
+      width: 40vw;
+      height: 21vw;
+    }
+
+    &.persona-other {
+
+      > div {
+        width: 30vw;
+        height: 18vw;
+        margin: auto;
+        flex: unset;
+      }
+    }
+  }
+
+  .quote {
+    background: #fc8b76;
+    color: white;
+    font-size: 20px;
+    padding: 1.5em;
+    text-align: center;
+    margin: 1em 0em;
+  }
+
+  .table-1 {
+    width: 60vw;
+    margin: auto;
+
+    td {
+      padding: 1em;
+    }
+  }
+
+  .palette {
+    margin-left: 6vw;
+
+    > div {
+      width: 5em;
+      height: 3em;
+      margin: 2px;
+      display: inline-block;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+    &[data-img] {
+      cursor: pointer;
+      transform: scale(1);
+      transition: transform 200ms;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+    }
+  }
+
+  .pics3 > * {
+    margin: 1em 1vw;
+  }
+
+  .photos2 > * {
+    margin: 1em 5vw;
+  }
+
+  .speech-bubble {
+    position: relative;
+    background: #e2eaee;
+    border-radius: 2em;
+    margin: 2em 2.8vw;
+    padding: 1vw;
+    font-size: 0.9em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 1.063em solid transparent;
+      border-bottom-color: #e2eaee;
+      border-top: 0;
+      border-left: 0;
+      margin-left: -0.531em;
+      margin-top: -1.062em;
+    }
+  }
+}

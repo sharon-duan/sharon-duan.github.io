@@ -1,0 +1,71 @@
+@import 'common.scss';
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-top: 2em;
+
+  img {
+    width: 24vw;
+    height: 24vw;
+    border-radius: 100%;
+    margin: 6vw 10vw 0 13vw;
+    padding: 1em;
+    border: 1px solid $primary;
+  }
+
+  section {
+    max-width: 32em;
+    margin: 5vw 4vw 5vw 0;
+    font-size: 15px;
+
+    div {
+      position: relative;
+    }
+
+    strong {
+      display: inline-block;
+      font-weight: 500;
+      margin-bottom: 1.6em;
+    }
+
+    button {
+      border: 1px solid $primary;
+      padding: 1em;
+      border: 1px solid #ec7357;
+      padding: 1em;
+      background: white;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: -12px;
+    }
+  }
+
+  p {
+    padding-bottom: 1em;
+
+    &::first-letter {
+      color: $primary;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+
+    img {
+      height: 38vw;
+      width: 38vw;
+      margin: auto;
+      padding: 2vw;
+    }
+
+    section {
+      max-width: none;
+      margin: 2em 1em;
+    }
+  }
+}
