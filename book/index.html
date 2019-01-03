@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/reset.css">   <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/style.css">   <!-- Resource style -->
+	<link rel="stylesheet" href="../css/project.css"> <!-- Custom style -->
+	<link rel="stylesheet" href="../css/sharon.css">  <!-- Custom style -->
+	<link rel="stylesheet" href="../css/book.css">  <!-- Custom style -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> <!-- Font Awesome Icons-->
+  <link rel="stylesheet" href="../css/glide.core.min.css">   <!-- Slideshow style -->
+  <link rel="stylesheet" href="../css/glide.theme.min.css">  <!-- Slideshow style -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<style>
+    .fold-right { left: -1px; }
+
+		.cd-fold-content {
+			padding: 0;
+		}
+
+		.cd-folding-panel .cd-close, .sharon-about-close {
+			background-color: #C9D17E;
+			border-radius: 100%;
+			width: 2.5em;
+			height: 2.5em;
+      top: 1.2em;
+      right: 1.5em;
+			box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+		}
+
+    .sharon-about-close {
+      position: absolute;
+      right: 0.8em;
+      top: 0.6em;
+      cursor: pointer;
+      opacity: 0;
+    }
+
+		.cd-folding-panel .cd-close:before, .cd-folding-panel .cd-close:after, .sharon-about-close:before, .sharon-about-close:after {
+			background-color: white;
+			height: 1px;
+			width: 17px;
+      content: ' ';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: opacity 0.2s;
+      -moz-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+		}
+
+    .sharon-about-close:before {
+      -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+
+    .sharon-about-close:after {
+      -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+
+		.project-content .title {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-moz-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			-o-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+
+		.project-content .blocks {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-moz-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			-o-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+
+		.is-open .project-content .blocks {
+			opacity: 1;
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		  -webkit-transition: -webkit-transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		  -moz-transition: -moz-transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		  transition: transform 0.5s 0.7s, opacity 0.8s 0.7s;
+		}
+
+		.is-open .project-content .title {
+			opacity: 1;
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
+		  -webkit-transition: -webkit-transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		  -moz-transition: -moz-transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		  transition: transform 0.5s 0.5s, opacity 0.8s 0.5s;
+		}
+	</style>
+
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>Sharon Duan</title>
+</head>
+<body>
+	<main class="cd-main" id="projects">
+
+		<div class="sharon">
+      <div class="sharon-about" id="about">
+        <div class="sharon-about-content">
+          <div class="sharon-about-close"></div>
+          <div class="sharon-about-content-top">
+          </div>
+        </div>
+      </div>
+      <div class="sharon-block">
+        <h1>Sharon Duan</h1>
+
+        <p class="subhead">User Experience Designer</p>
+
+        <div class="sharon-menu">
+          <a href="#projects">Projects</a>
+          <a href="#about">About me</a>
+         <!-- <a href="SharonDuan.pdf" target="_blank">Resume</a> -->
+        </div>
+
+        <div class="sharon-details sharon-hidden" id="contact">
+          <div>
+            <a href="mailto:duan.xyun@gmail.com" target="_blank"><i class="fa fa-envelope"></i>duan.xyun@gmail.com</a>
+          </div>
+          <div>
+            <!-- <a href="tel:+1-202-316-5825"><i class="fa fa-phone"></i>+1 202-316-5825</a> -->
+          </div>
+          <div>
+            <a href="https://www.google.com/maps?q=mountain+view" target="_blank"><i class="fa fa-home"></i>Mountain View, CA</a>
+          </div>
+          <!-- <div>
+            <a href="SharonDuan.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>My Resume</a>
+          </div> -->
+          <div class="about-me">
+            <i class="fa fa-question-circle"></i>About Me
+          </div>
+        </div>
+      </div>
+    </div>
+
+		<ul class="cd-gallery">
+
+      <li id="uncommon" class="tile cd-item">
+        <a href="item-1.html">
+          <img src="../homepage-images/uncommon_small.png">
+          <sub>
+            <h2>Reinventing job seeker mobile experience</h2>
+            <h1>Uncommon</h1>
+            <h3>mobile web</h3>
+          </sub>
+        </a>
+      </li>
+
+      <li id="delta" class="tile cd-item">
+        <a href="item-1.html">
+          <img src="../homepage-images/delta_small.png">
+          <sub>
+            <h2>Ordering in-flight service easily</h2>
+            <h1>Delta</h1>
+            <h3>mobile app</h3>
+          </sub>
+        </a>
+      </li>
+
+			<li class="tile cd-item">
+				<a href="item-1.html">
+				</a>
+			</li>
+
+			<li class="tile cd-item">
+				<a href="item-1.html">
+				</a>
+			</li>
+
+      <li class="tile cd-item">
+        <a href="item-1.html">
+        </a>
+      </li>
+
+      <li class="tile cd-item">
+        <a href="item-1.html">
+        </a>
+      </li>
+		</ul> <!-- .cd-gallery -->
+	</main> <!-- .cd-main -->
+
+	<div class="cd-folding-panel">
+
+		<div class="fold-left"></div> <!-- this is the left fold -->
+
+		<div class="fold-right"></div> <!-- this is the right fold -->
+
+		<div class="cd-fold-content">
+			<!-- content will be loaded using javascript -->
+		</div>
+
+		<a class="cd-close" href="#0"></a>
+	</div> <!-- .cd-folding-panel -->
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script>
+	$(function() {
+		console.log("%cWelcome to my Portfolio :-)", "color: orange");
+
+		$('.cd-item').on('click', function() {
+			var color = $(this).css('background-color');
+			setTimeout(function() {
+				$('.project-content .title').css('color', color);
+        $('.cd-folding-panel .cd-close').css('background-color', color);
+				$('.cd-folding-panel .play').css('background-color', color);
+			}, 500);
+		});
+
+		if ($(window).width() >= 600) {
+		  var t_foldSharon = setTimeout(foldSharon, 2000);
+		  $('.sharon').on('click.foldSharon', foldSharon);
+		} else {
+      $('.sharon-about').insertAfter('.cd-gallery');
+      $('.sharon-details').removeClass('sharon-hidden');
+      $('.sharon-details').insertAfter('.sharon-about');
+    }
+
+    // Snippet that smooth anchor links, credits to css-tricks.com
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+
+		return;
+
+		function foldSharon() {
+		  clearTimeout(t_foldSharon);
+		  $('.sharon').off('click.foldSharon');
+		  $('.sharon').addClass('folded');
+		  setTimeout(function() {
+		    $('.sharon-details').removeClass('sharon-hidden');
+
+	      $('.sharon .about-me, .sharon-about-close').on('click', unroll);
+		  }, 1000);
+		}
+
+    function unroll() {
+      if ($('.is-open').length) {
+        $('.cd-close').click();
+        return setTimeout(unroll, 800);
+      }
+
+      $('.sharon').toggleClass('about');
+      $('.sharon-about-content').width($(window).width() > 1100 ? $(window).width() * 0.8 : $(window).width() - 250);
+    }
+	});
+
+  function glide() {
+    $(".glide").glide({ type: "carousel", autoplay: false });
+  }
+</script>
+<script src="js/glide.min.js"></script> <!-- Slideshow -->
+</body>
+</html>

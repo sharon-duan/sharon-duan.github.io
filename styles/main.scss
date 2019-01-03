@@ -192,6 +192,8 @@ main {
     width: 100%;
     object-fit: contain;
     position: absolute;
+    top: 0;
+    left: 0;
     transition: transform $transitionLong*0.625;
     user-select: none;
     pointer-events: none;
@@ -211,6 +213,7 @@ main {
     h2 {
       @include uppercase();
       color: $grey-sub;
+      text-align: left;
       font-size: 0.685em;
     }
 

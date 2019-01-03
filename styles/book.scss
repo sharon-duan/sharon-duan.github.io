@@ -1,0 +1,45 @@
+@import 'main.scss';
+
+$transitionLong: 600ms;
+
+h1 {
+  @include uppercase();
+  font-weight: 500;
+  color: $grey-main;
+}
+
+.subhead {
+  color: $grey-sub;
+}
+
+main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.tile {
+  img {opacity: 1;}
+
+  &.cd-item {background: white;}
+
+  sub {
+    bottom: 0;
+    left: 0;
+    h1 {color: $grey-main;}
+    h2 {
+      transition: none;
+      transform: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .cd-item {
+    width: calc(50% - 20px);
+    height: calc(520px - 20px);
+    margin: 10px;
+  }
+}
