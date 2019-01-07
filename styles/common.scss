@@ -6,6 +6,12 @@
   text-transform: uppercase;
 }
 
+@mixin font-size($sizeInPx: 14) {
+  font-size: $sizeInPx + px;
+  // Browsers default font size is 16px (1rem)
+  font-size: ($sizeInPx / 16) + rem;
+}
+
 a {
   text-decoration: none;
 }

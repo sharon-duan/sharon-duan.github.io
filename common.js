@@ -1,7 +1,7 @@
 (function() {
   console.log("%cWelcome to my Portfolio :)", "color: orange");
 
-  const transitionLong = 600;
+  const transitionLong = 800;
   const trdur = transitionLong/2+2;
 
   setTimeout(() => {
@@ -35,6 +35,7 @@
       tile.addEventListener('click', () => {
         document.body.classList.add('project');
         header.classList.add('reduced');
+        header.classList.add('animated');
         setTimeout(() => {
           if (['bigsur', 'uncommon'].indexOf(tile.getAttribute('id')) === -1) {
             location.href = '/';
@@ -104,19 +105,18 @@
   }
 
   function setAllImages() {
-    const factor = window.innerWidth >= 1600 ? '3x' :
-                   window.innerWidth >= 600 ? '2x' :
-                   '1x';
+    const factor = window.innerWidth >= 1600 ? '3x' : '2x';
 
     const projId = document.querySelector('main').getAttribute('id');
-    document.querySelectorAll('[data-img]').forEach(img => {
-      const name = img.getAttribute('data-img');
-      const src = `projects/${projId}/${name}@${factor}.png`;
-      img.src = src;
+    document.querySelectorAll('.project-content img').forEach(img => {
+      let src = img.getAttribute('src');
+      const match = src.match(/([^@]+)@[\d\.]+x/);
+      if (match) {
+        src = match[1] + '@3x.png';
+      }
 
       img.onclick = () => {
-        const big = `./projects/${projId}/${name}@3x.png`;
-        window.open(big, '_blank');
+        window.open(src, '_blank');
       };
     });
   }

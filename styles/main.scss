@@ -1,7 +1,7 @@
 @import 'reset.scss';
 @import 'common.scss';
 
-$transitionLong: 600ms;
+$transitionLong: 800ms;
 
 html {
   height: 100%;
@@ -9,11 +9,18 @@ html {
 
 body {
   height: 100%;
-  background: #fcfcfc;
   font-family: AvenirNext;
   color: $grey-main;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  &.light {
+    background: #fcfcfc;
+    header {
+      background: rgba(252, 252, 252, 0.92);
+    }
+  }
 
   &.project {
     footer {
@@ -38,19 +45,24 @@ header {
   width: 100%;
   padding: 40px (5vw + $tile-margin);
   font-size: 30px;
+  background: rgba(255, 255, 255, 92);
   transition: top $transitionLong, opacity $transitionLong;
   z-index: 100;
-  background: rgba(252, 252, 252, 0.92);
   backdrop-filter: blur(2px);
   top: 0;
 
   &.reduced, &.animated {
-    transition: padding $transitionLong*0.375, font-size $transitionLong*0.375, box-shadow $transitionLong*0.375;
+    transition:
+      padding $transitionLong*0.375,
+      font-size $transitionLong*0.375,
+      box-shadow $transitionLong*0.375,
+      background-color $transitionLong*0.1;
   }
 
   &.animated {
     pointer-events: none;
-    box-shadow: 0;
+    box-shadow: 0 !important;
+    background-color: rgba(252, 252, 252, 0) !important;
   }
 
   &.reduced {
@@ -151,7 +163,7 @@ main {
   box-shadow: 0 2px 3px 2px #efefef;
   display: inline-block;
   transform: scale(1);
-  transition: transform $transitionLong*0.25, box-shadow $transitionLong*0.25, width $transitionLong*0.625, height $transitionLong*0.625, margin $transitionLong*0.625;
+  transition: transform $transitionLong*0.25, box-shadow $transitionLong*0.25;
   border-radius: 4px;
   cursor: pointer;
   position: relative;
