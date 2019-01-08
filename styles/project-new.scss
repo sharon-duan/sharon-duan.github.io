@@ -1,7 +1,8 @@
 @import 'common.scss';
 
 main {
-  padding: 62px 0;
+  padding: 0;
+  padding-top: 62px;
   max-width: none;
   overflow: hidden;
 }
@@ -66,6 +67,7 @@ main {
       padding: 10px 14px;
       font-size: 1.25em;
       margin-bottom: 2em;
+      cursor: pointer;
     }
 
   }
@@ -136,9 +138,9 @@ i {font-style: italic;}
 
   h1 {
     @include uppercase();
-    @include font-size(22);
+    @include font-size(25);
     color: $primary;
-    padding: 2.5em;
+    padding: 4em;
     text-align: center;
     font-weight: 500;
   }
@@ -160,10 +162,8 @@ i {font-style: italic;}
     color: $grey-main;
     font-size: 1em;
     position: relative;
-    margin-top: 4em;
-    margin-bottom: 2em;
-    margin-left: 4vw;
-    margin-right: 4vw;
+    margin-top: 6em;
+    margin-bottom: 4em;
 
     &::before {
       content: " ";
@@ -183,6 +183,8 @@ i {font-style: italic;}
 
   h4 {
     font-weight: 500;
+    padding-top: 1em;
+    padding-bottom: 2em;
 
     sub {
       @include font-size(15);
@@ -206,19 +208,25 @@ i {font-style: italic;}
 
   section {
     padding: 0;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
   }
 
   .flow {
-    width: 21em;
+    width: auto;
+    object-fit: contain;
     margin: auto;
-    margin-bottom: -2em;
+    height: 2.2em;
+    margin-bottom: -4em;
     position: relative;
-    top: -2em;
+    top: -4em;
 
-    &.longflow {
-      width: 29em;
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      margin: auto;
+      display: block;
     }
   }
 
@@ -228,24 +236,45 @@ i {font-style: italic;}
 
   [shrink] {
     padding: 0 12vw;
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   height: 100px;
+    //   border-left: 4px solid pink;
+    // }
   }
 
-  [shrink2] {
-    padding: 0 8vw;
-  }
+  // [shrink2] {
+    // padding: 0 5vw;
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   height: 100px;
+    //   border-left: 4px solid green;
+    // }
+  // }
 
-  [shrink3], section > h4 {
-    margin-left: 4vw;
-    margin-right: 4vw;
+  // [shrink3] {
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     height: 100px;
+  //     border-left: 4px solid blue;
+  //   }
+  // }
+
+  [shrink2], [shrink3], section > h4, section > h3 {
+    margin-left: 5vw;
+    margin-right: 5vw;
   }
 
   .also-note {
-    padding: 0 12vw;
+    padding: 3em 12vw;
   }
 
   .big-pic {
-    padding: 0 10vw;
-    max-width: 70em;
+    padding: 0 10vw 2em 10vw;
+    max-width: 80em;
     margin: auto;
   }
 
@@ -254,12 +283,12 @@ i {font-style: italic;}
     border-bottom: 1px solid #c8c5c9;;
     position: relative;
     width: 94%;
-    margin-top: 4em;
+    margin-top: 6em;
   }
 
   .alternate-bg {
-    background: #eeefef;
-    padding: 4em 0;
+    background: $secondary-light;
+    padding: 6em 0;
   }
 
   .overview-text {
@@ -360,41 +389,55 @@ i {font-style: italic;}
   }
 
   ul {
+    margin-left: 24px;
+
     li {
-      margin: -12px 0;
-      padding: 12px 0px 0px 22px;
-      list-style: none;
-      background-image: url("../projects/common/littlearrow.png");
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 15px;
+      padding-bottom: 1em;
     }
+  }
 
-    ul {
-      padding-left: 1em;
-      font-size: 0.9em;
+  ul.strong {
+    > li {
+      position: relative;
 
-      li {
-        padding-bottom: 0.4em;
-        background: none;
-
-        &::first-letter {
-          color: $primary;
-          font-weight: 600;
-          padding-right: 4px;
-        }
+      &::before {
+        content: '';
+        background-image: url(../projects/common/arrow-secondary.png);
+        background-repeat: no-repeat;
+        background-size: 15px;
+        position: absolute;
+        top: 7px;
+        left: -24px;
+        width: 15px;
+        height: 15px;
       }
     }
 
-    li {
-      padding-bottom: 0.8em;
+    ul {
+      margin-left: 1.2em;
+    }
+  }
+
+  ul:not(.strong) {
+    > li {
+      position: relative;
+
+      &::before {
+        content: '|';
+        position: absolute;
+        top: -1px;
+        left: -12px;
+        color: $secondary;
+        font-weight: 600;
+      }
     }
   }
 
   .grey-cards {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     display: flex;
+    padding-bottom: 2em;
 
     &.large-cards {
       max-width: none;
@@ -406,24 +449,27 @@ i {font-style: italic;}
   }
 
   .grey-card {
-    background: #eeefef;
+    background: $secondary-light;
     margin: 0 3vw;
     flex: 1;
     border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0px 2px 6px -1px #6b6b6b;
 
     > * {
-      padding: 1em;
+      padding: 1.5em;
     }
 
     h4 {
       padding: 0.6em;
       text-align: center;
       font-weight: 400;
-      background: #8b9094;
+      background: $secondary;
       color: white;
       margin: 0;
+
+      + ul {
+        padding-top: 1em;
+      }
     }
 
     p {
@@ -431,11 +477,10 @@ i {font-style: italic;}
     }
   }
 
-  .grey-card-orange-title {
-    background: #dee0e0;
+  .grey-card-primary {
+    background: white;
     border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0px 2px 6px -1px #6b6b6b;
     width: 24vw;
     min-width: 19em;
     margin: auto;
@@ -454,18 +499,17 @@ i {font-style: italic;}
       margin: 0;
     }
 
-    ul ul {
-      padding: 0;
-      padding-bottom: 1em;
+    li::before {
+      color: $primary !important;
     }
   }
 
-  .orange-quote {
+  .strong-quote {
     color: $primary;
     font-weight: 500;
-    @include font-size(17);
+    @include font-size(19);
     text-align: center;
-    padding-top: 2em;
+    padding-top: 3em;
   }
 
   .important-p {
@@ -511,7 +555,7 @@ i {font-style: italic;}
   .persona {
     position: relative;
     margin: auto;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 
     h4 {
       position: absolute;
@@ -618,6 +662,9 @@ i {font-style: italic;}
   }
 
   .pics3 {
+    padding-top: 1em;
+    padding-bottom: 2em;
+
     > * {
       margin: 1em 1vw;
     }
@@ -632,8 +679,87 @@ i {font-style: italic;}
     margin: 1em 3vw;
   }
 
-  .photos2 > * {
-    margin: 0em 2.5vw;
+  .photos2 {
+    margin-left: 12vw;
+    margin-right: 12vw;
+
+    > * {
+      margin: 1em 2vw;
+    }
+  }
+
+  .directed-tiles {
+    display: flex;
+    margin-bottom: 2em;
+
+    .directed-tile {
+      flex: 5;
+      background: white;
+      box-shadow: 0 2px 4px 0px #ccc;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+
+      strong {
+        font-weight: 600;
+      }
+
+      > * {
+        padding: 1em;
+        margin: auto 1em;
+      }
+
+      * + * {
+        border-top: 1px solid #eee;
+        flex: 1;
+      }
+
+      * ~ * {
+        flex: 1;
+      }
+    }
+
+    .arrow {
+      flex: 1;
+      height: 1px;
+      background: $primary;
+      position: relative;
+      margin: auto 4px;
+
+      &::before {
+        content: '';
+        border: 4px solid transparent;
+        border-left-color: #ec7357;
+        position: absolute;
+        top: -3px;
+        right: -6px;
+        border-left-width: 8px;
+      }
+    }
+  }
+
+  #final {
+    --ratio: 0.7;
+    --ifw: 442px;
+    --ifh: 935px;
+    --pad-top: 5.5em;
+    --pad-bottom: 0em;
+    background: $secondary;
+    position: relative;
+    height: calc(var(--ifh) * var(--ratio) + var(--pad-top) + var(--pad-bottom));
+
+    iframe {
+      position: absolute;
+      transform: scale(var(--ratio));
+      top: calc((var(--ifh) / -2) * (1 - var(--ratio)) + var(--pad-top));
+      left: calc(50% - (var(--ifw) / 2));
+
+      &:not([src]) {
+        background: #0000002b;
+        border-radius: 16px;
+        box-shadow: inset 0 2px 12px 1px #00000057;
+      }
+    }
   }
 }
 
@@ -831,7 +957,13 @@ i {font-style: italic;}
     }
 
     .flow {
-      width: 80% !important;
+      width: 100%;
+      padding: 0 4vw;
+      height: auto;
+
+      img {
+        width: 100%;
+      }
     }
 
     .wrap-6 > * {
@@ -842,6 +974,28 @@ i {font-style: italic;}
     .wrap-5 > * {
       width: calc(50% - 2vw);
       flex: unset;
+    }
+
+    .directed-tiles {
+      .directed-tile {
+        font-size: 2.9vw;
+        line-height: 1.5em;
+
+        > * {
+          padding: 2vw;
+          margin: auto;
+        }
+      }
+
+      .arrow {
+        flex: 1;
+        height: 0px;
+        margin: auto;
+
+        &::before {
+          right: 0px;
+        }
+      }
     }
   }
 }

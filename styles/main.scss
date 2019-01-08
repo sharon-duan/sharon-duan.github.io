@@ -14,6 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: #ec73574a;
 
   &.light {
     background: #fcfcfc;
@@ -45,7 +47,7 @@ header {
   width: 100%;
   padding: 40px (5vw + $tile-margin);
   font-size: 30px;
-  background: rgba(255, 255, 255, 92);
+  background: rgba(255, 255, 255, 0.92);
   transition: top $transitionLong, opacity $transitionLong;
   z-index: 100;
   backdrop-filter: blur(2px);
@@ -141,6 +143,7 @@ $max-width: 1300px;
 
 main {
   padding: 20px (2vw + $tile-margin);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -169,6 +172,10 @@ main {
   position: relative;
   overflow: hidden;
   top: 0;
+
+  // &:focus, &:active {
+  //   outline: none !important;
+  // }
 
   &.h {
     flex: 1;
@@ -345,6 +352,11 @@ footer {
       float: none;
       padding-right: 0;
       padding-top: 12px;
+      white-space: nowrap;
+
+      a {
+        padding: 0 5vw;
+      }
     }
   }
 

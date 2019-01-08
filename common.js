@@ -16,7 +16,7 @@
         if (a.getAttribute('id') === 'aabout' && !a.getAttribute('href')) {
           prepareMainPage();
           header.classList.add('reduced');
-          setTimeout(() => {location.href = 'about.html';}, trdur);
+          setTimeout(() => {location.href = '/about.html';}, trdur);
         }
 
         if (a.getAttribute('id') === 'awork' && !a.getAttribute('href')) {
@@ -41,7 +41,7 @@
             location.href = '/';
             return;
           }
-          location.href = 'projects/' + tile.getAttribute('id') + '.html';
+          location.href = '/projects/' + tile.getAttribute('id');
         }, trdur);
       });
     });
@@ -62,10 +62,29 @@
     }
   }, 100);
 
-  scrollable.addEventListener('scroll', updateHeader);
+  scrollable.addEventListener('scroll', onScroll);
+
+  function onScroll() {
+    try {
+      maybeAddInvisionPrototype();
+    } catch(e) {
+      console.error(e);
+    }
+    updateHeader();
+  }
+
+  function maybeAddInvisionPrototype() {
+    if (!proto || proto.getAttribute('src') || !proto.getAttribute('data-src')) return;
+
+    if (scrollable.scrollTop / final.offsetTop > 0.6) {
+      proto.setAttribute('src', proto.getAttribute('data-src'));
+    }
+  }
 
   function updateHeader() {
-    let ratio = Math.max(0, Math.min(1, scrollable.scrollTop / 100));
+    if (!window.header) return;
+
+    const ratio = Math.max(0, Math.min(1, scrollable.scrollTop / 100));
 
     header.style.boxShadow = `0 0 20px -3px rgba(0, 0, 0, ${value(ratio, 0, 0.15)})`;
 
@@ -102,6 +121,19 @@
         setTimeout(() => {acontact.click();}, 100);
       }
     }
+
+    resizeProto();
+    let timer;
+    window.addEventListener('resize', () => {
+      clearTimeout(timer);
+      timer = setTimeout(resizeProto, 500);
+    });
+  }
+
+  function resizeProto() {
+    if (!window.final) return;
+    final.style.height = window.innerHeight + 'px';
+    final.style.setProperty('--ratio', Math.min((window.innerHeight - 74) / 950, window.innerWidth / 500));
   }
 
   function setAllImages() {
