@@ -142,7 +142,7 @@ i {font-style: italic;}
     @include uppercase();
     @include font-size(27);
     color: $primary;
-    padding: 4em;
+    padding: calc(2em + 2vw) 0;
     text-align: center;
     font-weight: 500;
   }
@@ -164,7 +164,7 @@ i {font-style: italic;}
     text-align: left;
     color: $grey-main;
     position: relative;
-    margin-top: 6em;
+    margin-top: calc(3em + 3vw);
     margin-bottom: 4em;
 
     &::before {
@@ -229,9 +229,9 @@ i {font-style: italic;}
     object-fit: contain;
     margin: auto;
     height: 2.2em;
-    margin-bottom: -4em;
+    margin-bottom: calc(-1em - 3vw);
     position: relative;
-    top: -4em;
+    top: calc(-1em - 3vw);
 
     img {
       height: 100%;
@@ -270,7 +270,7 @@ i {font-style: italic;}
     border-bottom: 1px solid #c8c5c9;;
     position: relative;
     width: 94%;
-    margin-top: 6em;
+    margin-top: calc(3em + 3vw);
   }
 
   .alternate-bg {
@@ -679,6 +679,15 @@ i {font-style: italic;}
 
     > * {
       margin: 1em 2vw;
+
+      &:first-child {
+        transform: rotate(-9deg) translateX(2vw) scale(1.01);
+        z-index: 2;
+      }
+
+      &:last-child {
+        transform: rotate(3deg) translateX(-2vw);
+      }
     }
   }
 
@@ -851,8 +860,29 @@ i {font-style: italic;}
 
   .project-content {
     h1 {
-      @include font-size(16);
+      @include font-size(21);
     }
+
+    h3 {
+      @include font-size(17);
+    }
+
+    h4 {
+      padding-left: 0 !important;
+      width: auto;
+      text-align: left;
+    }
+
+    h3 sub, h4 sub {
+      top: 0.5em;
+      margin-bottom: 0.5em;
+      left: 0;
+      max-width: none;
+      width: auto;
+      margin-left: 0 !important;
+      font-family: AvenirNext;
+    }
+
 
     .columns {
       flex-direction: column;
@@ -917,19 +947,6 @@ i {font-style: italic;}
       }
     }
 
-    h4 {
-      padding-left: 0 !important;
-    }
-
-    h3 sub, h4 sub {
-      top: 0.5em;
-      margin-bottom: 0.5em;
-      left: 0;
-      max-width: none;
-      margin-left: 0 !important;
-      font-family: AvenirNext;
-    }
-
     .grey-cards {
       flex-direction: column;
 
@@ -988,8 +1005,8 @@ i {font-style: italic;}
     }
 
     .framed {
-      height: 42vw;
-      margin: 1em 2em;
+      height: 42vw !important;
+      margin: 1em 0;
     }
 
     .flow {
@@ -1010,6 +1027,15 @@ i {font-style: italic;}
     .wrap-5 > * {
       width: calc(50% - 2vw);
       flex: unset;
+    }
+
+    .photos2 {
+      margin-top: -3em;
+
+      > *:first-child {
+        transform: rotate(-9deg) translateX(2vw) translateY(3em) scale(1.01);
+        z-index: 2;
+      }
     }
 
     .directed-tiles {
