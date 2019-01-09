@@ -1,5 +1,7 @@
+/** This code is ugly, don't reproduce at home without adult surpervision. */
+
 (function() {
-  console.log("%cWelcome to my Portfolio :)", "color: orange");
+  console.log("%cWelcome to my Portfolio :)", "color: #ec7357");
 
   const transitionLong = 800;
   const trdur = transitionLong/2+2;
@@ -70,9 +72,19 @@
     } catch(e) {
       console.error(e);
     }
-    updateHeader();
+    try {
+      updateHeader();
+    } catch(e) {
+      console.error(e);
+    }
+    try {
+      updateToTop();
+    } catch(e) {
+      console.error(e);
+    }
   }
 
+  /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
   function maybeAddInvisionPrototype() {
     if (!proto || proto.getAttribute('src') || !proto.getAttribute('data-src')) return;
 
@@ -94,6 +106,16 @@
       if (window.sub) {
         sub.style.opacity = Math.max(0, value(ratio, 1, -1));
       }
+    }
+  }
+
+  function updateToTop() {
+    if (!window.totop) return;
+
+    if (scrollable.scrollTop > 1000) {
+      totop.classList.add('show');
+    } else {
+      totop.classList.remove('show');
     }
   }
 

@@ -192,14 +192,14 @@ main {
     }
   }
 
-  &#delta {
+  &.delta {
     background: $p-delta;
     img {
       transform: translateY(10px) rotate(11deg) scale(1.1);
     }
   }
 
-  &#bigsur {
+  &.bigsur {
     background: $p-bigsur;
     img {
       transform: rotate(0deg) scale(0.8);
@@ -269,14 +269,14 @@ main {
       }
     }
 
-    &#delta {
+    &.delta {
       @include shadow($p-delta);
       img {
         transform: translateY(10px) rotate(8deg) scale(1.18);
       }
     }
 
-    &#bigsur {
+    &.bigsur {
       @include shadow($p-bigsur);
       img {
         transform: rotate(1deg) scale(0.9);
@@ -333,6 +333,58 @@ footer {
     margin-bottom: 60px;
     color: #555;
     font-size: 20px;
+  }
+}
+
+#totop {
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    transition: transform 150ms, box-shadow 150ms, opacity 1000ms;
+  }
+
+  cursor: pointer;
+  position: absolute;
+  bottom: 2em;
+  right: calc(2em + 1vw);
+
+  font-size: 0.5em;
+  width: 5em;
+  height: 5em;
+  background: #ffffffe0;
+  border-radius: 100%;
+  overflow: hidden;
+
+  &::before {
+    content: 'TOP';
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    color: $secondary;
+    font-size: 1.7em;
+    width: 100%;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0em;
+    left: -0.5em;
+    border: 3em solid transparent;
+    border-bottom-color: $secondary;
+    border-bottom-width: 2em;
+    opacity: 0.7;
+  }
+
+  transform: scale(1);
+  transition: transform 150ms, box-shadow 150ms, opacity 150ms;
+  box-shadow: 0 2px 7px 0px #badbe8;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px 2px #badbe8;
   }
 }
 
