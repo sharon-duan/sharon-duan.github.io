@@ -991,6 +991,11 @@ i {font-style: italic;}
       margin-top: 0;
       margin-bottom: 0;
     }
+
+    blockquote {
+      margin: 0 auto;
+      padding: 3em 0;
+    }
   }
 
   .protoquote {
@@ -999,15 +1004,6 @@ i {font-style: italic;}
     blockquote {
       margin: 0 auto;
       padding: 3em 0 4em 0;
-    }
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-      color: white;
-      &::before {
-        background: white !important;
-      }
     }
   }
 
@@ -1021,7 +1017,17 @@ i {font-style: italic;}
     position: relative;
     height: calc(var(--ifh) * var(--ratio) + var(--pad-top) + var(--pad-bottom));
     padding-bottom: 3em;
+    padding-top: 7em;
     box-sizing: initial;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: white;
+      &::before {
+        background: white !important;
+      }
+    }
 
     iframe {
       position: absolute;
