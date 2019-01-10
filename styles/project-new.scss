@@ -173,7 +173,7 @@ i {font-style: italic;}
       height: 3px;
       background: #ec7357;
       position: absolute;
-      top: -10px;
+      top: -17px;
       left: 0;
       border-radius: 10px;
     }
@@ -379,7 +379,15 @@ i {font-style: italic;}
     }
   }
 
-  .wrap-6, .wrap-5 {
+  .pics6 {
+    display: flex;
+    > * {
+      flex: 1;
+      margin: 0 1vw;
+    }
+  }
+
+  .wrap-5 {
     flex-wrap: wrap;
     display: flex;
     > * {
@@ -490,6 +498,14 @@ i {font-style: italic;}
 
       .grey-card {
         margin: 0 1vw;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -681,7 +697,7 @@ i {font-style: italic;}
       display: inline-block;
       padding: 1vw 0vw;
       text-align: center;
-      font-size: 1vw;
+      font-size: 0.8vw;
     }
   }
 
@@ -867,6 +883,10 @@ i {font-style: italic;}
     &::before {
       background: white;
     }
+
+    sub {
+      max-width: 45vw;
+    }
   }
 }
 
@@ -876,7 +896,7 @@ i {font-style: italic;}
   }
 
   .project-content {
-    .wrap-6 > * {
+    .pics6 > * {
       width: calc(25% - 2vw);
       flex: unset;
     }
@@ -1083,7 +1103,7 @@ i {font-style: italic;}
       }
     }
 
-    .wrap-6 > * {
+    .pics6 > * {
       width: calc(33% - 2vw);
       flex: unset;
     }
