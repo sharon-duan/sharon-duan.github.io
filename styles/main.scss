@@ -209,7 +209,7 @@ main {
   &.cooks {
     background: $p-cooks;
     img {
-      transform: rotate(0deg) scale(1.0);
+      transform: rotate(-2deg) scale(1.0);
     }
   }
 
@@ -306,7 +306,7 @@ main {
     &.cooks {
       @include shadow($p-cooks);
       img {
-        transform: rotate(2deg) scale(1.1);
+        transform: rotate(1deg) scale(1.1);
       }
     }
 
