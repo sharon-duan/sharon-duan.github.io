@@ -36,10 +36,12 @@
     document.querySelectorAll('.tile').forEach(tile => {
       tile.addEventListener('click', () => {
         document.body.classList.add('project');
-        header.classList.add('reduced');
-        header.classList.add('animated');
+        if (['uncommon'].indexOf(tile.getAttribute('id')) !== -1) {
+          header.classList.add('reduced');
+          header.classList.add('animated');
+        }
         setTimeout(() => {
-          if (['bigsur', 'uncommon'].indexOf(tile.getAttribute('id')) === -1) {
+          if (['uncommon'].indexOf(tile.getAttribute('id')) === -1) {
             location.href = '/';
             return;
           }
@@ -86,10 +88,10 @@
 
   /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
   function maybeAddInvisionPrototype() {
-    if (!proto || proto.getAttribute('src') || !proto.getAttribute('data-src')) return;
+    if (!window.protoframe || !window.proto || protoframe.getAttribute('src') || !protoframe.getAttribute('data-src')) return;
 
-    if (scrollable.scrollTop / final.offsetTop > 0.6) {
-      proto.setAttribute('src', proto.getAttribute('data-src'));
+    if (scrollable.scrollTop / proto.offsetTop > 0.6) {
+      protoframe.setAttribute('src', protoframe.getAttribute('data-src'));
     }
   }
 
@@ -153,9 +155,9 @@
   }
 
   function resizeProto() {
-    if (!window.final) return;
-    final.style.height = window.innerHeight + 'px';
-    final.style.setProperty('--ratio', Math.min((window.innerHeight - 74) / 950, window.innerWidth / 500));
+    if (!window.proto) return;
+    proto.style.height = window.innerHeight + 'px';
+    proto.style.setProperty('--ratio', Math.min((window.innerHeight - 74) / 950, window.innerWidth / 500));
   }
 
   function setAllImages() {

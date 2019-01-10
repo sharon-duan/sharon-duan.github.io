@@ -1,8 +1,9 @@
 @import 'fonts.scss';
 
 @mixin uppercase() {
-  font-family: Raleway;
+  font-family: Raleway, AvenirNext, Helvetica, Arial;
   font-weight: 400;
+  letter-spacing: 0.84px;
   text-transform: uppercase;
 }
 
@@ -30,9 +31,12 @@ $secondary-light: #f0f6f9;
 $p-uncommon: #cf87f9;
 $p-delta: #dfb8a5;
 $p-bigsur: #96d0bc;
+$p-cooks: #CFB796;
+$p-phlint: #92C5D4;
 
 $tile-margin: 1vw;
 
 * {
   box-sizing: border-box;
+  letter-spacing: 0.72px;
 }

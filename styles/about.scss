@@ -11,8 +11,8 @@ main {
     height: 24vw;
     border-radius: 100%;
     margin: 6vw 10vw 0 13vw;
-    padding: 1em;
-    border: 1px solid $primary;
+    padding: 12px;
+    border: 2px solid $primary;
   }
 
   section {
@@ -28,26 +28,41 @@ main {
       display: inline-block;
       font-weight: 500;
       margin-bottom: 1.6em;
+      @include font-size(16);
+      letter-spacing: 0.72px;
     }
 
     button {
-      border: 1px solid $primary;
-      padding: 1em;
-      border: 1px solid #ec7357;
-      padding: 1em;
-      background: white;
+      @include font-size(13);
+      padding: 5px 9px;
+      background: $primary;
+      border: 0;
+      color: white;
       cursor: pointer;
       position: absolute;
       right: 0;
-      top: -12px;
+      top: -0.3em;
+
+      &:hover {
+        background: lighten($primary, 5%);
+      }
+
+      a {color: inherit;}
     }
   }
 
   p {
     padding-bottom: 1em;
 
+    // &:nth-of-type(odd) {
+    //   position: relative;
+    //   left: 5em;
+    // }
+
     &::first-letter {
       color: $primary;
+      font-weight: 600;
+      @include font-size(20);
     }
   }
 }

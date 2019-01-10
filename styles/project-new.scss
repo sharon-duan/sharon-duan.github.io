@@ -1,5 +1,7 @@
 @import 'common.scss';
 
+$maxwidth: 1260px;
+
 main {
   padding: 0;
   padding-top: 62px;
@@ -35,28 +37,40 @@ main {
   }
 }
 
+.cooks {
+  #banner {
+    background: $p-cooks;
+  }
+}
+
+.phlint {
+  #banner {
+    background: $p-phlint;
+  }
+}
+
 #banner {
   color: white;
-  height: 380px;
+  height: 410px;
   display: flex;
 
   #banner-text {
-    width: 60%;
+    width: 50%;
     padding: 5em 4vw 5em 9vw;
+    letter-spacing: 0.8px;
 
     h1 {
       font-size: 2.5em;
       color: inherit;
       padding: 0;
-      padding-bottom: 1.2em;
+      padding-bottom: 1.5em;
       text-align: left;
       letter-spacing: 1.5px;
     }
 
     p {
       font-size: 1.25em;
-      padding-bottom: 2.2em;
-      letter-spacing: 0.8px;
+      padding-bottom: 3em;
     }
 
     button {
@@ -64,10 +78,11 @@ main {
       border: 1px solid white;
       color: white;
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 11px 18px;
       font-size: 1.25em;
       margin-bottom: 2em;
       cursor: pointer;
+      letter-spacing: inherit;
     }
 
   }
@@ -75,6 +90,7 @@ main {
   #banner-img {
     flex: 1;
     display: flex;
+    margin-right: 1em;
 
     img {
       width: 50vw;
@@ -140,11 +156,16 @@ i {font-style: italic;}
 
   h1 {
     @include uppercase();
-    @include font-size(27);
+    @include font-size(26);
     color: $primary;
     padding: calc(2em + 2vw) 0;
     text-align: center;
     font-weight: 500;
+    letter-spacing: 1.04px;
+
+    &.spaced {
+      word-spacing: 8px;
+    }
   }
 
   h2 {
@@ -165,7 +186,7 @@ i {font-style: italic;}
     color: $grey-main;
     position: relative;
     margin-top: calc(3em + 3vw);
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 
     &::before {
       content: " ";
@@ -188,7 +209,6 @@ i {font-style: italic;}
     font-weight: 500;
     padding-top: 1em;
     padding-bottom: 2em;
-    width: var(--h3-right-end);
 
     sub {
       @include font-size(15);
@@ -207,9 +227,10 @@ i {font-style: italic;}
     font-weight: normal;
     position: relative;
     display: block;
-    top: -22px;
-    max-width: 47vw;
+    top: -26px;
+    max-width: 50vw;
     left: calc(6vw + var(--h3-right-end));
+    font-family: AvenirNext, Helvetica, Arial;
     padding: 0;
   }
 
@@ -217,30 +238,53 @@ i {font-style: italic;}
     margin-top: 0;
   }
 
+  .scene {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    overflow: hidden;
+    height: 56vw;
+    max-height: 92vh;
+    margin: 5em 0 3em 0;
+
+    img {
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
   blockquote {
     @include font-size(25);
     max-width: 600px;
     line-height: 1.5em;
     text-align: center;
-    margin: calc(3em + 3vw) auto 2em auto;
+    margin: calc(1em + 3vw) auto 2em auto;
 
     q {
       display: block;
+      font-family: Raleway, AvenirNext, Helvetica, Arial;
+      @include font-size(20);
+      letter-spacing: 1.66px;
+      line-height: 35px;
+      font-weight: 500;
+      padding: 0 1em;
     }
 
     small {
       display: block;
       font-weight: 400;
-      @include font-size(14);
+      @include font-size(17);
       text-align: right;
-      padding-top: 5px;
+      margin-top: 10px;
       position: relative;
+      font-family: Raleway, AvenirNext, Helvetica, Arial;
+      letter-spacing: 1.13px;
 
       &::before {
         content: '';
         position: absolute;
-        top: 23px;
-        right: 234px;
+        top: 17px;
+        right: 18.1em;
         width: 20px;
         height: 1px;
         background: currentColor;
@@ -250,21 +294,19 @@ i {font-style: italic;}
     .quote-line {
       border: 0;
       position: relative;
-      height: 80px;
+      height: 68px;
 
-      span {
-        font-size: 4.5em;
-        line-height: 0.7em;
-        font-family: cursive;
+      img {
         position: relative;
-        left: -0.07em;
+        pointer-events: none;
+        width: 1.1em;
       }
 
       &::before, &::after {
         content: '';
         background: currentColor;
-        height: 2px;
-        width: 40%;
+        height: 1px;
+        width: 38%;
         position: absolute;
         top: 20px;
       }
@@ -281,7 +323,7 @@ i {font-style: italic;}
 
   section {
     padding: 0;
-    max-width: 1200px;
+    max-width: $maxwidth;
     margin: auto;
   }
 
@@ -289,10 +331,10 @@ i {font-style: italic;}
     width: auto;
     object-fit: contain;
     margin: auto;
-    height: 2.2em;
+    height: 2.7em;
     margin-bottom: calc(-1em - 3vw);
     position: relative;
-    top: calc(-1em - 3vw);
+    top: calc(-0.5em - 3vw);
 
     img {
       height: 100%;
@@ -300,6 +342,30 @@ i {font-style: italic;}
       object-fit: contain;
       margin: auto;
       display: block;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      width: 9em;
+      height: 5em;
+      background-size: 9em;
+      right: 4.7vw;
+      top: -5em;
+    }
+
+    &.flow-research::before {
+      background-image: url(../projects/uncommon/images/smalldiamond-research.png);
+    }
+    &.flow-insights::before {
+      background-image: url(../projects/uncommon/images/smalldiamond-insights.png);
+    }
+    &.flow-ideate::before {
+      background-image: url(../projects/uncommon/images/smalldiamond-ideate.png);
+    }
+    &.flow-design::before {
+      background-image: url(../projects/uncommon/images/smalldiamond-design.png);
     }
   }
 
@@ -317,11 +383,11 @@ i {font-style: italic;}
   }
 
   .also-note {
-    padding: 3em 12vw;
+    padding: 4em 22vw 0em 8vw;
   }
 
   .big-pic {
-    padding: 0 10vw 2em 10vw;
+    padding: 0 10vw 2em 9vw;
     max-width: 80em;
     margin: auto;
   }
@@ -337,6 +403,36 @@ i {font-style: italic;}
   .alternate-bg {
     background: $secondary-light;
     padding: 6em 0;
+
+    .columns {
+      max-width: $maxwidth;
+      margin: auto;
+
+      > * {
+        margin: 0 1.8vw;
+
+        &.important-p {
+          h4 {
+            @include font-size(19);
+            font-weight: 800;
+            padding: 0 0 1em 0;
+            width: auto;
+          }
+
+          div {
+            font-weight: 500;
+          }
+        }
+
+        &:first-child {
+          margin-left: 5vw;
+        }
+
+        &:last-child {
+          margin-right: 5vw;
+        }
+      }
+    }
   }
 
   .overview-text {
@@ -390,14 +486,17 @@ i {font-style: italic;}
   .wrap-5 {
     flex-wrap: wrap;
     display: flex;
+
     > * {
       flex: 1;
-      margin: 0 1vw;
+      margin: 0 2vw;
     }
 
     ul {
       margin-top: 3em;
       margin-bottom: 3em;
+      margin-left: 0.2em;
+
       li {
         &::before {
           color: $primary !important;
@@ -424,7 +523,7 @@ i {font-style: italic;}
     display: flex;
 
     div:first-of-type {
-      padding-right: 2em;
+      padding-right: 4em;
       padding-top: 4vw;
     }
   }
@@ -443,10 +542,10 @@ i {font-style: italic;}
   }
 
   ul {
-    margin-left: 24px;
+    margin-left: 30px;
 
     li {
-      padding-bottom: 1em;
+      padding-bottom: 0.7em;
     }
   }
 
@@ -458,17 +557,17 @@ i {font-style: italic;}
         content: '';
         background-image: url(../projects/common/arrow-secondary.png);
         background-repeat: no-repeat;
-        background-size: 15px;
+        background-size: 22px;
         position: absolute;
-        top: 7px;
-        left: -24px;
-        width: 15px;
-        height: 15px;
+        top: 5px;
+        left: -32px;
+        width: 22px;
+        height: 20px;
       }
     }
 
     ul {
-      margin-left: 1.2em;
+      margin-left: 0.9em;
     }
   }
 
@@ -518,18 +617,18 @@ i {font-style: italic;}
     overflow: hidden;
 
     > * {
-      padding: 1.5em;
+      padding: 1.5em 1.9em;
     }
 
     h4 {
-      padding: 0.6em;
+      padding: 0.8em;
       text-align: center;
       font-weight: 400;
       background: $secondary;
       color: white;
       margin: 0;
       width: 100%;
-      font-size: inherit;
+      @include font-size(18);
 
       + ul {
         padding-top: 1em;
@@ -537,7 +636,7 @@ i {font-style: italic;}
     }
 
     p {
-      padding: 2em 1em;
+      padding: 2em;
     }
   }
 
@@ -545,9 +644,7 @@ i {font-style: italic;}
     background: white;
     border-radius: 2px;
     overflow: hidden;
-    width: 24vw;
-    min-width: 19em;
-    margin: auto;
+    flex: 1.2;
 
     > * {
       padding: 1em;
@@ -574,22 +671,7 @@ i {font-style: italic;}
     font-weight: 500;
     @include font-size(19);
     text-align: center;
-    padding-top: 3em;
-  }
-
-  .important-p {
-    display: flex;
-    padding: 0 3vw;
-
-    h4 {
-      @include font-size(19);
-      font-weight: 600;
-      padding-right: 1em;
-    }
-
-    div {
-      font-weight: 500;
-    }
+    padding-top: 6em;
   }
 
   .orange-card {
@@ -620,14 +702,13 @@ i {font-style: italic;}
   .persona {
     position: relative;
     margin: auto;
-    margin-bottom: 4em;
+    margin-bottom: 0;
 
     h4 {
-      position: absolute;
       display: inline-block;
-      text-align: right;
       width: 100%;
       left: calc(-100% - 1em);
+      padding: 1em 0;
     }
 
     div {
@@ -642,7 +723,6 @@ i {font-style: italic;}
 
     &.persona-main {
       width: 40vw;
-      padding-bottom: 1em;
     }
 
     &.persona-other {
@@ -725,12 +805,11 @@ i {font-style: italic;}
     display: flex;
   }
 
-  .pics3 {
-    padding-top: 1em;
+  .pics3, .digital3 {
     padding-bottom: 2em;
 
     > * {
-      margin: 1em 1vw;
+      margin: 0 1vw;
       width: 100%;
       height: 15vw;
 
@@ -746,6 +825,12 @@ i {font-style: italic;}
       div:last-of-type {
         transform: rotate(2deg);
       }
+    }
+  }
+
+  .digital3 {
+    > * {
+      height: 26vw;
     }
   }
 
@@ -827,7 +912,79 @@ i {font-style: italic;}
     }
   }
 
+  .add-border-light {
+    img {
+      border: 1px solid #ddd;
+    }
+  }
+
   #final {
+    background: $secondary-light;
+    padding: 4em 0px;
+
+    .final-row {
+      display: flex;
+      margin: 4em 1vw;
+
+      &.final-pics3, &.final-pics2 {
+        .fpics {
+          flex: 3;
+          display: flex;
+          max-height: 39em;
+          margin: auto;
+
+          div {
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+
+        .ftext {
+          flex: 1.3;
+          padding: 0 4vw;
+          margin: auto;
+
+          .ftitle {
+            @include font-size(19);
+            color: $secondary;
+            padding-bottom: 36px;
+            font-weight: 700;
+            letter-spacing: 0.84px;
+          }
+
+          .fblabla {
+            padding-bottom: 6vw;
+          }
+        }
+      }
+
+      &.final-pics2 {
+        .fpics {
+          flex: 1.5;
+        }
+
+        .ftext + .fpics {
+          margin-left: 6vw;
+        }
+
+        .fpics + .ftext {
+          margin-left: 6vw;
+        }
+      }
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  #proto {
     --ratio: 0.7;
     --ifw: 442px;
     --ifh: 935px;
@@ -836,6 +993,8 @@ i {font-style: italic;}
     background: $secondary;
     position: relative;
     height: calc(var(--ifh) * var(--ratio) + var(--pad-top) + var(--pad-bottom));
+    padding-bottom: 3em;
+    box-sizing: initial;
 
     iframe {
       position: absolute;
@@ -851,9 +1010,12 @@ i {font-style: italic;}
     }
 
     h3 {
+      margin-top: 0;
+      margin-bottom: 0;
       top: 106px;
+      color: white;
       &::before {
-        color: #495159 !important;
+        background: white !important;
       }
     }
   }
@@ -886,6 +1048,7 @@ i {font-style: italic;}
 
     sub {
       max-width: 45vw;
+      left: calc(10vw + var(--h3-right-end));
     }
   }
 }
@@ -897,11 +1060,11 @@ i {font-style: italic;}
 
   .project-content {
     .pics6 > * {
-      width: calc(25% - 2vw);
+      width: calc(25% - 4vw);
       flex: unset;
     }
     .wrap-5 > * {
-      width: calc(33% - 2vw);
+      width: calc(33% - 4vw);
       flex: unset;
     }
   }
@@ -922,20 +1085,22 @@ i {font-style: italic;}
       padding: 1.5em 1em 0 1em;
 
       h1 {
-        @include font-size(26);
+        @include font-size(28);
         text-align: center;
       }
 
       p {
-        @include font-size(15);
+        @include font-size(16);
       }
 
       button {
-        @include font-size(13);
+        @include font-size(14);
       }
     }
 
     #banner-img {
+      margin: 0;
+
       img {
         width: 90%;
       }
@@ -964,9 +1129,11 @@ i {font-style: italic;}
       max-width: none;
       width: auto;
       margin-left: 0 !important;
-      font-family: AvenirNext;
     }
 
+    img {
+      pointer-events: none;
+    }
 
     .columns {
       flex-direction: column;
@@ -1022,7 +1189,7 @@ i {font-style: italic;}
       padding: 0 8vw;
     }
 
-    .pics3 {
+    .pics3, .digital3 {
       > div {
         width: 90%;
         margin: auto;
@@ -1043,8 +1210,16 @@ i {font-style: italic;}
       }
     }
 
-    .important-p {
-      padding-bottom: 2em;
+    .alternate-bg {
+      padding: 3em 0;
+
+      .columns > * {
+        margin: 0px 5vw 3em 5vw !important;
+      }
+
+      .strong-quote {
+        padding-top: 1em;
+      }
     }
 
     .persona {
@@ -1052,6 +1227,10 @@ i {font-style: italic;}
       padding-bottom: 1em;
       margin: auto;
       margin-left: 30%;
+
+      h4 {
+        @include font-size(15);
+      }
 
       &.persona-other .persona-group {
         flex-direction: column;
@@ -1104,12 +1283,12 @@ i {font-style: italic;}
     }
 
     .pics6 > * {
-      width: calc(33% - 2vw);
+      width: calc(33% - 4vw);
       flex: unset;
     }
 
     .wrap-5 > * {
-      width: calc(50% - 2vw);
+      width: calc(50% - 4vw);
       flex: unset;
     }
 
@@ -1141,6 +1320,55 @@ i {font-style: italic;}
         &::before {
           right: 0px;
         }
+      }
+    }
+
+    blockquote {
+      margin-top: 20vw;
+
+      q {
+        @include font-size(15);
+        padding: 0;
+        line-height: 1.7em;
+      }
+
+      .quote-line {
+        height: 45px;
+      }
+
+      small {
+        @include font-size(13);
+
+        &::before {
+          right: 18.6em;
+          width: 13px;
+        }
+      }
+    }
+
+    #final {
+      .final-row {
+        margin-bottom: 7em;
+        flex-direction: column;
+
+        .fpics {
+          margin: auto 5vw !important;
+          margin-bottom: 2em !important;
+        }
+
+        .ftext {
+          margin: auto !important;
+
+          .fblabla {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+
+    #proto {
+      h3 {
+        display: none;
       }
     }
   }

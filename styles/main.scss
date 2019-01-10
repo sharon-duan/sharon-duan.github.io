@@ -9,7 +9,7 @@ html {
 
 body {
   height: 100%;
-  font-family: AvenirNext;
+  font-family: AvenirNext, Helvetica, Arial;
   color: $grey-main;
   display: flex;
   flex-direction: column;
@@ -185,7 +185,7 @@ main {
     flex: 2;
   }
 
-  &#uncommon {
+  &.uncommon {
     background: $p-uncommon;
     img {
       transform: rotate(-24deg) scale(1.2);
@@ -203,6 +203,23 @@ main {
     background: $p-bigsur;
     img {
       transform: rotate(0deg) scale(0.8);
+    }
+  }
+
+  &.cooks {
+    background: $p-cooks;
+    img {
+      transform: rotate(0deg) scale(1.0);
+    }
+  }
+
+  &.phlint {
+    background: $p-phlint;
+    img:first-of-type {
+      transform: rotate(0deg) scale(0.8) translate(-9vh, 0);
+    }
+    img:last-of-type {
+      transform: rotate(0deg) scale(0.7) translate(33vh, 8vh);
     }
   }
 
@@ -234,6 +251,9 @@ main {
       color: $grey-sub;
       text-align: left;
       font-size: 0.685em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     h1 {
@@ -262,10 +282,10 @@ main {
       height: 70px;
     }
 
-    &#uncommon {
+    &.uncommon {
       @include shadow($p-uncommon);
       img {
-        transform: rotate(-18deg) scale(1.28);
+        transform: rotate(-18deg) scale(1.32) translate(1vh, 1vh);
       }
     }
 
@@ -280,6 +300,23 @@ main {
       @include shadow($p-bigsur);
       img {
         transform: rotate(1deg) scale(0.9);
+      }
+    }
+
+    &.cooks {
+      @include shadow($p-cooks);
+      img {
+        transform: rotate(2deg) scale(1.1);
+      }
+    }
+
+    &.phlint {
+      @include shadow($p-phlint);
+      img:first-of-type {
+        transform: rotate(-1deg) scale(0.84) translate(-11vh, 0em);
+      }
+      img:last-of-type {
+        transform: rotate(6deg) scale(0.7) translate(38vh, 1vh);
       }
     }
   }
@@ -348,10 +385,10 @@ footer {
   position: absolute;
   bottom: 2em;
   right: calc(2em + 1vw);
-
   font-size: 0.5em;
   width: 5em;
   height: 5em;
+  border: 1px solid white;
   background: #ffffffe0;
   border-radius: 100%;
   overflow: hidden;
@@ -380,11 +417,10 @@ footer {
 
   transform: scale(1);
   transition: transform 150ms, box-shadow 150ms, opacity 150ms;
-  box-shadow: 0 2px 7px 0px #badbe8;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 3px 10px 2px #badbe8;
+    // transform: scale(1.05);
+    box-shadow: 0 2px 7px 0px #badbe8;
   }
 }
 
@@ -393,8 +429,6 @@ footer {
     font-size: 17px !important;
     padding-top: 14px !important;
     padding-bottom: 14px !important;
-
-    text-align: center;
 
     sub {
       display: none;
@@ -405,6 +439,9 @@ footer {
       padding-right: 0;
       padding-top: 12px;
       white-space: nowrap;
+      position: relative;
+      text-align: center;
+      top: 8px;
 
       a {
         padding: 0 5vw;
@@ -413,7 +450,7 @@ footer {
   }
 
   main {
-    padding-top: 77px !important;
+    padding-top: 88px !important;
   }
 
   .row {
