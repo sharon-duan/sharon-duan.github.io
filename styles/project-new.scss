@@ -189,7 +189,6 @@ i {font-style: italic;}
     padding-top: 1em;
     padding-bottom: 2em;
     width: var(--h3-right-end);
-    text-align: right;
 
     sub {
       @include font-size(15);
@@ -209,8 +208,8 @@ i {font-style: italic;}
     position: relative;
     display: block;
     top: -22px;
-    max-width: 44vw;
-    left: calc(10vw + var(--h3-right-end));
+    max-width: 47vw;
+    left: calc(6vw + var(--h3-right-end));
     padding: 0;
   }
 
@@ -375,8 +374,8 @@ i {font-style: italic;}
     }
 
     h3 sub {
-      max-width: 28vw;
-      left: var(--h3-right-end);
+      max-width: 24vw;
+      left: calc(150px + 2vw);
     }
   }
 
@@ -513,6 +512,8 @@ i {font-style: italic;}
       background: $secondary;
       color: white;
       margin: 0;
+      width: 100%;
+      font-size: inherit;
 
       + ul {
         padding-top: 1em;
@@ -544,6 +545,7 @@ i {font-style: italic;}
       background: $primary;
       color: white;
       margin: 0;
+      width: 100%;
     }
 
     li::before {
