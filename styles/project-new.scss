@@ -1094,10 +1094,6 @@ i {font-style: italic;}
 }
 
 @media screen and (max-width: 600px) {
-  [not-phone] {
-    display: none;
-  }
-
   #banner {
     flex-direction: column;
     height: auto;

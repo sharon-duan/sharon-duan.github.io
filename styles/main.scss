@@ -38,6 +38,10 @@ body {
   }
 }
 
+[only-phone] {
+  display: none;
+}
+
 #sharon {
   cursor: pointer;
 }
@@ -324,7 +328,7 @@ main {
 
 footer {
   margin-top: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   background: #eee;
   display: flex;
   flex-direction: column;
@@ -368,9 +372,9 @@ footer {
   }
 
   sub {
-    margin-bottom: 60px;
-    color: #555;
-    font-size: 20px;
+    color: #666;
+    padding-top: 4px;
+    font-size: 13px;
   }
 }
 
@@ -426,6 +430,14 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  [not-phone] {
+    display: none !important;
+  }
+
+  [only-phone] {
+    display: initial;
+  }
+
   header, header.reduced {
     font-size: 17px !important;
     padding-top: 14px !important;

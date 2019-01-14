@@ -7,12 +7,25 @@ main {
   margin-top: 2em;
 
   img {
-    width: 24vw;
     height: 24vw;
+    width: 24vw;
     border-radius: 100%;
-    margin: 6vw 10vw 0 13vw;
     padding: 12px;
     border: 2px solid $primary;
+  }
+
+  .image-container {
+    width: 24vw;
+    margin: 6vw 10vw 0 13vw;
+  }
+
+  .important {
+    font-weight: 600;
+    text-align: center;
+    padding-top: 3vw;
+    width: 120%;
+    position: relative;
+    left: -10%;
   }
 
   section {
@@ -71,6 +84,11 @@ main {
   main {
     flex-direction: column;
 
+    .image-container {
+      width: auto;
+      margin: auto;
+    }
+
     img {
       height: 38vw;
       width: 38vw;
@@ -81,6 +99,30 @@ main {
     section {
       max-width: none;
       margin: 2em 1em;
+
+      strong {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
+
+    .important {
+      width: auto;
+      left: 0;
+      text-align: left;
+      padding: 0vw 2vw;
+    }
+
+    .resume {
+      position: initial;
+      top: 0;
+      left: 0;
+      margin: auto;
+      display: block;
+      margin-top: -3vw;
+      margin-bottom: 10vw;
     }
   }
 }
