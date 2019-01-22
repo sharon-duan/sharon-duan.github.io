@@ -4,16 +4,14 @@
 $transitionLong: 800ms;
 
 html {
-  height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  height: 100%;
   font-family: AvenirNext, Helvetica, Arial;
   color: $grey-main;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: #ec73574a;
 
@@ -69,6 +67,10 @@ header {
     pointer-events: none;
     box-shadow: 0 !important;
     background-color: rgba(252, 252, 252, 0) !important;
+
+    #progress {
+      display: none;
+    }
   }
 
   &.reduced {
@@ -119,8 +121,6 @@ header {
 
 #scrollable {
   flex: 1;
-  overflow: auto;
-  scroll-behavior: smooth;
   position: relative;
 
   > main#work {
@@ -135,7 +135,6 @@ header {
   &.appears {
     top: 100px;
     opacity: 0;
-    transform: scaleY(1.1);
   }
 
   &.no-hover {
@@ -387,7 +386,7 @@ footer {
   }
 
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   bottom: 2em;
   right: calc(2em + 1vw);
   font-size: 0.5em;

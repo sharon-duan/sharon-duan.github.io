@@ -66,39 +66,47 @@
     }
   }, 100);
 
-  scrollable.addEventListener('scroll', onScroll);
+  document.addEventListener('scroll', onScroll);
 
   function onScroll() {
-    try {
-      maybeAddInvisionPrototype();
-    } catch(e) {
-      console.error(e);
-    }
-    try {
-      updateHeader();
-    } catch(e) {
-      console.error(e);
-    }
-    try {
-      updateToTop();
-    } catch(e) {
-      console.error(e);
-    }
+    const scrollTop = getScrollTop();
+    maybeAddInvisionPrototype(scrollTop);
+    updateHeader(scrollTop);
+    updateToTop(scrollTop);
+    updateProgress(scrollTop);
+    updateSectionsVisibility(scrollTop);
+  }
+
+  function getScrollTop() {
+    return window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
   }
 
   /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
-  function maybeAddInvisionPrototype() {
+  function maybeAddInvisionPrototype(scrollTop) {
     if (!window.protoframe || !window.proto || protoframe.getAttribute('src') || !protoframe.getAttribute('data-src')) return;
 
-    if (scrollable.scrollTop / proto.offsetTop > 0.6) {
+    if (scrollTop / proto.offsetTop > 0.6) {
       protoframe.setAttribute('src', protoframe.getAttribute('data-src'));
     }
   }
 
-  function updateHeader() {
+  function updateSectionsVisibility() {
+    document.querySelectorAll('section').forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      const h = section.offsetHeight;
+
+      if (section.style.visibility === 'hidden' && (top - window.outerHeight <= 0) && (top + h) >= 0) {
+        section.style.visibility = 'visible';
+      } else if (section.style.visibility === 'visible' && (top + h) <= 0) {
+        section.style.visibility = 'hidden';
+      }
+    });
+  }
+
+  function updateHeader(scrollTop) {
     if (!window.header) return;
 
-    const ratio = Math.max(0, Math.min(1, scrollable.scrollTop / 100));
+    const ratio = Math.max(0, Math.min(1, scrollTop / 100));
 
     header.style.boxShadow = `0 0 20px -3px rgba(0, 0, 0, ${value(ratio, 0, 0.15)})`;
 
@@ -111,14 +119,22 @@
     }
   }
 
-  function updateToTop() {
+  function updateToTop(scrollTop) {
     if (!window.totop) return;
 
-    if (scrollable.scrollTop > 1000) {
+    if (scrollTop > 1000) {
       totop.classList.add('show');
     } else {
       totop.classList.remove('show');
     }
+  }
+
+  function updateProgress(scrollTop) {
+    if (!window.progress) return;
+
+    const bar = progress.querySelector('div');
+    const ratio = scrollTop / (document.body.scrollHeight - window.outerHeight);
+    bar.style.width = `${ratio * 100}%`;
   }
 
   function value(ratio, min, max) {
@@ -128,17 +144,20 @@
   init();
 
   function init() {
-    try {
-      updateHeader();
-    } catch(e) {
-      console.error(e);
+    document.querySelectorAll('section').forEach(section => {
+      section.style.visibility = 'hidden';
+    });
+
+    if (document.documentElement.scrollTop > 0) {
+      console.log('weird');
     }
 
-    try {
-      setAllImages();
-    } catch(e) {
-      console.error(e);
-    }
+    setSmoothScroll();
+    onScroll();
+    /* for now we load all images right away
+    setAllImages();
+    setTimeout(setAllImages, transitionLong);
+    */
 
     if (location.hash) {
       if (location.hash === '#contact') {
@@ -164,15 +183,20 @@
     const factor = window.innerWidth >= 1600 ? '3x' : '2x';
 
     const projId = document.querySelector('main').getAttribute('id');
-    document.querySelectorAll('.project-content img').forEach(img => {
-      let src = img.getAttribute('src');
+    document.querySelectorAll('[data-img]').forEach(img => {
+      let src = img.getAttribute('data-img');
+
+      img.setAttribute('src', src);
+      img.removeAttribute('data-img');
+
+      let fullSizeSrc = src;
       const match = src.match(/([^@]+)@[\d\.]+x/);
       if (match) {
-        src = match[1] + '@3x.png';
+        fullSizeSrc = match[1] + '@3x.png';
       }
 
       img.onclick = () => {
-        window.open(src, '_blank');
+        window.open(fullSizeSrc, '_blank');
       };
     });
   }
@@ -191,5 +215,17 @@
     } catch(e) {
       console.error(e);
     }
+  }
+
+  function setSmoothScroll() {
+    // Chrome and the like do this natively
+    if ('scrollBehavior' in document.documentElement.style) return;
+    document.querySelectorAll('a[href*="#"]').forEach((a) => {
+      const target = document.getElementById(a.getAttribute('href').substring(1));
+      a.removeAttribute('href');
+      a.addEventListener('click', () => {
+        document.body.scroll({top: target.getBoundingClientRect().top, behavior: 'smooth'});
+      });
+    });
   }
 })();

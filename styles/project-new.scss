@@ -4,7 +4,7 @@ $maxwidth: 1260px;
 
 main {
   padding: 0;
-  padding-top: 62px;
+  padding-top: 61px;
   max-width: none;
   overflow: hidden;
 }
@@ -795,8 +795,13 @@ i {font-style: italic;}
     height: auto;
     cursor: pointer;
     transform: scale(1);
-    transition: transform 200ms;
+    opacity: 1;
+    transition: transform 200ms, opacity 100ms;
     object-fit: contain;
+
+    &[data-img] {
+      opacity: 0;
+    }
 
     &:hover {
       transform: scale(1.05);
@@ -1073,6 +1078,25 @@ i {font-style: italic;}
       max-width: 45vw;
       left: calc(10vw + var(--h3-right-end));
     }
+  }
+}
+
+#progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: none;
+
+  div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: $primary;
+    opacity: 0.6;
   }
 }
 
