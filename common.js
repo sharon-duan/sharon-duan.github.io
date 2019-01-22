@@ -154,10 +154,8 @@
 
     setSmoothScroll();
     onScroll();
-    /* for now we load all images right away
+    setTimeout(onScroll, trdur);
     setAllImages();
-    setTimeout(setAllImages, transitionLong);
-    */
 
     if (location.hash) {
       if (location.hash === '#contact') {
@@ -183,11 +181,16 @@
     const factor = window.innerWidth >= 1600 ? '3x' : '2x';
 
     const projId = document.querySelector('main').getAttribute('id');
-    document.querySelectorAll('[data-img]').forEach(img => {
-      let src = img.getAttribute('data-img');
+    document.querySelectorAll('.project-content img').forEach(img => {
+      let src;
 
-      img.setAttribute('src', src);
-      img.removeAttribute('data-img');
+      if (img.getAttribute('data-img')) {
+        src = img.getAttribute('data-img');
+        img.setAttribute('src', src);
+        img.removeAttribute('data-img');
+      } else {
+        src = img.getAttribute('src');
+      }
 
       let fullSizeSrc = src;
       const match = src.match(/([^@]+)@[\d\.]+x/);
@@ -195,6 +198,7 @@
         fullSizeSrc = match[1] + '@3x.png';
       }
 
+      console.log('bound');
       img.onclick = () => {
         window.open(fullSizeSrc, '_blank');
       };
