@@ -1415,4 +1415,10 @@ i {font-style: italic;}
       }
     }
   }
+
+  #progress {
+    bottom: -2px;
+    height: 2px;
+    div {height: 2px;}
+  }
 }
