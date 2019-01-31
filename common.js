@@ -35,16 +35,27 @@
 
     document.querySelectorAll('.tile').forEach(tile => {
       tile.addEventListener('click', () => {
-        document.body.classList.add('project');
-        if (['uncommon'].indexOf(tile.getAttribute('id')) !== -1) {
-          header.classList.add('reduced');
-          header.classList.add('animated');
+        if (tile.classList.contains('comingsoon')) {
+          tile.style.pointerEvents = 'none';
+          const comingSoon = document.createElement('div');
+          comingSoon.classList.add('comingsoon-overlay');
+          comingSoon.innerHTML = `
+              <div>
+                <h1>COMING SOON</h1>
+                <img alt="Tea pot" src="images/teapot.png">
+                <img alt="Tea cup" src="images/teacup.png">
+              </div>
+          `;
+          tile.appendChild(comingSoon);
+          setTimeout(() => comingSoon.style.opacity = '1');
+          return;
         }
+
+        document.body.classList.add('project');
+        header.classList.add('reduced');
+        header.classList.add('animated');
+
         setTimeout(() => {
-          if (['uncommon'].indexOf(tile.getAttribute('id')) === -1) {
-            location.href = '/';
-            return;
-          }
           location.href = '/projects/' + tile.getAttribute('id');
         }, trdur);
       });
