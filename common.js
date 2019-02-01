@@ -36,7 +36,8 @@
     document.querySelectorAll('.tile').forEach(tile => {
       tile.addEventListener('click', () => {
         if (tile.classList.contains('comingsoon')) {
-          tile.style.pointerEvents = 'none';
+          if (tile._overlayed) return;
+          tile._overlayed = true;
           const comingSoon = document.createElement('div');
           comingSoon.classList.add('comingsoon-overlay');
           comingSoon.innerHTML = `
@@ -47,8 +48,21 @@
               </div>
           `;
           tile.appendChild(comingSoon);
-          setTimeout(() => comingSoon.style.opacity = '1');
+          setTimeout(() => comingSoon.style.opacity = '1', 1);
+          clearTimeout(tile._t);
+          tile._t = setTimeout(del, 4000);
+          tile.addEventListener('mouseleave', del);
           return;
+
+          function del() {
+            clearTimeout(tile._t);
+            tile.removeEventListener('mouseleave', del);
+            if (!tile._overlayed) return;
+            tile._overlayed = false;
+            comingSoon.style.opacity = '0';
+            tile.style.pointerEvents = 'unset';
+            setTimeout(() => comingSoon.remove(), 100);
+          }
         }
 
         document.body.classList.add('project');
