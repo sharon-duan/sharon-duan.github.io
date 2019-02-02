@@ -42,7 +42,7 @@
           comingSoon.classList.add('comingsoon-overlay');
           comingSoon.innerHTML = `
               <div>
-                <h1>COMING SOON</h1>
+                <h1>COMING SOON...</h1>
                 <img alt="Tea pot" src="images/teapot.png">
                 <img alt="Tea cup" src="images/teacup.png">
               </div>

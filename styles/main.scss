@@ -1,5 +1,6 @@
 @import 'reset.scss';
 @import 'common.scss';
+@import 'fonts.scss';
 
 $transitionLong: 800ms;
 
@@ -282,6 +283,7 @@ main {
     background: rgba(255, 255, 255, 0.8);
     opacity: 0;
     transition: opacity 150ms;
+    font-family: Raleway, AvenirNext, Helvetica, Arial;
 
     > div {
       width: 22vw;
@@ -293,7 +295,7 @@ main {
     h1 {
       font-size: 2vw;
       text-align: center;
-      font-weight: 500;
+      font-weight: 400;
       padding-top: 33%;
     }
 
