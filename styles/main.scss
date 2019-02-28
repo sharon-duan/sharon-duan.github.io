@@ -51,26 +51,29 @@ header {
   padding: 40px (5vw + $tile-margin);
   font-size: 30px;
   background: rgba(255, 255, 255, 0.92);
-  transition: top $transitionLong, opacity $transitionLong;
   z-index: 100;
   backdrop-filter: blur(2px);
   top: 0;
 
-  &.reduced, &.animated {
-    transition:
-      padding $transitionLong*0.375,
-      font-size $transitionLong*0.375,
-      box-shadow $transitionLong*0.375,
-      background-color $transitionLong*0.1;
-  }
 
   &.animated {
     pointer-events: none;
     box-shadow: 0 !important;
     background-color: rgba(252, 252, 252, 0) !important;
 
+    transition:
+        padding-top $transitionLong*0.375,
+        padding-bottom $transitionLong*0.375,
+        font-size $transitionLong*0.375,
+        box-shadow $transitionLong*0.375,
+        background-color $transitionLong*0.1;
+
     #progress {
       display: none;
+    }
+
+    sub {
+      transition: opacity $transitionLong*0.375;
     }
   }
 
@@ -80,7 +83,6 @@ header {
     padding-bottom: 20px !important;
 
     sub {
-      transition: opacity $transitionLong*0.375;
       opacity: 0 !important;
     }
   }
@@ -128,10 +130,10 @@ header {
     padding-top: calc(20px + 112px);
   }
 
-  transition: opacity $transitionLong*0.75, top $transitionLong, transform $transitionLong*0.9;
   top: 0;
   opacity: 1;
   transform: scaleY(1);
+  transition: opacity $transitionLong*0.75, top $transitionLong, transform $transitionLong*0.9;
 
   &.appears {
     top: 100px;

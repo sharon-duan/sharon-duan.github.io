@@ -8,7 +8,6 @@
 
   setTimeout(() => {
     let active = header.querySelector('a.active');
-    header.classList.remove('appears');
     header.querySelectorAll('a').forEach((a) => {
       a.onclick = () => {
         active && active.classList.remove('active');
@@ -103,7 +102,7 @@
   }
 
   function getScrollTop() {
-    return window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+    return document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
   }
 
   /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
