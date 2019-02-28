@@ -166,6 +166,7 @@ i {font-style: italic;}
 
 .project-content {
   @include font-size(15);
+  line-height: 1.33;
 
   --h3-right-end: 275px;
 
@@ -200,7 +201,7 @@ i {font-style: italic;}
     text-align: left;
     color: $grey-main;
     position: relative;
-    margin-top: calc(3em + 3vw);
+    margin-top: calc(4em + 4vw);
     margin-bottom: 2em;
 
     &::before {
@@ -405,6 +406,19 @@ i {font-style: italic;}
     margin-top: calc(3em + 3vw);
   }
 
+  [data-ab="A"]::before, [data-ab="B"]::before {
+    content: "A";
+    position: absolute;
+    top: 0px;
+    left: 7px;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  [data-ab="B"]::before {
+    content: "B";
+  }
+
   .alternate-bg {
     background: $secondary-light;
     padding: 6em 0;
@@ -498,7 +512,7 @@ i {font-style: italic;}
     }
 
     ul {
-      margin-top: 3em;
+      margin-top: 2em;
       margin-bottom: 3em;
       margin-left: 0.2em;
 
@@ -528,6 +542,7 @@ i {font-style: italic;}
         width: 20px;
         position: absolute;
         left: -7px;
+        top: -2px;
       }
     }
   }
@@ -572,7 +587,7 @@ i {font-style: italic;}
     margin-left: 30px;
 
     li {
-      padding-bottom: 0.7em;
+      padding-bottom: 1em;
     }
   }
 
@@ -638,6 +653,10 @@ i {font-style: italic;}
     &.real-height .grey-card {
       height: 100%;
     }
+
+    &.squeezed .grey-card {
+      margin: 0 1vw;
+    }
   }
 
   .grey-card {
@@ -676,6 +695,7 @@ i {font-style: italic;}
     border-radius: 2px;
     overflow: hidden;
     flex: 1.2;
+    height: 100%;
 
     > * {
       padding: 1em;
@@ -818,7 +838,7 @@ i {font-style: italic;}
     cursor: pointer;
     transform: scale(1);
     opacity: 1;
-    transition: transform 200ms, opacity 100ms;
+    transition: transform 150ms, opacity 100ms;
     object-fit: contain;
 
     &[data-img] {
@@ -826,7 +846,7 @@ i {font-style: italic;}
     }
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     &[todo] {
@@ -849,6 +869,7 @@ i {font-style: italic;}
       width: 100%;
       height: 15vw;
       display: flex;
+      position: relative;
 
       img, video {
         height: 100%;
@@ -1026,6 +1047,20 @@ i {font-style: italic;}
 
         .fpics + .ftext {
           margin-left: 6vw;
+        }
+      }
+
+      &.condensed {
+        margin: 0;
+        width: 115%;
+        margin-left: -4vw;
+
+        .fpics > div {
+          margin-right: -2vw;
+        }
+
+        .ftext {
+          padding: 0 5vw 0 3vw;
         }
       }
     }
