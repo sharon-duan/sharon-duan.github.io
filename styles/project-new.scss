@@ -856,6 +856,8 @@ i {font-style: italic;}
 
       video {
         margin: auto;
+        padding: 1vw;
+        width: 100%;
       }
     }
 
@@ -866,6 +868,15 @@ i {font-style: italic;}
       div:last-of-type {
         transform: rotate(2deg);
       }
+    }
+  }
+
+  .big3 {
+    padding-bottom: 2em;
+
+    div {
+      margin: 0 2vw;
+      padding-bottom: 2em;
     }
   }
 

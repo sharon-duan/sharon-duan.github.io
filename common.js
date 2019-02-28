@@ -182,7 +182,10 @@
     let timer;
     window.addEventListener('resize', () => {
       clearTimeout(timer);
-      timer = setTimeout(resizeProto, 500);
+      timer = setTimeout(() => {
+        onScroll();
+        resizeProto();
+      }, 500);
     });
   }
 
