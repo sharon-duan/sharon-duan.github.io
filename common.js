@@ -24,11 +24,6 @@
           prepareMainPage();
           setTimeout(() => {location.href = '/';}, trdur);
         }
-
-        if (a.getAttribute('id') === 'acontact' && !a.getAttribute('href')) {
-          prepareMainPage();
-          setTimeout(() => {location.href = '/#contact';}, trdur);
-        }
       };
     });
 
@@ -102,7 +97,7 @@
   }
 
   function getScrollTop() {
-    return document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
+    return window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
   }
 
   /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
@@ -115,13 +110,13 @@
   }
 
   function updateSectionsVisibility() {
-    document.querySelectorAll('section').forEach(section => {
+    document.querySelectorAll('section').forEach((section, i) => {
       const top = section.getBoundingClientRect().top;
-      const h = section.offsetHeight;
+      const bottom = top + section.scrollHeight;
 
-      if (section.style.visibility === 'hidden' && (top - window.outerHeight <= 0) && (top + h) >= 0) {
+      if (section.style.visibility !== 'visible' && (top - window.innerHeight <= 0) && bottom >= 0) {
         section.style.visibility = 'visible';
-      } else if (section.style.visibility === 'visible' && (top + h) <= 0) {
+      } else if (section.style.visibility !== 'hidden' && bottom < 0) {
         section.style.visibility = 'hidden';
       }
     });
@@ -172,10 +167,6 @@
       section.style.visibility = 'hidden';
     });
 
-    if (document.documentElement.scrollTop > 0) {
-      console.log('weird');
-    }
-
     setSmoothScroll();
     onScroll();
     setTimeout(onScroll, trdur);
@@ -222,7 +213,6 @@
         fullSizeSrc = match[1] + '@3x.png';
       }
 
-      console.log('bound');
       img.onclick = () => {
         window.open(fullSizeSrc, '_blank');
       };
@@ -249,8 +239,9 @@
     // Chrome and the like do this natively
     if ('scrollBehavior' in document.documentElement.style) return;
     document.querySelectorAll('a[href*="#"]').forEach((a) => {
-      const target = document.getElementById(a.getAttribute('href').substring(1));
-      a.removeAttribute('href');
+      if (a.getAttribute('data-bound')) return;
+      const target = document.getElementById(a.getAttribute('href').match(/.*#(.*)/)[1]);
+      a.setAttribute('data-bound', true);
       a.addEventListener('click', () => {
         document.body.scroll({top: target.getBoundingClientRect().top, behavior: 'smooth'});
       });
