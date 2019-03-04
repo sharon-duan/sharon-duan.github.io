@@ -311,7 +311,7 @@ i {font-style: italic;}
         content: '';
         position: absolute;
         top: 17px;
-        right: 18.1em;
+        margin-left: -30px;
         width: 20px;
         height: 1px;
         background: currentColor;
@@ -503,11 +503,17 @@ i {font-style: italic;}
     }
   }
 
-  .pics6 {
+  .pics6, .pics {
     display: flex;
     > * {
       flex: 1;
       margin: 0 1vw;
+    }
+
+    sub {
+      text-align: center;
+      display: block;
+      padding: 1em 0;
     }
   }
 
@@ -679,7 +685,7 @@ i {font-style: italic;}
     }
 
     h4 {
-      padding: 0.8em;
+      padding: 1.2em 0 0.3em 0;
       text-align: center;
       font-weight: 400;
       color: $secondary;
@@ -711,7 +717,7 @@ i {font-style: italic;}
 
     h4 {
       @include font-size(18);
-      padding: 0.6em;
+      padding: 1.2em 1em 0.3em 1em;
       text-align: center;
       font-weight: 400;
       color: $secondary;
@@ -776,6 +782,10 @@ i {font-style: italic;}
 
     &.persona-main {
       width: 40vw;
+
+      &.persona-cooks {
+        width: 50vw;
+      }
     }
 
     &.persona-other {
@@ -789,6 +799,16 @@ i {font-style: italic;}
       .persona-one {
         height: 24vw;
         margin: 0 calc(2.5vw + 1.5em);
+      }
+
+      &.persona-cooks {
+        .persona-one {
+          height: 20vw;
+        }
+
+        .persona-smaller {
+          height: 16vw;
+        }
       }
 
       img {
@@ -1341,6 +1361,10 @@ i {font-style: italic;}
       margin: auto;
       margin-left: 30%;
 
+      &.persona-cooks {
+        margin-left: auto;
+      }
+
       h4 {
         @include font-size(15);
       }
@@ -1451,11 +1475,6 @@ i {font-style: italic;}
 
       small {
         @include font-size(13);
-
-        &::before {
-          right: 18.6em;
-          width: 13px;
-        }
       }
     }
 
