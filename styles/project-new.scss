@@ -2,6 +2,13 @@
 
 $maxwidth: 1260px;
 
+%card-base {
+  box-shadow: 2px 6px 30px -3px #22334424;
+  border-radius: 8px;
+}
+
+$color-above-gradient: #2b6497;
+
 main {
   padding: 0;
   padding-top: 61px;
@@ -64,6 +71,7 @@ main {
     width: 50%;
     padding: 5em 4vw 5em 9vw;
     letter-spacing: 0.8px;
+    line-height: initial;
 
     h1 {
       font-size: 2.5em;
@@ -166,7 +174,7 @@ i {font-style: italic;}
 
 .project-content {
   @include font-size(15);
-  line-height: 1.33;
+  line-height: 20px;
 
   --h3-right-end: 275px;
 
@@ -420,7 +428,8 @@ i {font-style: italic;}
   }
 
   .alternate-bg {
-    background: $secondary-light;
+    background: linear-gradient(150deg, #faead3 0%, #acc 80%);
+    color: $color-above-gradient;
     padding: 6em 0;
 
     .columns {
@@ -599,10 +608,10 @@ i {font-style: italic;}
         content: '';
         background-image: url(../projects/common/arrow-secondary.png);
         background-repeat: no-repeat;
-        background-size: 22px;
+        background-size: 15px;
         position: absolute;
         top: 5px;
-        left: -32px;
+        left: -28px;
         width: 22px;
         height: 20px;
       }
@@ -660,22 +669,20 @@ i {font-style: italic;}
   }
 
   .grey-card {
-    background: $secondary-light;
+    @extend %card-base;
     margin: 0 2vw;
     flex: 1;
-    border-radius: 2px;
     overflow: hidden;
 
     > * {
-      padding: 1.5em 1.9em;
+      padding: 1.5em 1.3em;
     }
 
     h4 {
       padding: 0.8em;
       text-align: center;
       font-weight: 400;
-      background: $secondary;
-      color: white;
+      color: $secondary;
       margin: 0;
       width: 100%;
       @include font-size(18);
@@ -691,8 +698,9 @@ i {font-style: italic;}
   }
 
   .grey-card-primary {
+    @extend %card-base;
     background: white;
-    border-radius: 2px;
+    color: initial;
     overflow: hidden;
     flex: 1.2;
     height: 100%;
@@ -706,19 +714,13 @@ i {font-style: italic;}
       padding: 0.6em;
       text-align: center;
       font-weight: 400;
-      background: $primary;
-      color: white;
+      color: $secondary;
       margin: 0;
       width: 100%;
-    }
-
-    li::before {
-      color: $primary !important;
     }
   }
 
   .strong-quote {
-    color: $primary;
     font-weight: 500;
     @include font-size(19);
     text-align: center;
@@ -992,8 +994,9 @@ i {font-style: italic;}
   }
 
   #final {
-    background: $secondary-light;
+    background: linear-gradient(150deg, #faead3 0%, #acc 70%);
     padding: 4em 0px;
+    color: $color-above-gradient;
 
     .final-row {
       display: flex;
@@ -1024,7 +1027,6 @@ i {font-style: italic;}
 
           .ftitle {
             @include font-size(19);
-            color: $secondary;
             padding-bottom: 36px;
             font-weight: 700;
             letter-spacing: 0.84px;
@@ -1091,7 +1093,6 @@ i {font-style: italic;}
     --ifh: 935px;
     --pad-top: 5.5em;
     --pad-bottom: 0em;
-    background: $secondary;
     position: relative;
     height: calc(var(--ifh) * var(--ratio) + var(--pad-top) + var(--pad-bottom));
     padding-bottom: 3em;
@@ -1101,10 +1102,6 @@ i {font-style: italic;}
     h3 {
       margin-top: 0;
       margin-bottom: 0;
-      color: white;
-      &::before {
-        background: white !important;
-      }
     }
 
     iframe {
