@@ -437,6 +437,10 @@ i {font-style: italic;}
     box-shadow: $card-shadow;
   }
 
+  .rounded * {
+    border-radius: 8px;
+  }
+
   .alternate-bg {
     background: linear-gradient(150deg, #faead3 0%, #acc 80%);
     color: $color-above-gradient;
@@ -1129,7 +1133,7 @@ i {font-style: italic;}
     }
   }
 
-  #proto {
+  #proto:not([static]) {
     --ratio: 0.7;
     --ifw: 442px;
     --ifh: 935px;
@@ -1348,7 +1352,7 @@ i {font-style: italic;}
         width: 90%;
         margin: auto;
         height: auto;
-        padding-bottom: 1em;
+        margin-bottom: 1em;
       }
     }
 
@@ -1377,10 +1381,9 @@ i {font-style: italic;}
     }
 
     .persona {
-      width: 52vw !important;
+      width: 70vw !important;
       padding-bottom: 1em;
       margin: auto;
-      margin-left: 30%;
 
       &.persona-cooks {
         margin-left: auto;
@@ -1446,7 +1449,9 @@ i {font-style: italic;}
     }
 
     .wrap-5 > * {
-      width: calc(50% - 4vw);
+      width: calc(50% - 16vw);
+      margin-left: 8vw;
+      margin-right: 8vw;
       flex: unset;
     }
 
@@ -1503,6 +1508,8 @@ i {font-style: italic;}
       .final-row {
         margin-bottom: 7em;
         flex-direction: column;
+        width: 100% !important;
+        margin-left: 0 !important;
 
         .fpics {
           margin: auto 5vw !important;

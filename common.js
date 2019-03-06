@@ -190,7 +190,7 @@
   }
 
   function resizeProto() {
-    if (!window.proto) return;
+    if (!window.proto || !window.protoframe) return;
     proto.style.height = window.innerHeight + 'px';
     proto.style.setProperty('--ratio', Math.min((window.innerHeight - 74) / 950, window.innerWidth / 500));
   }
