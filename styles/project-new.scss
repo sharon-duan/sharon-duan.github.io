@@ -945,7 +945,15 @@ i {font-style: italic;}
 
     div {
       margin: 0 2vw;
+    }
+
+    &:not(.nopad) div {
       padding-bottom: 2em;
+    }
+
+    &.nopad img {
+      object-fit: cover;
+      height: 100%;
     }
   }
 
@@ -1287,6 +1295,7 @@ i {font-style: italic;}
       max-width: none;
       width: auto;
       margin-left: 0 !important;
+      padding-left: 0 !important;
     }
 
     img {
@@ -1449,9 +1458,9 @@ i {font-style: italic;}
     }
 
     .wrap-5 > * {
-      width: calc(50% - 16vw);
-      margin-left: 8vw;
-      margin-right: 8vw;
+      width: calc(50% - 10vw);
+      margin-left: 5vw;
+      margin-right: 5vw;
       flex: unset;
     }
 
@@ -1526,7 +1535,7 @@ i {font-style: italic;}
       }
     }
 
-    #proto {
+    #proto:not([static]) {
       h3 {
         display: none;
       }
