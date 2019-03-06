@@ -2,12 +2,19 @@
 
 $maxwidth: 1260px;
 
+$card-shadow: 2px 6px 30px -3px #22334424;
+
+
 %card-base {
-  box-shadow: 2px 6px 30px -3px #22334424;
+  box-shadow: $card-shadow;
   border-radius: 8px;
 }
 
 $color-above-gradient: #2b6497;
+
+strong {
+  font-weight: 600;
+}
 
 main {
   padding: 0;
@@ -219,7 +226,6 @@ i {font-style: italic;}
       background: #ec7357;
       position: absolute;
       top: -17px;
-      left: 0;
       border-radius: 10px;
     }
 
@@ -392,8 +398,8 @@ i {font-style: italic;}
   }
 
   [shrink2], section > h4, h3 {
-    margin-left: 5vw;
-    margin-right: 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   .also-note {
@@ -425,6 +431,10 @@ i {font-style: italic;}
 
   [data-ab="B"]::before {
     content: "B";
+  }
+
+  .shadowed > * {
+    box-shadow: $card-shadow;
   }
 
   .alternate-bg {
@@ -777,7 +787,7 @@ i {font-style: italic;}
 
     img {
       height: 100%;
-      border: 1px  solid #A9C2A3;
+      box-shadow: $card-shadow;
     }
 
     &.persona-main {
