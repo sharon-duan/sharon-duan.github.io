@@ -471,6 +471,18 @@ i {font-style: italic;}
         }
       }
     }
+
+    &.squeezed .columns > * {
+      margin: 0 2.5vw;
+
+      &:first-child {
+        margin-left: 10vw;
+      }
+
+      &:last-child {
+        margin-right: 10vw;
+      }
+    }
   }
 
   .overview-text {
@@ -1260,7 +1272,6 @@ i {font-style: italic;}
     }
 
     h4 {
-      padding-left: 0 !important;
       width: auto;
       text-align: left;
     }
