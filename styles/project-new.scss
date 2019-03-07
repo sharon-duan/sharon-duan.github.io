@@ -4,7 +4,6 @@ $maxwidth: 1260px;
 
 $card-shadow: 2px 6px 30px -3px #22334424;
 
-
 %card-base {
   box-shadow: $card-shadow;
   border-radius: 8px;
@@ -1224,6 +1223,88 @@ i {font-style: italic;}
   }
 }
 
+#next, #prev {
+  position: absolute;
+  top: -3px;
+  height: 34px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 200ms;
+  border: 15px solid transparent;
+  box-sizing: initial;
+
+  &:hover {
+    opacity: 1;
+
+    > div {
+      max-width: 11em;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  img {
+    height: 100%;
+  }
+
+  > div {
+    @include uppercase();
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    padding: 7px 0px;
+    white-space: nowrap;
+    background: #909097;
+    color: white;
+    overflow: hidden;
+    transition: all 300ms;
+    border: 0px;
+
+    max-width: 0em;
+  }
+
+  &#next {
+    right: 0;
+    direction: rtl;
+    border-right: 0;
+
+    > div {
+      right: 8px;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+    }
+
+    &:hover > div {
+      border-left: 3px solid white;
+    }
+  }
+
+  &#prev {
+    left: 0;
+    border-left: 0;
+
+    > div {
+      left: 8px;
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    img {
+      transform: scaleX(-1);
+    }
+
+    &:hover > div {
+      border-right: 3px solid white;
+    }
+  }
+}
+
+.project {
+  #next, #prev {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   [under-1000] {
     display: initial;
@@ -1242,6 +1323,10 @@ i {font-style: italic;}
 }
 
 @media screen and (max-width: 600px) {
+  #next, #prev {
+    top: 25px;
+  }
+
   #banner {
     flex-direction: column;
     height: auto;
@@ -1548,3 +1633,4 @@ i {font-style: italic;}
     div {height: 2px;}
   }
 }
+

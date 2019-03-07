@@ -3,7 +3,7 @@
 (function() {
   console.log("%cWelcome to my Portfolio :)", "color: #ec7357");
 
-  const transitionLong = 800;
+  const transitionLong = 500;
   const trdur = transitionLong/2+2;
 
   setTimeout(() => {
@@ -25,6 +25,15 @@
           setTimeout(() => {location.href = '/';}, trdur);
         }
       };
+    });
+
+    document.querySelectorAll('#prev,#next').forEach(link => {
+      link.addEventListener('click', () => {
+        const proj = link.getAttribute('to');
+        prepareMainPage();
+        header.classList.add('reduced');
+        setTimeout(() => {location.href = '/projects/' + proj;}, trdur);
+      });
     });
 
     document.querySelectorAll('.tile').forEach(tile => {

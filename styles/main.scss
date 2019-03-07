@@ -2,7 +2,7 @@
 @import 'common.scss';
 @import 'fonts.scss';
 
-$transitionLong: 800ms;
+$transitionLong: 500ms;
 
 html {
   scroll-behavior: smooth;
@@ -506,7 +506,7 @@ footer {
   }
 
   main {
-    padding-top: 88px !important;
+    padding-top: 78px !important;
   }
 
   .row {
