@@ -163,6 +163,16 @@
     const bar = progress.querySelector('div');
     const ratio = scrollTop / (document.body.scrollHeight - window.outerHeight);
     bar.style.width = `${ratio * 100}%`;
+
+    if (ratio >= 0.9999) {
+      document.querySelectorAll('#next').forEach(link => {
+        link.classList.add('force-open');
+      });
+    } else {
+      document.querySelectorAll('#next').forEach(link => {
+        link.classList.remove('force-open');
+      });
+    }
   }
 
   function value(ratio, min, max) {

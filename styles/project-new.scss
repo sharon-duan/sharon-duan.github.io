@@ -1222,14 +1222,15 @@ i {font-style: italic;}
   transition: opacity 200ms;
   border: 15px solid transparent;
   box-sizing: initial;
+  z-index: 10;
 
-  &:hover {
+  &:hover, &.force-open {
     opacity: 1;
 
     > div {
       max-width: 11em;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
@@ -1238,11 +1239,10 @@ i {font-style: italic;}
   }
 
   > div {
-    @include uppercase();
-    font-size: 20px;
+    font-size: 16px;
     position: absolute;
     top: 0px;
-    padding: 7px 0px;
+    padding: 9px 0px;
     white-space: nowrap;
     background: #909097;
     color: white;
@@ -1264,8 +1264,10 @@ i {font-style: italic;}
       border-bottom-left-radius: 100px;
     }
 
-    &:hover > div {
-      border-left: 3px solid white;
+    &:hover, &.force-open {
+      > div {
+        border-left: 2px solid white;
+      }
     }
   }
 
@@ -1283,8 +1285,10 @@ i {font-style: italic;}
       transform: scaleX(-1);
     }
 
-    &:hover > div {
-      border-right: 3px solid white;
+    &:hover, &.force-open {
+      > div {
+        border-right: 2px solid white;
+      }
     }
   }
 }
@@ -1314,7 +1318,7 @@ i {font-style: italic;}
 
 @media screen and (max-width: 600px) {
   #next, #prev {
-    top: 25px;
+    top: 24px;
   }
 
   #banner {
