@@ -188,12 +188,14 @@ i {font-style: italic;}
     @include uppercase();
     @include font-size(26);
     color: $primary;
-    padding: calc(2em + 2vw) 0;
+    margin-top: 9em;
+    margin-bottom: 4em;
     text-align: center;
     font-weight: 500;
     letter-spacing: 1.04px;
 
     &.spaced {
+      margin-top: calc(3em + 4vw);
       word-spacing: 8px;
     }
   }
@@ -215,8 +217,8 @@ i {font-style: italic;}
     text-align: left;
     color: $grey-main;
     position: relative;
-    margin-top: calc(4em + 4vw);
-    margin-bottom: 2em;
+    margin-top: 8.5em;
+    margin-bottom: 4em;
 
     &::before {
       content: " ";
@@ -230,20 +232,22 @@ i {font-style: italic;}
 
     sub {
       @include font-size(15);
+      margin-bottom: -1.7em;
     }
   }
 
   h4 {
     @include font-size(19);
     font-weight: 500;
-    padding-top: 1em;
-    padding-bottom: 2em;
+    margin-top: 6em;
+    margin-bottom: 3em;
 
     sub {
       @include font-size(15);
       width: 44vw;
       text-align: left;
       white-space: normal;
+      margin-bottom: -1.7em;
     }
 
     &.nowrap {
@@ -273,7 +277,7 @@ i {font-style: italic;}
     pointer-events: none;
     overflow: hidden;
     max-height: 92vh;
-    margin: 5em 0 3em 0;
+    margin: 6em 0 0 0;
 
     img {
       height: 100%;
@@ -364,9 +368,9 @@ i {font-style: italic;}
     object-fit: contain;
     margin: auto;
     height: 2.7em;
-    margin-bottom: calc(-1em - 3vw);
     position: relative;
-    top: calc(-0.5em - 3vw);
+    margin-top: -5em;
+    margin-bottom: -3em;
 
     img {
       height: 100%;
@@ -403,12 +407,14 @@ i {font-style: italic;}
 
   .also-note {
     padding: 4em 22vw 0em 8vw;
+    margin-bottom: 2em;
   }
 
   .big-pic {
-    padding: 0 10vw 2em 9vw;
+    padding: 0 10vw 0 9vw;
     max-width: 80em;
     margin: auto;
+    margin-bottom: 2em;
   }
 
   hr {
@@ -458,6 +464,7 @@ i {font-style: italic;}
             font-weight: 800;
             padding: 0 0 1em 0;
             width: auto;
+            margin: 0;
           }
 
           div {
@@ -538,7 +545,7 @@ i {font-style: italic;}
     sub {
       text-align: center;
       display: block;
-      padding: 1em 0;
+      margin: 1em 0 3em 0;
     }
   }
 
@@ -672,7 +679,6 @@ i {font-style: italic;}
     max-width: 900px;
     margin: auto;
     display: flex;
-    padding-bottom: 2em;
 
     &.large-cards {
       max-width: none;
@@ -686,6 +692,7 @@ i {font-style: italic;}
 
         &:last-of-type {
           margin-right: 0;
+          margin-bottom: 0 !important;
         }
       }
     }
@@ -786,13 +793,13 @@ i {font-style: italic;}
   .persona {
     position: relative;
     margin: auto;
-    margin-bottom: 0;
+    margin-bottom: 2em;
 
     h4 {
       display: inline-block;
       width: 100%;
       left: calc(-100% - 1em);
-      padding: 1em 0;
+      margin: 1em 0;
     }
 
     div {
@@ -807,10 +814,6 @@ i {font-style: italic;}
 
     &.persona-main {
       width: 40vw;
-
-      &.persona-cooks {
-        width: 50vw;
-      }
     }
 
     &.persona-other {
@@ -822,22 +825,12 @@ i {font-style: italic;}
       }
 
       .persona-one {
-        height: 24vw;
-        margin: 0 calc(2.5vw + 1.5em);
-      }
-
-      &.persona-cooks {
-        .persona-one {
-          height: 20vw;
-        }
-
-        .persona-smaller {
-          height: 16vw;
-        }
+        margin: 0 calc(4vw + 1.5em);
       }
 
       img {
-        width: auto;
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -909,7 +902,7 @@ i {font-style: italic;}
   }
 
   .pics3, .digital3 {
-    padding-bottom: 2em;
+    margin-bottom: 2em;
 
     > * {
       margin: 0 1vw;
@@ -940,17 +933,12 @@ i {font-style: italic;}
   }
 
   .big3 {
-    padding-bottom: 2em;
-
     div {
       margin: 0 2vw;
+      margin-bottom: 2em;
     }
 
-    &:not(.nopad) div {
-      padding-bottom: 2em;
-    }
-
-    &.nopad img {
+    img {
       object-fit: cover;
       height: 100%;
     }
@@ -1050,6 +1038,7 @@ i {font-style: italic;}
     background: linear-gradient(150deg, #faead3 0%, #acc 70%);
     padding: 4em 0px;
     color: $color-above-gradient;
+    margin: 10em 0 2em 0;
 
     .final-row {
       display: flex;
@@ -1127,7 +1116,7 @@ i {font-style: italic;}
 
     blockquote {
       margin: 0 auto;
-      padding: 3em 0;
+      padding: 3em 1em;
     }
   }
 
@@ -1178,6 +1167,7 @@ i {font-style: italic;}
   background-repeat: no-repeat;
   position: relative;
   height: 450px;
+  margin: 6em 0;
 
   &::before {
     content: '';
@@ -1362,15 +1352,19 @@ i {font-style: italic;}
   .project-content {
     h1 {
       @include font-size(21);
+      margin-top: 7em;
+      margin-bottom: 2em;
     }
 
     h3 {
       @include font-size(17);
+      margin-top: 6em;
     }
 
     h4 {
       width: auto;
       text-align: left;
+      margin-top: 4em;
     }
 
     h3 sub, h4 sub {
@@ -1438,7 +1432,7 @@ i {font-style: italic;}
     }
 
     .also-note {
-      padding: 0 8vw;
+      padding: 0 5vw;
     }
 
     .pics3, .digital3 {
@@ -1476,12 +1470,7 @@ i {font-style: italic;}
 
     .persona {
       width: 70vw !important;
-      padding-bottom: 1em;
       margin: auto;
-
-      &.persona-cooks {
-        margin-left: auto;
-      }
 
       h4 {
         @include font-size(15);
@@ -1493,7 +1482,6 @@ i {font-style: italic;}
         .persona-one {
           margin: auto;
           height: initial;
-          padding-bottom: 1em;
 
           img {
             width: 100%;
@@ -1531,6 +1519,7 @@ i {font-style: italic;}
       width: 100%;
       padding: 0 4vw;
       height: auto;
+      margin-top: -1.8em;
 
       img {
         width: 100%;
