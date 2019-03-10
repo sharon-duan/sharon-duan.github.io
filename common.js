@@ -27,15 +27,6 @@
       };
     });
 
-    document.querySelectorAll('#prev,#next').forEach(link => {
-      link.addEventListener('click', () => {
-        const proj = link.getAttribute('to');
-        prepareMainPage();
-        header.classList.add('reduced');
-        setTimeout(() => {location.href = '/projects/' + proj;}, trdur);
-      });
-    });
-
     document.querySelectorAll('.tile').forEach(tile => {
       tile.addEventListener('click', () => {
         if (tile.classList.contains('comingsoon')) {
@@ -103,6 +94,7 @@
     updateToTop(scrollTop);
     updateProgress(scrollTop);
     updateSectionsVisibility(scrollTop);
+    updateMenu(scrollTop);
   }
 
   function getScrollTop() {
@@ -206,6 +198,17 @@
         resizeProto();
       }, 500);
     });
+
+    document.querySelectorAll('#prev,#next').forEach(link => {
+      link.addEventListener('click', () => {
+        const proj = link.getAttribute('to');
+        prepareMainPage();
+        header.classList.add('reduced');
+        setTimeout(() => {location.href = '/projects/' + proj;}, trdur);
+      });
+    });
+
+    setupMenu();
   }
 
   function resizeProto() {
@@ -269,4 +272,55 @@
       });
     });
   }
+
+  function setupMenu() {
+    if (!window.menu) return;
+
+    document.querySelectorAll('section > h1').forEach((h1, i) => {
+      const title = h1.textContent;
+      const item = document.createElement('div');
+      item.innerHTML = `${title[0]}<span>${title}</span>`;
+      if (i === 0) {
+        // item.classList.add('current');
+      }
+
+      if (title.toLowerCase() === 'design & deliver') {
+        item.classList.add('design');
+      }
+
+      item.onclick = () => {
+        document.documentElement.scrollTop = h1.offsetTop - 100;
+      }
+
+      menu.appendChild(item);
+    });
+  }
+
+  var lastCurrent;
+  function updateMenu(scrollTop) {
+    if (!window.menu) return;
+
+    if (scrollTop > 100) {
+      menu.classList.add('show');
+    } else {
+      menu.classList.remove('show');
+    }
+
+    const top = Math.max(0, banner.offsetHeight - scrollTop) + header.offsetHeight + 100;
+    menu.style.setProperty('--top', `${top}px`);
+
+    Array.from(document.querySelectorAll('section > h1')).reverse().some(h1 => {
+      if (document.documentElement.scrollTop >= h1.offsetTop - window.innerHeight * 0.4) {
+        if (h1 === lastCurrent) return true;
+        const title = h1.textContent;
+        document.querySelectorAll('#menu > div').forEach((item) => {
+          const isNowCurrent = item.textContent.substr(1) === title;
+          if (isNowCurrent) lastCurrent = h1;
+          item.classList.toggle('current', isNowCurrent);
+        });
+        return true;
+      }
+    });
+  }
+
 })();
