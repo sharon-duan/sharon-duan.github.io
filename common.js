@@ -101,6 +101,16 @@
     return window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
   }
 
+  function setScrollTop(val) {
+    // Chrome and the like do this natively
+    if ('scrollBehavior' in document.documentElement.style) {
+      document.documentElement.scrollTop = val;
+      return;
+    }
+
+    document.body.scroll({top: val, behavior: 'smooth'});
+  }
+
   /** If not here and we scolled 60%, swap invisiton iframe src to actually load it */
   function maybeAddInvisionPrototype(scrollTop) {
     if (!window.protoframe || !window.proto || protoframe.getAttribute('src') || !protoframe.getAttribute('data-src')) return;
@@ -289,7 +299,7 @@
       }
 
       item.onclick = () => {
-        document.documentElement.scrollTop = h1.offsetTop - 100;
+        setScrollTop(h1.offsetTop - 100);
       }
 
       menu.appendChild(item);
@@ -310,7 +320,7 @@
     menu.style.setProperty('--top', `${top}px`);
 
     Array.from(document.querySelectorAll('section > h1')).reverse().some(h1 => {
-      if (document.documentElement.scrollTop >= h1.offsetTop - window.innerHeight * 0.4) {
+      if (getScrollTop() >= h1.offsetTop - window.innerHeight * 0.4) {
         if (h1 === lastCurrent) return true;
         const title = h1.textContent;
         document.querySelectorAll('#menu > div').forEach((item) => {
