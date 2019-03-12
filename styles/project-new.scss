@@ -477,6 +477,12 @@ i {font-style: italic;}
     max-width: 80em;
     margin: auto;
     margin-bottom: 2em;
+
+    sub {
+      text-align: center;
+      display: block;
+      margin: 1em 0 3em 0;
+    }
   }
 
   hr {
@@ -1014,6 +1020,12 @@ i {font-style: italic;}
 
   .pics2 > * {
     margin: 1em 3vw;
+  }
+
+  .pics2 sub {
+    text-align: center;
+    display: block;
+    margin: 1.8vw 0 3vw 0;
   }
 
   .photos2 {
