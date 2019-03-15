@@ -21,11 +21,9 @@ strong {
   position: fixed;
   z-index: 1;
   height: calc(100% - var(--top));
-  width: var(--width);
   top: var(--top);
   left: calc(var(--width) * -1);
-  // margin-top: 11%;
-  transition: left 600ms;
+  transition: left 300ms;
 
   &.show {
     left: 0;
@@ -33,81 +31,43 @@ strong {
 
   > div {
     position: relative;
-    margin-bottom: 1px;
-    width: 50px;
-    height: 50px;
-    padding: 17px;
-    text-align: center;
-    color: white;
-    margin-left: -15px;
+    margin-bottom: 3px;
+    max-width: 40px;
+    height: 40px;
+    padding: 12px;
+    color: transparent;
+    margin-left: -8px;
+    white-space: nowrap;
     cursor: pointer;
     left: 0;
     text-indent: 6px;
-    transition: left 300ms, background-color 300ms, text-indent 300ms;
+    overflow: hidden;
+    background-color: #ffffffbb;
+    box-shadow: $card-shadow;
+    border-radius: 4px;
+    transition: left 300ms, background-color 150ms, color 150ms, max-width 150ms;
 
-    &::before {
-      content: ' ';
-      background: #b1b1b1ab;
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 100px;
-      z-index: -1;
-      transition: background-color 300ms;
-    }
-
-    > span {
-      position: absolute;
-      display: inline-block;
-      white-space: nowrap;
-      background: #cbcbcb;
-      top: 0;
-      left: 19px;
-      border-top-right-radius: 100px;
-      border-bottom-right-radius: 100px;
-      border-top-left-radius: 21px;
-      border-bottom-left-radius: 21px;
-      overflow: hidden;
-      max-width: 0;
-      padding: 17px 0;
-      transition: max-width 200ms, background-color 300ms;
+    &::first-letter {
+      color: initial;
     }
 
     &:hover {
       left: 5px;
-      color: transparent !important;
-
-      > span {
-        color: white;
-        max-width: 180px;
-        padding-right: 18px;
-      }
-
-      &::before, > span {
-        background: #b1b1b1;
-      }
+      color: initial;
+      max-width: 200px;
     }
 
     &.design {
-      &, span {
+      &::first-letter, &:hover {
         color: $primary;
-      }
-
-      &::before, > span {
-        background: #ffcec4;
       }
     }
 
     &.current {
-      left: 8px;
-      color: white;
-      text-indent: 0;
-
-      &::before, > span {
+      left: 4px;
+      background-color: $primary;
+      &::first-letter, &:hover {
         color: white;
-        background: $primary;
       }
     }
   }

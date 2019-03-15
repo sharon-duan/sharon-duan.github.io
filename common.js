@@ -289,10 +289,7 @@
     document.querySelectorAll('section > h1').forEach((h1, i) => {
       const title = h1.textContent;
       const item = document.createElement('div');
-      item.innerHTML = `${title[0]}<span>${title}</span>`;
-      if (i === 0) {
-        // item.classList.add('current');
-      }
+      item.innerHTML = title;
 
       if (title.toLowerCase() === 'design & deliver') {
         item.classList.add('design');
@@ -324,7 +321,7 @@
         if (h1 === lastCurrent) return true;
         const title = h1.textContent;
         document.querySelectorAll('#menu > div').forEach((item) => {
-          const isNowCurrent = item.textContent.substr(1) === title;
+          const isNowCurrent = item.textContent === title;
           if (isNowCurrent) lastCurrent = h1;
           item.classList.toggle('current', isNowCurrent);
         });
