@@ -55,6 +55,7 @@ strong {
       left: 5px;
       color: initial;
       max-width: 200px;
+      background-color: white;
     }
 
     &.design {
@@ -1252,21 +1253,35 @@ i {font-style: italic;}
   top: 0px;
   height: 16px;
   cursor: pointer;
-  transition: max-width 300ms, background-color 300ms;
+  transition: max-width 160ms, background-color 200ms 100ms;
   border: 12px solid transparent;
-  background-color: #D8D8D8;
+  color: white;
   background-clip: padding-box;
   box-sizing: initial;
   padding: 9px;
   z-index: 10;
   max-width: 10px;
+  text-indent: 20px;
   white-space: nowrap;
   overflow: hidden;
 
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 11px;
+    height: 1px;
+    background-color: $grey-main;
+  }
+
   &:hover, &.force-open {
-    background-color: #9B9B9B;
     background-color: $primary;
     max-width: 11em;
+    transition: max-width 200ms, background-color 200ms;
+    &::before, &::after {
+      background-color: white;
+    }
   }
 
   img {
@@ -1295,6 +1310,18 @@ i {font-style: italic;}
     > div {
       padding-right: 10px;
     }
+
+    &::before {
+      right: 8px;
+      top: 13px;
+      transform: rotate(48deg);
+    }
+
+    &::after {
+      right: 8px;
+      top: 21px;
+      transform: rotate(-48deg);
+    }
   }
 
   &#prev {
@@ -1305,6 +1332,18 @@ i {font-style: italic;}
 
     > div {
       padding-left: 10px;
+    }
+
+    &::before {
+      left: 8px;
+      top: 13px;
+      transform: rotate(-48deg);
+    }
+
+    &::after {
+      left: 8px;
+      top: 21px;
+      transform: rotate(48deg);
     }
   }
 }
