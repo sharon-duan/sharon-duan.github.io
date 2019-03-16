@@ -1299,7 +1299,7 @@ i {font-style: italic;}
   }
 
   &#next {
-    right: 0;
+    right: 0.8vw;
     direction: rtl;
     border-right: 0;
 
@@ -1312,20 +1312,20 @@ i {font-style: italic;}
     }
 
     &::before {
-      right: 8px;
+      right: 10px;
       top: 11px;
       transform: rotate(46deg);
     }
 
     &::after {
-      right: 8px;
+      right: 10px;
       top: 17px;
       transform: rotate(-46deg);
     }
   }
 
   &#prev {
-    left: 0;
+    left: 0.8vw;
     border-left: 0;
 
     > div {
@@ -1333,13 +1333,13 @@ i {font-style: italic;}
     }
 
     &::before {
-      left: 8px;
+      left: 10px;
       top: 11px;
       transform: rotate(-46deg);
     }
 
     &::after {
-      left: 8px;
+      left: 10px;
       top: 17px;
       transform: rotate(46deg);
     }
