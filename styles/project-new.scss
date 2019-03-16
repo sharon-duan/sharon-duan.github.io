@@ -1250,18 +1250,18 @@ i {font-style: italic;}
 
 #next, #prev {
   position: absolute;
-  top: 0px;
-  height: 16px;
+  top: 17px;
   cursor: pointer;
-  transition: max-width 160ms, background-color 200ms 100ms;
-  border: 12px solid transparent;
-  color: white;
-  background-clip: padding-box;
+  transition: max-width 160ms, background-color 200ms 100ms, padding 1000ms;
+  background-color: transparent;
+  color: $primary;
   box-sizing: initial;
-  padding: 9px;
+  padding: 6px 16px;
+  border-radius: 4px;
   z-index: 10;
-  max-width: 10px;
-  text-indent: 20px;
+  max-width: 0px;
+  text-indent: 16px;
+  font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
 
@@ -1270,17 +1270,19 @@ i {font-style: italic;}
     position: absolute;
     left: 0;
     top: 0;
-    width: 11px;
+    width: 9px;
     height: 1px;
     background-color: $grey-main;
   }
 
   &:hover, &.force-open {
-    background-color: $primary;
+    padding: 6px 12px;
+    background-color: white;
+    box-shadow: $card-shadow;
     max-width: 11em;
     transition: max-width 200ms, background-color 200ms;
     &::before, &::after {
-      background-color: white;
+      background-color: $primary;
     }
   }
 
@@ -1300,8 +1302,6 @@ i {font-style: italic;}
     right: 0;
     direction: rtl;
     border-right: 0;
-    border-top-left-radius: 16px;
-    border-bottom-left-radius: 16px;
 
     img {
       transform: scaleX(-1);
@@ -1313,22 +1313,20 @@ i {font-style: italic;}
 
     &::before {
       right: 8px;
-      top: 13px;
-      transform: rotate(48deg);
+      top: 11px;
+      transform: rotate(46deg);
     }
 
     &::after {
       right: 8px;
-      top: 21px;
-      transform: rotate(-48deg);
+      top: 17px;
+      transform: rotate(-46deg);
     }
   }
 
   &#prev {
     left: 0;
     border-left: 0;
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
 
     > div {
       padding-left: 10px;
@@ -1336,14 +1334,14 @@ i {font-style: italic;}
 
     &::before {
       left: 8px;
-      top: 13px;
-      transform: rotate(-48deg);
+      top: 11px;
+      transform: rotate(-46deg);
     }
 
     &::after {
       left: 8px;
-      top: 21px;
-      transform: rotate(48deg);
+      top: 17px;
+      transform: rotate(46deg);
     }
   }
 }
@@ -1373,7 +1371,7 @@ i {font-style: italic;}
 
 @media screen and (max-width: 600px) {
   #next, #prev {
-    top: 24px;
+    top: 46px;
   }
 
   #banner {
