@@ -15,6 +15,29 @@ strong {
   font-weight: 600;
 }
 
+[noc] {
+  pointer-events: none;
+}
+
+.full-screen-container-by-sharon-duan-yes-indeed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111015ab;
+  z-index: 101;
+  display: flex;
+  cursor: zoom-out;
+
+  img {
+    margin: auto;
+    max-width: 96%;
+    max-height: 96%;
+    pointer-events: none;
+  }
+}
+
 #menu {
   --top: 0px;
   --width: 50px;
@@ -22,25 +45,25 @@ strong {
   z-index: 1;
   height: calc(100% - var(--top));
   top: var(--top);
-  left: calc(var(--width) * -1);
-  transition: left 300ms;
+  left: -200px;
+  transition: left 600ms;
 
   &.show {
     left: 0;
   }
 
   > div {
+    @include font-size(14);
     position: relative;
     margin-bottom: 3px;
     max-width: 40px;
-    height: 40px;
-    padding: 12px;
+    padding: 10px;
     color: transparent;
     margin-left: -8px;
     white-space: nowrap;
     cursor: pointer;
     left: 0;
-    text-indent: 6px;
+    text-indent: 11px;
     overflow: hidden;
     background-color: #ffffffbb;
     box-shadow: $card-shadow;
@@ -48,18 +71,21 @@ strong {
     transition: left 300ms, background-color 150ms, color 150ms, max-width 150ms;
 
     &::first-letter {
-      color: initial;
+      color: $grey-paragraphs;
+    }
+
+    &:hover, &.force-expand {
+      color: $grey-paragraphs;
+      max-width: 180px;
     }
 
     &:hover {
       left: 5px;
-      color: initial;
-      max-width: 200px;
       background-color: white;
     }
 
-    &.design {
-      &::first-letter, &:hover {
+    &.primary {
+      &::first-letter, &:hover, &.force-expand {
         color: $primary;
       }
     }
@@ -67,15 +93,24 @@ strong {
     &.current {
       left: 4px;
       background-color: $primary;
-      &::first-letter, &:hover {
+      &::first-letter, &:hover, &.force-expand {
         color: white;
       }
     }
   }
 }
 
+#prototype-section h1 {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 3em;
+  overflow: hidden;
+}
+
 .project #menu {
-  left: calc(var(--width) * -1) !important;
+  left: -200px !important;
   transition-delay: 0ms !important;
   transition-duration: 100ms;
 }
@@ -92,7 +127,7 @@ main {
   background: #ccc;
   color: black;
   padding: 10px;
-  font-size: 12px;
+  @include font-size(12);
   border-radius: 4px;
   max-width: 40vw;
   margin: auto;
@@ -105,7 +140,7 @@ main {
 
 .uncommon {
   #banner {
-    background: $p-uncommon;
+    background: linear-gradient(150deg, #EBB2A2 0%, #8E79F8 100%);
   }
 }
 
@@ -135,12 +170,13 @@ main {
 
 #banner {
   color: white;
-  height: 410px;
+  height: 540px;
   display: flex;
+  margin-bottom: 5vw;
 
   #banner-text {
-    width: 50%;
-    padding: 5em 4vw 5em 9vw;
+    width: 40%;
+    padding: 5em 3vw 5em 6vw;
     letter-spacing: 0.8px;
     line-height: initial;
 
@@ -187,9 +223,9 @@ main {
     margin-right: 1em;
 
     img {
-      width: 50vw;
-      height: 100%;
+      width: 59vw;
       margin: auto;
+      margin-top: 1.5em;
       object-fit: contain;
     }
   }
@@ -202,8 +238,9 @@ main {
 i {font-style: italic;}
 
 .project-content {
-  @include font-size(15);
-  line-height: 20px;
+  @include font-size(14.5);
+  line-height: 25px;
+  color: $grey-paragraphs;
 
   --h3-right-end: 275px;
 
@@ -254,19 +291,22 @@ i {font-style: italic;}
     }
 
     sub {
-      @include font-size(15);
+      @include font-size(14.5);
+      color: $grey-paragraphs;
       margin-bottom: -1.7em;
     }
   }
 
   h4 {
     @include font-size(19);
+    color: $grey-main;
     font-weight: 500;
     margin-top: 6em;
     margin-bottom: 3em;
 
     sub {
-      @include font-size(15);
+      @include font-size(14.5);
+      color: $grey-paragraphs;
       width: 44vw;
       text-align: left;
       white-space: normal;
@@ -313,7 +353,7 @@ i {font-style: italic;}
   }
 
   blockquote {
-    @include font-size(25);
+    @include font-size(20);
     max-width: 600px;
     line-height: 1.5em;
     text-align: center;
@@ -322,9 +362,9 @@ i {font-style: italic;}
     q {
       display: block;
       font-family: Raleway, AvenirNext, Helvetica, Arial;
-      @include font-size(20);
-      letter-spacing: 1.66px;
-      line-height: 35px;
+      @include font-size(18);
+      letter-spacing: 1.5px;
+      line-height: 32px;
       font-weight: 500;
       padding: 0 1em;
     }
@@ -332,7 +372,7 @@ i {font-style: italic;}
     small {
       display: block;
       font-weight: 400;
-      @include font-size(17);
+      @include font-size(16);
       text-align: right;
       margin-top: 10px;
       position: relative;
@@ -353,12 +393,12 @@ i {font-style: italic;}
     .quote-line {
       border: 0;
       position: relative;
-      height: 68px;
+      height: 54px;
 
       img {
         position: relative;
         pointer-events: none;
-        width: 1.1em;
+        width: 0.9em;
       }
 
       &::before, &::after {
@@ -397,21 +437,11 @@ i {font-style: italic;}
 
     img {
       height: 100%;
-      width: auto;
+      width: 40vw;
       object-fit: contain;
       margin: auto;
       display: block;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      background-repeat: no-repeat;
-      width: 9em;
-      height: 5em;
-      background-size: 9em;
-      right: 4.7vw;
-      top: -5em;
+      pointer-events: none;
     }
   }
 
@@ -459,7 +489,7 @@ i {font-style: italic;}
     position: absolute;
     top: 0px;
     left: 7px;
-    font-size: 19px;
+    @include font-size(19);
     font-weight: 500;
   }
 
@@ -494,6 +524,7 @@ i {font-style: italic;}
             padding: 0 0 1em 0;
             width: auto;
             margin: 0;
+            color: inherit;
           }
 
           div {
@@ -677,8 +708,8 @@ i {font-style: italic;}
         background-repeat: no-repeat;
         background-size: 15px;
         position: absolute;
-        top: 5px;
-        left: -28px;
+        top: 9px;
+        left: -25px;
         width: 22px;
         height: 20px;
       }
@@ -737,6 +768,7 @@ i {font-style: italic;}
 
   .grey-card {
     @extend %card-base;
+    color: $grey-paragraphs;
     margin: 0 2vw;
     flex: 1;
     overflow: hidden;
@@ -767,7 +799,7 @@ i {font-style: italic;}
   .grey-card-primary {
     @extend %card-base;
     background: white;
-    color: initial;
+    color: $grey-paragraphs;
     overflow: hidden;
     flex: 1.2;
     height: 100%;
@@ -862,12 +894,25 @@ i {font-style: italic;}
         height: auto;
       }
     }
+
+    &.persona-with-the-bigger-one-on-da-middle {
+      .persona-one {
+        margin: 0 1.2vw;
+        flex: 1;
+      }
+
+      .persona-one:nth-child(2) {
+        flex: 1.24;
+        position: relative;
+        top: -2vw;
+      }
+    }
   }
 
   .quote {
     background: #fc8b76;
     color: white;
-    font-size: 20px;
+    @include font-size(20);
     padding: 1.5em;
     text-align: center;
     margin: 1em 0em;
@@ -904,7 +949,7 @@ i {font-style: italic;}
   img {
     width: 100%;
     height: auto;
-    cursor: pointer;
+    cursor: zoom-in;
     transform: scale(1);
     opacity: 1;
     transition: transform 150ms, opacity 100ms;
@@ -1225,6 +1270,7 @@ i {font-style: italic;}
     sub {
       max-width: 45vw;
       left: calc(10vw + var(--h3-right-end));
+      color: white;
     }
   }
 }
@@ -1249,6 +1295,7 @@ i {font-style: italic;}
 }
 
 #next, #prev {
+  display: none !important; // disabled
   position: absolute;
   top: 17px;
   cursor: pointer;
@@ -1261,7 +1308,7 @@ i {font-style: italic;}
   z-index: 10;
   max-width: 0px;
   text-indent: 16px;
-  font-size: 16px;
+  @include font-size(16);
   white-space: nowrap;
   overflow: hidden;
 
@@ -1291,7 +1338,7 @@ i {font-style: italic;}
   }
 
   > div {
-    font-size: 16px;
+    @include font-size(16);
     display: inline-block;
     position: relative;
     top: -3px;
@@ -1376,7 +1423,7 @@ i {font-style: italic;}
 
   #banner {
     flex-direction: column;
-    height: auto;
+    height: 102vw !important;
 
     #banner-text {
       width: initial;
@@ -1399,9 +1446,13 @@ i {font-style: italic;}
 
     #banner-img {
       margin: 0;
+      height: 100%;
 
       img {
         width: 90%;
+        margin: auto !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
       }
     }
   }
@@ -1530,7 +1581,7 @@ i {font-style: italic;}
       margin: auto;
 
       h4 {
-        @include font-size(15);
+        @include font-size(14.5);
       }
 
       &.persona-other .persona-group {
@@ -1573,13 +1624,12 @@ i {font-style: italic;}
     }
 
     .flow {
-      width: 100%;
       padding: 0 4vw;
       height: auto;
       margin-top: -1.8em;
 
       img {
-        width: 100%;
+        width: 100% !important;
       }
     }
 
@@ -1630,7 +1680,7 @@ i {font-style: italic;}
       margin-top: 20vw;
 
       q {
-        @include font-size(15);
+        @include font-size(14.5);
         padding: 0;
         line-height: 1.7em;
       }

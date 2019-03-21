@@ -83,6 +83,12 @@
         scrollable.classList.remove('no-hover');
       }, transitionLong);
     }
+
+    if (window.menu) {
+      setTimeout(() => {
+        menu.classList.add('show');
+      }, 1000);
+    }
   }, 100);
 
   document.addEventListener('scroll', onScroll);
@@ -199,14 +205,11 @@
       }
     }
 
-    resizeProto();
+    resize();
     let timer;
     window.addEventListener('resize', () => {
       clearTimeout(timer);
-      timer = setTimeout(() => {
-        onScroll();
-        resizeProto();
-      }, 500);
+      timer = setTimeout(resize, 500);
     });
 
     document.querySelectorAll('#prev,#next').forEach(link => {
@@ -219,6 +222,11 @@
     });
 
     setupMenu();
+  }
+
+  function resize() {
+    onScroll();
+    resizeProto();
   }
 
   function resizeProto() {
@@ -236,7 +244,7 @@
 
       if (img.getAttribute('data-img')) {
         src = img.getAttribute('data-img');
-        img.setAttribute('src', src);
+        img.src = src;
         img.removeAttribute('data-img');
       } else {
         src = img.getAttribute('src');
@@ -248,8 +256,17 @@
         fullSizeSrc = match[1] + '@3x.png';
       }
 
-      img.onclick = () => {
-        window.open(fullSizeSrc, '_blank');
+      img.onclick = (e) => {
+        e.stopPropagation();
+        const fs = document.createElement('div');
+        fs.classList.add('full-screen-container-by-sharon-duan-yes-indeed');
+        const bigImg = document.createElement('img');
+        bigImg.src = fullSizeSrc;
+        fs.appendChild(bigImg);
+        document.body.appendChild(fs);
+        window.addEventListener('click', () => {
+          fs.remove();
+        }, {once: true});
       };
     });
   }
@@ -291,8 +308,8 @@
       const item = document.createElement('div');
       item.innerHTML = title;
 
-      if (title.toLowerCase() === 'design & deliver') {
-        item.classList.add('design');
+      if (title.toLowerCase() === 'prototype') {
+        item.classList.add('primary');
       }
 
       item.onclick = () => {
@@ -305,18 +322,22 @@
 
   var lastCurrent;
   function updateMenu(scrollTop) {
-    if (!window.menu) return;
+    if (!window.menu || !window.banner) return;
 
-    if (scrollTop > 100) {
-      menu.classList.add('show');
-    } else {
-      menu.classList.remove('show');
-    }
-
-    const top = Math.max(0, banner.offsetHeight - scrollTop) + header.offsetHeight + 100;
+    const t = banner.offsetHeight * 0.5 - scrollTop;
+    const top = Math.max(0, t) + 200;
     menu.style.setProperty('--top', `${top}px`);
 
-    Array.from(document.querySelectorAll('section > h1')).reverse().some(h1 => {
+    if (t < 0) {
+      menu.classList.add('show');
+    }
+
+    document.querySelectorAll('#menu > div').forEach((item) => {
+      item.classList.toggle('force-expand', t > 0);
+    });
+
+
+    const any = Array.from(document.querySelectorAll('section > h1')).reverse().some(h1 => {
       if (getScrollTop() >= h1.offsetTop - window.innerHeight * 0.4) {
         if (h1 === lastCurrent) return true;
         const title = h1.textContent;
@@ -328,6 +349,12 @@
         return true;
       }
     });
+
+    if (!any) {
+      lastCurrent = undefined;
+      const current = document.querySelector('#menu > div.current');
+      current && current.classList.remove('current');
+    }
   }
 
 })();

@@ -49,7 +49,7 @@ header {
   position: fixed;
   width: 100%;
   padding: 40px (5vw + $tile-margin);
-  font-size: 30px;
+  @include font-size(30);
   background: rgba(255, 255, 255, 0.92);
   z-index: 100;
   backdrop-filter: blur(2px);
@@ -92,6 +92,11 @@ header {
     color: $grey-main;
     font-weight: 500;
     letter-spacing: 1.6px;
+    transition: color 100ms;
+
+    &:hover {
+      color: #222;
+    }
   }
 
   .links {
@@ -102,7 +107,7 @@ header {
       text-decoration: none;
       color: #555;
       padding: 0 19px;
-      font-size: 16px;
+      @include font-size(16);
       cursor: pointer;
 
       &.active {
@@ -115,7 +120,7 @@ header {
     color: $grey-sub;
     display: block;
     padding-top: 18px;
-    font-size: 16px;
+    @include font-size(16);
     position: absolute;
     bottom: 12px;
     pointer-events: none;
@@ -395,7 +400,7 @@ footer {
 
   div {
     &:first-child {
-      font-size: 26px;
+      @include font-size(26);
       color: $primary;
       margin-top: 40px;
     }
@@ -417,7 +422,7 @@ footer {
   sub {
     color: #666;
     padding-top: 4px;
-    font-size: 13px;
+    @include font-size(13);
   }
 }
 
