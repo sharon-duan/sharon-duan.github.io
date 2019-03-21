@@ -146,25 +146,21 @@ main {
 
 .delta {
   #banner {
-    background: $p-delta;
-  }
-}
-
-.bigsur {
-  #banner {
-    background: $p-bigsur;
+    background: linear-gradient(150deg, #8ce2c2 0%, #5f84bd 100%);
+    background: linear-gradient(150deg, #7dbfd4 10%, #402ea0 100%);
   }
 }
 
 .cooks {
   #banner {
-    background: $p-cooks;
+    background: linear-gradient(150deg, #d7ca79 0%, #b66e6f 90%);
   }
 }
 
 .phlint {
   #banner {
-    background: $p-phlint;
+    background: linear-gradient(150deg, #7dbfd4 10%, #402ea0 100%);
+    background: linear-gradient(150deg, #8ce2c2 0%, #5f84bd 100%);
   }
 }
 
