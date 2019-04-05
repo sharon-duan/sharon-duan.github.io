@@ -1485,6 +1485,10 @@ i {font-style: italic;}
       pointer-events: none;
     }
 
+    .mobile-order-1 { order: 1; }
+    .mobile-order-2 { order: 2; }
+    .mobile-order-3 { order: 3; }
+
     .columns {
       flex-direction: column;
 
@@ -1615,7 +1619,7 @@ i {font-style: italic;}
     }
 
     .framed {
-      height: 42vw !important;
+      height: 21vw !important;
       margin: 1em 0;
     }
 
@@ -1723,6 +1727,11 @@ i {font-style: italic;}
     bottom: -2px;
     height: 2px;
     div {height: 2px;}
+  }
+
+  .scene {
+    height: 68vw !important;
+    img {object-fit: cover !important;}
   }
 
   #menu {

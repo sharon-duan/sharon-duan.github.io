@@ -227,10 +227,10 @@ main {
   &.phlint {
     background: $p-phlint;
     & > img:first-of-type {
-      transform: rotate(0deg) scale(0.8) translate(-9vh, 0);
+      transform: rotate(0deg) scale(0.8) translate(-4vw, 0);
     }
     & > img:last-of-type {
-      transform: rotate(0deg) scale(0.7) translate(33vh, 8vh);
+      transform: rotate(0deg) scale(0.7) translate(19vw, 4vw);
     }
   }
 
@@ -365,10 +365,10 @@ main {
     &.phlint {
       @include shadow($p-phlint);
       & > img:first-of-type {
-        transform: rotate(-1deg) scale(0.84) translate(-11vh, 0em);
+        transform: rotate(-1deg) scale(0.84) translate(-5vw, 0em);
       }
       & > img:last-of-type {
-        transform: rotate(6deg) scale(0.7) translate(38vh, 1vh);
+        transform: rotate(6deg) scale(0.7) translate(22vw, 1vw);
       }
     }
   }
@@ -529,10 +529,10 @@ footer {
     &.phlint {
       background: $p-phlint;
       & > img:first-of-type {
-        transform: rotate(0deg) scale(0.8) translate(-6vh, 0);
+        transform: rotate(0deg) scale(0.8) translate(-11vw, 0);
       }
       & > img:last-of-type {
-        transform: rotate(3deg) scale(0.7) translate(26vh, 8vh);
+        transform: rotate(3deg) scale(0.6) translate(50vw, 9vw);
       }
     }
 
