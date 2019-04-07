@@ -210,13 +210,6 @@ main {
     }
   }
 
-  &.bigsur {
-    background: $p-bigsur;
-    & > img {
-      transform: rotate(0deg) scale(0.8);
-    }
-  }
-
   &.cooks {
     background: $p-cooks;
     & > img {
@@ -231,6 +224,20 @@ main {
     }
     & > img:last-of-type {
       transform: rotate(0deg) scale(0.7) translate(19vw, 4vw);
+    }
+  }
+
+  &.bigsur {
+    background: $p-bigsur;
+    & > img {
+      transform: rotate(0deg) scale(0.8);
+    }
+  }
+
+  &.cafevenetia {
+    background: $p-cafevenetia;
+    & > img {
+      transform: rotate(0deg) scale(0.8);
     }
   }
 
@@ -348,13 +355,6 @@ main {
       }
     }
 
-    &.bigsur {
-      @include shadow($p-bigsur);
-      & > img {
-        transform: rotate(1deg) scale(0.9);
-      }
-    }
-
     &.cooks {
       @include shadow($p-cooks);
       & > img {
@@ -369,6 +369,20 @@ main {
       }
       & > img:last-of-type {
         transform: rotate(6deg) scale(0.7) translate(22vw, 1vw);
+      }
+    }
+
+    &.bigsur {
+      @include shadow($p-bigsur);
+      & > img {
+        transform: rotate(1deg) scale(0.9);
+      }
+    }
+
+    &.cafevenetia {
+      @include shadow($p-cafevenetia);
+      & > img {
+        transform: rotate(1deg) scale(0.9);
       }
     }
   }
