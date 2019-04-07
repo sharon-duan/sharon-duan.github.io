@@ -413,10 +413,6 @@ footer {
 
   a:hover {
     color: $primary;
-    img {
-      transform: scale(1.05);
-    }
-
   }
 
   div {
@@ -429,6 +425,12 @@ footer {
     img {
       margin: 14px 4px;
       width: 36px;
+      transition: filter 100ms;
+
+      &:hover {
+        filter: sepia(100%);
+        transform: scale(1.05);
+      }
     }
   }
 
