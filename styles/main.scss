@@ -327,6 +327,13 @@ main {
       left: 24%;
       top: 47%;
     }
+
+    &.always {
+      opacity: 1;
+      pointer-events: none;
+      background: none;
+      color: white;
+    }
   }
 
   &:hover, &:active {
