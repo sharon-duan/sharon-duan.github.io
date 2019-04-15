@@ -230,7 +230,7 @@ main {
   &.bigsur {
     background: $p-bigsur;
     & > img {
-      transform: rotate(0deg) scale(0.8);
+      transform: rotate(2deg) scale(0.95);
     }
   }
 
@@ -358,7 +358,7 @@ main {
     &.delta {
       @include shadow($p-delta);
       & > img {
-        transform: translateY(10px) rotate(8deg) scale(1.18);
+        transform: translateY(10px) rotate(8deg) scale(1.18) translate(-0.4vw);
       }
     }
 
@@ -382,7 +382,7 @@ main {
     &.bigsur {
       @include shadow($p-bigsur);
       & > img {
-        transform: rotate(1deg) scale(0.9);
+        transform: rotate(3deg) scale(1) translate(0.5vw, -0.5vw);
       }
     }
 
