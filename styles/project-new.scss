@@ -457,6 +457,10 @@ i {font-style: italic;}
       display: block;
       pointer-events: none;
     }
+
+    &.looksmall {
+      min-height: 3.5em;
+    }
   }
 
   [pad] {
