@@ -59,6 +59,7 @@ main {
       position: absolute;
       right: 0;
       top: -0.3em;
+      border-radius: 4px;
 
       &:hover {
         background: lighten($primary, 5%);

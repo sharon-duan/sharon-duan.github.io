@@ -237,7 +237,7 @@ main {
   &.cafevenetia {
     background: $p-cafevenetia;
     & > img {
-      transform: rotate(0deg) scale(0.8);
+      transform: rotate(0deg) scale(0.8) translate(0, 7vw);
     }
   }
 
@@ -389,7 +389,7 @@ main {
     &.cafevenetia {
       @include shadow($p-cafevenetia);
       & > img {
-        transform: rotate(1deg) scale(0.9);
+        transform: rotate(0deg) scale(0.8) translate(0, 1vw);
       }
     }
   }

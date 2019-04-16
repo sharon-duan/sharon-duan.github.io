@@ -181,6 +181,25 @@ main {
   }
 }
 
+.cafevenetia {
+  #banner {
+    background: linear-gradient(150deg, #b88231 0%, #3b2709 60%, #2c1c06 100%);
+
+    @media screen and (min-width: 600px) {
+      #banner-img img {
+        max-height: 38em;
+        padding-top: 4vh;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      #banner-img img {
+        max-height: 66vw;
+      }
+    }
+  }
+}
+
 #banner {
   color: white;
   height: 540px;
