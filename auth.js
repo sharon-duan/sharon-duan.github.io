@@ -35,7 +35,7 @@
 
   function check() {
     const typed = $('input').value;
-    if (hash(typed) === 'e6d0d610') {
+    if (hash(typed) === 'cf36abcf') {
       sessionStorage.setItem(key, Date.now());
       location.href = '/';
       return;
